@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Christian Moden
- * Class name: SailorSoda.cs
- * Purpose: Class used to represent the Sailor Soda drink and it's properties
+ * Class name: CandlehearthCoffee.cs
+ * Purpose: Class used to represent the Apple juice drink and it's properties
  */
 using BleakwindBuffet.Data.Enums;
 using System;
@@ -10,14 +10,10 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class SailorSoda
+    public class CandlehearthCoffee
     {
         /// <summary>
-        /// Flavor property, default flavor is cherry.  Accesses Flavor enum
-        /// </summary>
-        public SodaFlavor Flavor { get; set; } = SodaFlavor.Cherry;
-        /// <summary>
-        /// Size property for drink, accesses Size enum 
+        /// Size property for the drink
         /// </summary>
         public Size Size { get; set; } = Size.Small;
         /// <summary>
@@ -32,34 +28,41 @@ namespace BleakwindBuffet.Data.Drinks
             get => calories;
             set
             {
-                if (Size == Size.Small) Calories = 117;
-                if (Size == Size.Medium) Calories = 153;
-                if (Size == Size.Large) Calories = 205;
+                if (Size == Size.Small) Calories = 7;
+                if (Size == Size.Medium) Calories = 10;
+                if (Size == Size.Large) Calories = 20;
             }
         }
-
         /// <summary>
         /// Backing variable for Price property
         /// </summary>
         public double price;
         /// <summary>
-        /// Price Property for soda.  Changes price based on size of drink
+        /// Price Property for juice.  Changes price based on size of drink
         /// </summary>
-        public double Price 
+        public double Price
         {
             get => price;
-            
+
             set
             {
-                if (Size == Size.Small) price = 1.42;
-                if (Size == Size.Medium) price = 1.74;
-                if (Size == Size.Large) price = 2.07;
+                if (Size == Size.Small) price = .75;
+                if (Size == Size.Medium) price = 1.25;
+                if (Size == Size.Large) price = 1.75;
             }
         }
         /// <summary>
         /// Ice property for the drink
         /// </summary>
-        public bool Ice { get; set; } = true;
+        public bool Ice { get; set; } = false;
+        /// <summary>
+        /// Cream property for coffee
+        /// </summary>
+        public bool RoomForCream { get; set; } = false;
+        /// <summary>
+        /// Decaf property for coffee
+        /// </summary>
+        public bool Decaf { get; set; } = false;
         /// <summary>
         /// Special instructions list property tailored for this specific drink
         /// </summary>
@@ -68,20 +71,20 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> instruct = new List<string>();
-                if (!Ice) instruct.Add("Hold ice");
+                if (Ice) instruct.Add("Add ice");
+                if (RoomForCream) instruct.Add("Add cream");
                 return instruct;
             }
         }
         /// <summary>
-        /// Overrides default ToString method with string specific to drink size, flavor, and name
+        /// Overrides default ToString method with string specific to drink size, caffination, andname
         /// </summary>
         /// <returns>string</returns>
         public override string ToString()
         {
-            return ($"{Size} {Flavor} Sailor Soda"); 
+            if (Decaf) return ($"{Size} Candlehearth Coffee");
+            else return ($"{Size} Decaf Candlehearth Coffee");
+
         }
-
     }
-
-
 }
