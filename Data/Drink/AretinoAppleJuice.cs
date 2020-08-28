@@ -16,39 +16,30 @@ namespace BleakwindBuffet.Data.Drinks
         /// Size property for the drink
         /// </summary>
         public Size Size { get; set; } = Size.Small;
-        /// <summary>
-        /// Private backing variable for calories
-        /// </summary>
-        private uint calories;
+        
         /// <summary>
         /// Calories Property, changes based on drink size
         /// </summary>
         public uint Calories
         {
-            get => calories;
-            set
+            get
             {
-                if (Size == Size.Small) Calories = 44;
-                if (Size == Size.Medium) Calories = 88;
-                if (Size == Size.Large) Calories = 132;
+                if (Size == Size.Small) return 44;
+                if (Size == Size.Medium) return 88;
+                else return 132;
             }
         }
-        /// <summary>
-        /// Backing variable for Price property
-        /// </summary>
-        public double price;
+        
         /// <summary>
         /// Price Property for juice.  Changes price based on size of drink
         /// </summary>
         public double Price
         {
-            get => price;
-
-            set
+            get
             {
-                if (Size == Size.Small) price = .62;
-                if (Size == Size.Medium) price = .87;
-                if (Size == Size.Large) price = 1.01;
+                if (Size == Size.Small) return .62;
+                if (Size == Size.Medium) return .87;
+                else return 1.01;
             }
         }
         /// <summary>

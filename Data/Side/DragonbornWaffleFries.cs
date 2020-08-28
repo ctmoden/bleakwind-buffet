@@ -10,44 +10,34 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    class DragonbornWaffleFries
+    public class DragonbornWaffleFries
     {
         /// <summary>
         /// Size property for the size
         /// </summary>
         public Size Size { get; set; } = Size.Small;
         /// <summary>
-        /// Private backing variable for calories
-        /// </summary>
-        private uint calories;
-        /// <summary>
         /// Calories Property, changes based on side size
         /// </summary>
         public uint Calories
         {
-            get => calories;
-            set
+            get
             {
-                if (Size == Size.Small) Calories = 77;
-                if (Size == Size.Medium) Calories = 89;
-                if (Size == Size.Large) Calories = 100;
+                if (Size == Size.Small) return 77;
+                if (Size == Size.Medium) return 89;
+                else return 100;               
             }
         }
-        /// <summary>
-        /// Backing variable for Price property
-        /// </summary>
-        public double price;
+        
         /// <summary>
         /// Price Property for side.  Changes price based on size of side
         public double Price
         {
-            get => price;
-
-            set
+            get
             {
-                if (Size == Size.Small) price = .42;
-                if (Size == Size.Medium) price = .76;
-                if (Size == Size.Large) price = .96;
+                if (Size == Size.Small) return.42;
+                if (Size == Size.Medium) return .76;
+                else return .96;
             }
         }
         /// <summary>

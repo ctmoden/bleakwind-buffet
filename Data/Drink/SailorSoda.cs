@@ -20,40 +20,31 @@ namespace BleakwindBuffet.Data.Drinks
         /// Size property for drink, accesses Size enum 
         /// </summary>
         public Size Size { get; set; } = Size.Small;
-        /// <summary>
-        /// Private backing variable for calories
-        /// </summary>
-        private uint calories;
+        
         /// <summary>
         /// Calories Property, changes based on drink size
         /// </summary>
         public uint Calories
         {
-            get => calories;
-            set
+            get
             {
-                if (Size == Size.Small) Calories = 117;
-                if (Size == Size.Medium) Calories = 153;
-                if (Size == Size.Large) Calories = 205;
+                if (Size == Size.Small) return 117;
+                if (Size == Size.Medium) return 153;
+                else return 205;
             }
         }
 
-        /// <summary>
-        /// Backing variable for Price property
-        /// </summary>
-        public double price;
+        
         /// <summary>
         /// Price Property for soda.  Changes price based on size of drink
         /// </summary>
         public double Price 
         {
-            get => price;
-            
-            set
+            get
             {
-                if (Size == Size.Small) price = 1.42;
-                if (Size == Size.Medium) price = 1.74;
-                if (Size == Size.Large) price = 2.07;
+                if (Size == Size.Small) return 1.42;
+                if (Size == Size.Medium) return 1.74;
+                else return 2.07;
             }
         }
         /// <summary>

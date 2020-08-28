@@ -25,29 +25,23 @@ namespace BleakwindBuffet.Data.Sides
         /// </summary>
         public uint Calories
         {
-            get => calories;
-            set
+            get
             {
-                if (Size == Size.Small) Calories = 105;
-                if (Size == Size.Medium) Calories = 142;
-                if (Size == Size.Large) Calories = 179;
+                if (Size == Size.Small) return 105;
+                if (Size == Size.Medium) return 142;
+                else return 179;
             }
         }
-        /// <summary>
-        /// Backing variable for Price property
-        /// </summary>
-        public double price;
+        
         /// <summary>
         /// Price Property for side.  Changes price based on size of side
         public double Price
         {
-            get => price;
-
-            set
+            get
             {
-                if (Size == Size.Small) price = 1.22;
-                if (Size == Size.Medium) price = 1.58;
-                if (Size == Size.Large) price = 1.93;
+                if (Size == Size.Small) return 1.22;
+                if (Size == Size.Medium) return 1.58;
+                else return 1.93;
             }
         }
         /// <summary>
