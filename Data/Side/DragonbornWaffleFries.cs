@@ -28,9 +28,9 @@ namespace BleakwindBuffet.Data.Sides
             get => calories;
             set
             {
-                if (Size == Size.Small) Calories = 105;
-                if (Size == Size.Medium) Calories = 142;
-                if (Size == Size.Large) Calories = 179;
+                if (Size == Size.Small) Calories = 77;
+                if (Size == Size.Medium) Calories = 89;
+                if (Size == Size.Large) Calories = 100;
             }
         }
         /// <summary>
@@ -45,9 +45,9 @@ namespace BleakwindBuffet.Data.Sides
 
             set
             {
-                if (Size == Size.Small) price = 1.22;
-                if (Size == Size.Medium) price = 1.58;
-                if (Size == Size.Large) price = 1.93;
+                if (Size == Size.Small) price = .42;
+                if (Size == Size.Medium) price = .76;
+                if (Size == Size.Large) price = .96;
             }
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <returns>string</returns>
         public override string ToString()
         {
-            return ($"{Size} Mad Otar Grits");
+            return ($"{Size} Dragonborn Waffle Fries");
         }
     }
 }
