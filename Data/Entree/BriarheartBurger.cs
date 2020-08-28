@@ -57,6 +57,7 @@ namespace BleakwindBuffet.Data.Entrees
                 return instructionList;
             }
             //FIXME do we need a setter?  I think it is fine on first guess.
+            //setter: change property from outside of the class, we just want to have object 
         }
         /// <summary>
         /// Overrides the standard ToString method and replaces the return value with the burger name.
