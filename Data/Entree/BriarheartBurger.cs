@@ -2,6 +2,7 @@
  * Author: Christian Moden
  * Class name: BriarheartBurger.cs
  * Purpose: Class used to represent Briarheart burger and it's properties
+ * FIXME create a class with all of the sizes with calories defined to help with maintainability 
  */
 using System;
 using System.Collections.Generic;

@@ -2,6 +2,7 @@
  * Author: Christian Moden
  * Class name: VokunSalad.cs
  * Purpose: Class used to represent the Vokun Salad and it's properties
+ *FIXME need to modify properties to throw not implemented exception for size/flavors as needed.
  */
 using BleakwindBuffet.Data.Enums;
 using System;
