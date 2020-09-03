@@ -10,7 +10,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class GardenOrcOmlette
+    public class GardenOrcOmelette
     {
         /// <summary>
         /// Price property for the omlette. 
@@ -44,12 +44,12 @@ namespace BleakwindBuffet.Data.Entrees
         {
             get
             {
-                List<string> instruct = new List<string>();
-                if (!Broccoli) instruct.Add("Hold broccoli");
-                if (!Mushrooms) instruct.Add("Hold mushrooms");
-                if (!Tomato) instruct.Add("Hold Tomato");
-                if (!Cheddar) instruct.Add("Hold cheddar");
-                return instruct;
+                List<string> specialInstructions = new List<string>();
+                if (!Broccoli) specialInstructions.Add("Hold broccoli");
+                if (!Mushrooms) specialInstructions.Add("Hold mushrooms");
+                if (!Tomato) specialInstructions.Add("Hold Tomato");
+                if (!Cheddar) specialInstructions.Add("Hold cheddar");
+                return specialInstructions;
             }
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <returns>"Gardern Orc Omlette" string</returns>
         public override string ToString()
         {
-            return "Garden Orc Omlette";
+            return "Garden Orc Omelette";
         }
 
     }

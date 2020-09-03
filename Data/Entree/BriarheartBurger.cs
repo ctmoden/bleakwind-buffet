@@ -48,14 +48,14 @@ namespace BleakwindBuffet.Data.Entrees
         public List<string> SpecialInstructions
         {
             get
-            {
-                List<string> instructionList = new List<string>();
-                if(!Bun) instructionList.Add("Hold bun");
-                if(!Ketchup) instructionList.Add("Hold ketchup");
-                if(!Mustard) instructionList.Add("Hold mustard");
-                if(!Pickle) instructionList.Add("Hold pickle");
-                if (!Cheese) instructionList.Add("Hold cheese");
-                return instructionList;
+            { 
+                List<string> specialInstructions = new List<string>();
+                if(!Bun) specialInstructions.Add("Hold bun");
+                if(!Ketchup) specialInstructions.Add("Hold ketchup");
+                if(!Mustard) specialInstructions.Add("Hold mustard");
+                if(!Pickle) specialInstructions.Add("Hold pickle");
+                if (!Cheese) specialInstructions.Add("Hold cheese");
+                return specialInstructions;
             }
             //FIXME do we need a setter?  I think it is fine on first guess.
             //setter: change property from outside of the class, we just want to have object 

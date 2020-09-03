@@ -61,16 +61,16 @@ namespace BleakwindBuffet.Data.Entrees
         {
             get
             {
-                List<string> instructionList = new List<string>();
-                if (!Bun) instructionList.Add("Hold bun");
-                if (!Ketchup) instructionList.Add("Hold ketchup");
-                if (!Mustard) instructionList.Add("Hold mustard");
-                if (!Pickle) instructionList.Add("Hold pickle");
-                if (!Cheese) instructionList.Add("Hold cheese");
-                if (!Tomato) instructionList.Add("Hold tomato");
-                if (!Lettuce) instructionList.Add("Hold lettuce");
-                if (!Mayo) instructionList.Add("Hold mayo");
-                return instructionList;
+                List<string> specialInstructions = new List<string>();
+                if (!Bun) specialInstructions.Add("Hold bun");
+                if (!Ketchup) specialInstructions.Add("Hold ketchup");
+                if (!Mustard) specialInstructions.Add("Hold mustard");
+                if (!Pickle) specialInstructions.Add("Hold pickle");
+                if (!Cheese) specialInstructions.Add("Hold cheese");
+                if (!Tomato) specialInstructions.Add("Hold tomato");
+                if (!Lettuce) specialInstructions.Add("Hold lettuce");
+                if (!Mayo) specialInstructions.Add("Hold mayo");
+                return specialInstructions;
             }
             //FIXME do we need a setter?  I think it is fine on first guess.
         }

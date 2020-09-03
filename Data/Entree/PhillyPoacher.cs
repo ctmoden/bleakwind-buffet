@@ -39,11 +39,11 @@ namespace BleakwindBuffet.Data.Entrees
         {
             get
             {
-                List<string> instruct = new List<string>();
-                if (!Sirloin) instruct.Add("Hold sirloin");
-                if (!Onion) instruct.Add("Hold onion");
-                if (!Roll) instruct.Add("Hold roll");
-                return instruct;
+                List<string> specialInstructions = new List<string>();
+                if (!Sirloin) specialInstructions.Add("Hold sirloin");
+                if (!Onion) specialInstructions.Add("Hold onion");
+                if (!Roll) specialInstructions.Add("Hold roll");
+                return specialInstructions;
             }
         }
         /// <summary>

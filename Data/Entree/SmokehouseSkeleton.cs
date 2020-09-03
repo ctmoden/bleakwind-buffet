@@ -45,12 +45,12 @@ namespace BleakwindBuffet.Data.Entrees
         {
             get
             {
-                List<string> instructionList = new List<string>();
-                if (!SausageLink) instructionList.Add("Hold sausage");
-                if (!Egg) instructionList.Add("Hold eggs");
-                if (!HashBrowns) instructionList.Add("Hold hash browns");
-                if (!Pancake) instructionList.Add("Hold pancakes");
-                return instructionList;
+                List<string> specialInstructions = new List<string>();
+                if (!SausageLink) specialInstructions.Add("Hold sausage");
+                if (!Egg) specialInstructions.Add("Hold eggs");
+                if (!HashBrowns) specialInstructions.Add("Hold hash browns");
+                if (!Pancake) specialInstructions.Add("Hold pancakes");
+                return specialInstructions;
             }
         }
         /// <summary>

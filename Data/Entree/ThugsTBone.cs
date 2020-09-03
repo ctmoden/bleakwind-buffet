@@ -9,7 +9,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class ThugsT_Bone
+    public class ThugsTBone
     {
         /// <summary>
         /// Price property for the T-Bone
@@ -26,8 +26,8 @@ namespace BleakwindBuffet.Data.Entrees
         {
             get
             {
-                List<string> list = new List<string>();
-                return list;
+                List<string> specialInstructions = new List<string>();
+                return specialInstructions;
             }
         }
         /// <summary>

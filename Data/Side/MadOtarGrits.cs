@@ -51,8 +51,8 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                List<string> list = new List<string>();
-                return list;
+                List<string> specialInstructions = new List<string>();
+                return specialInstructions;
             }
         }
         /// <summary>
