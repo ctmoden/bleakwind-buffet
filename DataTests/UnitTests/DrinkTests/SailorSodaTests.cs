@@ -51,6 +51,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
+            
+        }
+
+        [Fact]
+        public void ShouldBeAbleToSetFlavor()
+        {
             SailorSoda soda = new SailorSoda();
             soda.Flavor = SodaFlavor.Cherry;
             Assert.Equal(SodaFlavor.Cherry, soda.Flavor);
@@ -62,11 +68,6 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal(SodaFlavor.Lemon, soda.Flavor);
             soda.Flavor = SodaFlavor.Peach;
             Assert.Equal(SodaFlavor.Peach, soda.Flavor);
-        }
-
-        [Fact]
-        public void ShouldBeAbleToSetFlavor()
-        {
         }
 
         [Theory]
