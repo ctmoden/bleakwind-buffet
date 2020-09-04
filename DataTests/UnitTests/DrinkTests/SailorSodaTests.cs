@@ -1,5 +1,6 @@
 ﻿/*
  * Author: Zachery Brunner
+ * Modified by: Christian Moden
  * Class: SailorSodaTests.cs
  * Purpose: Test the SailorSoda.cs class in the Data library
  */
@@ -9,6 +10,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Drinks;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -17,26 +19,49 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldIncludeIceByDefault()
         {
+            SailorSoda soda = new SailorSoda();
+            Assert.True(soda.Ice);
         }
 
         [Fact]
         public void ShouldBeSmallByDefault()
         {
+            SailorSoda soda = new SailorSoda();
+            Assert.Equal(Size.Small, soda.Size);
         }
 
         [Fact]
         public void FlavorShouldBeCherryByDefault()
         {
+            SailorSoda soda = new SailorSoda();
+            Assert.Equal(SodaFlavor.Cherry, soda.Flavor);
         }
 
         [Fact]
         public void ShouldBeAbleToSetIce()
         {
+            SailorSoda soda = new SailorSoda();
+            soda.Ice = true;
+            Assert.True(soda.Ice);
+            soda.Ice = false;
+            Assert.False(soda.Ice);
+
         }
 
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
+            SailorSoda soda = new SailorSoda();
+            soda.Flavor = SodaFlavor.Cherry;
+            Assert.Equal(SodaFlavor.Cherry, soda.Flavor);
+            soda.Flavor = SodaFlavor.Blackberry;
+            Assert.Equal(SodaFlavor.Blackberry, soda.Flavor);
+            soda.Flavor = SodaFlavor.Grapefruit;
+            Assert.Equal(SodaFlavor.Grapefruit, soda.Flavor);
+            soda.Flavor = SodaFlavor.Lemon;
+            Assert.Equal(SodaFlavor.Lemon, soda.Flavor);
+            soda.Flavor = SodaFlavor.Peach;
+            Assert.Equal(SodaFlavor.Peach, soda.Flavor);
         }
 
         [Fact]

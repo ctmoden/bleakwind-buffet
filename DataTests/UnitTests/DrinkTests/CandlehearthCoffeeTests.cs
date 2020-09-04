@@ -111,18 +111,30 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         }
 
         [Theory]
+        /// <summary>
+        /// both ice and cream included
+        /// </summary>
         [InlineData(true, true)]
+        /// <summary>
+        /// ice is included, cream is not
+        /// </summary>
         [InlineData(true, false)]
+        /// <summary>
+        /// ice is not included, cream is
+        /// </summary>
         [InlineData(false, true)]
+        /// <summary>
+        /// neither ice nor cream is included
+        /// </summary>
         [InlineData(false, false)]
         public void ShouldHaveCorrectSpecialInstructions(bool includeIce, bool includeCream)
         {
             CandlehearthCoffee coffee = new CandlehearthCoffee();
             coffee.Ice = includeIce;
             coffee.RoomForCream = includeCream;
-            if (coffee.Ice) Assert.Contains("Add ice", coffee.SpecialInstructions);
-            if (coffee.RoomForCream) Assert.Contains("Add cream", coffee.SpecialInstructions);
-            if (!(coffee.Ice || coffee.RoomForCream)) Assert.Empty(coffee.SpecialInstructions);
+            if (includeIce) Assert.Contains("Add ice", coffee.SpecialInstructions);
+            if (includeCream) Assert.Contains("Add cream", coffee.SpecialInstructions);
+            if (!(includeIce || includeCream)) Assert.Empty(coffee.SpecialInstructions);
         }
 
         [Theory]

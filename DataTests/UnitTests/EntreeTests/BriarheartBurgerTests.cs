@@ -119,22 +119,28 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Theory]
+        /// <summary>
+        /// boolean variables will set respective properties in test to true.
+        /// </summary>
         [InlineData(true, true, true, true, true)]
+        /// <summary>
+        /// boolean variables will set respective properties in test to false.
+        /// </summary>
         [InlineData(false, false, false, false, false)]
         public void ShouldReturnCorrectSpecialInstructions(bool includeBun, bool includeKetchup, bool includeMustard,
                                                                     bool includePickle, bool includeCheese)
         {
             BriarheartBurger b = new BriarheartBurger();
             b.Bun = includeBun;
-            if (!b.Bun) Assert.Contains("Hold bun", b.SpecialInstructions);
+            if (!includeBun) Assert.Contains("Hold bun", b.SpecialInstructions);
             b.Ketchup = includeKetchup;
-            if (!b.Ketchup) Assert.Contains("Hold ketchup", b.SpecialInstructions);
+            if (!includeKetchup) Assert.Contains("Hold ketchup", b.SpecialInstructions);
             b.Mustard = includeMustard;
-            if (!b.Mustard) Assert.Contains("Hold bun", b.SpecialInstructions);
+            if (!includeMustard) Assert.Contains("Hold mustard", b.SpecialInstructions);
             b.Pickle = includePickle;
-            if (!b.Pickle) Assert.Contains("Hold pickle", b.SpecialInstructions);
+            if (!includePickle) Assert.Contains("Hold pickle", b.SpecialInstructions);
             b.Cheese = includeCheese;
-            if (!b.Cheese) Assert.Contains("Hold cheese", b.SpecialInstructions);
+            if (!includeCheese) Assert.Contains("Hold cheese", b.SpecialInstructions);
             if (b.Bun && b.Ketchup && b.Mustard && b.Pickle && b.Cheese) Assert.Empty(b.SpecialInstructions);
             
         }
