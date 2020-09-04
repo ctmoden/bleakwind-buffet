@@ -6,7 +6,10 @@
 using Xunit;
 
 using BleakwindBuffet.Data;
-
+using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Sides;
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class BriarheartBurgerTests
@@ -15,6 +18,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldIncludeBunByDefault()
         {
+            
         }
 
         [Fact]

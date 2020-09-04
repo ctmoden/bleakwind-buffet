@@ -10,6 +10,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class representing the coffee drink and it's properties
+    /// </summary>
     public class CandlehearthCoffee
     {
         /// <summary>
