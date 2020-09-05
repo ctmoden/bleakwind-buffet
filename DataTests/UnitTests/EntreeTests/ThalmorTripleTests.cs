@@ -6,6 +6,7 @@
 using Xunit;
 
 using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -14,66 +15,101 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldIncludeBunByDefault()
         {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.True(triple.Bun);
         }
 
         [Fact]
         public void ShouldIncludeKetchupByDefault()
         {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.True(triple.Ketchup);
         }
 
         [Fact]
         public void ShouldIncludeMustardByDefault()
         {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.True(triple.Mustard);
         }
 
         [Fact]
         public void ShouldIncludePickleByDefault()
         {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.True(triple.Pickle);
         }
 
         [Fact]
         public void ShouldIncludeCheeseByDefault()
         {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.True(triple.Cheese);
         }
 
         [Fact]
         public void ShouldIncludeTomatoByDefault()
         {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.True(triple.Bun);
         }
 
         [Fact]
         public void ShouldIncludeLettuceByDefault()
         {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.True(triple.Lettuce);
         }
 
         [Fact]
         public void ShouldIncludeMayoByDefault()
         {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.True(triple.Mayo);
         }
 
         [Fact]
         public void ShouldIncludeBaconByDefault()
         {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.True(triple.Bacon);
         }
 
         [Fact]
         public void ShouldIncludeEggByDefault()
         {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.True(triple.Egg);
         }
 
         [Fact]
         public void ShouldBeAbleToSetBun()
         {
+            ThalmorTriple triple = new ThalmorTriple();
+            triple.Bun = true;
+            Assert.True(triple.Bun);
+            triple.Bun = false;
+            Assert.False(triple.Bun);
         }
 
         [Fact]
         public void ShouldBeAbleToSetKetchup()
         {
+            ThalmorTriple triple = new ThalmorTriple();
+            triple.Ketchup = true;
+            Assert.True(triple.Ketchup);
+            triple.Ketchup = false;
+            Assert.False(triple.Ketchup);
         }
 
         [Fact]
         public void ShouldBeAbleToSetMustard()
         {
+            ThalmorTriple triple = new ThalmorTriple();
+            triple.Bun = true;
+            Assert.True(triple.Bun);
+            triple.Bun = false;
+            Assert.False(triple.Bun);
         }
 
         [Fact]

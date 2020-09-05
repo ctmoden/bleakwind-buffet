@@ -1,6 +1,6 @@
 ﻿/*
  * Author: Zachery Brunner
- * Modifies by: Christian Moden
+ * Modified by: Christian Moden
  * Class: GardenOrcOmeletteTests.cs
  * Purpose: Test the GardenOrcOmelette.cs class in the Data library
  */

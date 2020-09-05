@@ -1,5 +1,6 @@
 ﻿/*
  * Author: Zachery Brunner
+ * Modified by: Christian Moden
  * Class: SmokehouseSkeletonTests.cs
  * Purpose: Test the SmokehouseSkeleton.cs class in the Data library
  */
@@ -83,24 +84,48 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldReturnCorrectPrice()
         {
+            SmokehouseSkeleton smoke = new SmokehouseSkeleton();
+            Assert.Equal(5.62, smoke.Price);
         }
 
         [Fact]
         public void ShouldReturnCorrectCalories()
         {
+            SmokehouseSkeleton smoke = new SmokehouseSkeleton();
+            Assert.Equal(602, (double)smoke.Calories);
         }
-
+        
         [Theory]
+        /// <summary>
+        /// Parameters set all respective properties to true
+        /// </summary>
         [InlineData(true, true, true, true)]
+        /// <summary>
+        /// Parameters set all respective properties to false
+        /// </summary>
         [InlineData(false, false, false, false)]
         public void ShouldReturnCorrectSpecialInstructions(bool includeSausage, bool includeEgg,
                                                             bool includeHashbrowns, bool includePancake)
         {
+            SmokehouseSkeleton smoke = new SmokehouseSkeleton();
+            smoke.SausageLink = includeSausage;
+            smoke.Egg = includeEgg;
+            smoke.HashBrowns = includeHashbrowns;
+            smoke.Pancake = includePancake;
+            if (!includePancake) Assert.Contains("Hold pancakes", smoke.SpecialInstructions);
+            if (!includeSausage) Assert.Contains("Hold sausage", smoke.SpecialInstructions);
+            if (!includeHashbrowns) Assert.Contains("Hold hash browns", smoke.SpecialInstructions);
+            if (!includeEgg) Assert.Contains("Hold eggs", smoke.SpecialInstructions);
+            if (includeEgg && includeHashbrowns && includePancake && includeSausage) Assert.Empty(smoke.SpecialInstructions);
+
         }
 
         [Fact]
         public void ShouldReturnCorrectToString()
         {
+            SmokehouseSkeleton smoke = new SmokehouseSkeleton();
+            Assert.Equal("Smokehouse Skeleton", smoke.ToString());
+
         }
     }
 }
