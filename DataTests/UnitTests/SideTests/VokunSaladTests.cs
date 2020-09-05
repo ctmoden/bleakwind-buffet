@@ -97,6 +97,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, "Large Vokun Salad")]
         public void ShouldReturnCorrectToStringBasedOnSize(Size size, string name)
         {
+            VokunSalad salad = new VokunSalad();
+            salad.Size = size;
+            Assert.Equal(name, salad.ToString());
         }
     }
 }

@@ -16,10 +16,7 @@ namespace BleakwindBuffet.Data.Sides
         /// Size property for the side
         /// </summary>
         public Size Size { get; set; } = Size.Small;
-        /// <summary>
-        /// Private backing variable for calories
-        /// </summary>
-        private uint calories;
+        
         /// <summary>
         /// Calories Property, changes based on side size
         /// </summary>

@@ -95,6 +95,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ShouldHaveCorrectSpecialInstructions(bool includeIce, bool includeLemon)
         {
             WarriorWater water = new WarriorWater();
+            water.Ice = includeIce;
+            water.Lemon = includeLemon;
             if (!includeIce) Assert.Contains("Hold ice", water.SpecialInstructions);
             if (includeLemon) Assert.Contains("Add lemon", water.SpecialInstructions);
             if (includeIce && !includeLemon) Assert.Empty(water.SpecialInstructions);
@@ -107,7 +109,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         /// <summary>
         /// medium size to string return 
         /// </summary>
-        [InlineData(Size.Medium, "Medium Wariror Water")]
+        [InlineData(Size.Medium, "Medium Warrior Water")]
         /// <summary>
         /// large size to string return 
         /// </summary>
