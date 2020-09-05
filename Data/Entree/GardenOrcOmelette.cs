@@ -47,7 +47,7 @@ namespace BleakwindBuffet.Data.Entrees
                 List<string> specialInstructions = new List<string>();
                 if (!Broccoli) specialInstructions.Add("Hold broccoli");
                 if (!Mushrooms) specialInstructions.Add("Hold mushrooms");
-                if (!Tomato) specialInstructions.Add("Hold Tomato");
+                if (!Tomato) specialInstructions.Add("Hold tomato");
                 if (!Cheddar) specialInstructions.Add("Hold cheddar");
                 return specialInstructions;
             }
