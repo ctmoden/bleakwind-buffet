@@ -10,16 +10,13 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class DragonbornWaffleFries
+    public class DragonbornWaffleFries : Side
     {
-        /// <summary>
-        /// Size property for the size
-        /// </summary>
-        public Size Size { get; set; } = Size.Small;
+        
         /// <summary>
         /// Calories Property, changes based on side size
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -31,7 +28,7 @@ namespace BleakwindBuffet.Data.Sides
         
         /// <summary>
         /// Price Property for side.  Changes price based on size of side
-        public double Price
+        public override double Price
         {
             get
             {
@@ -43,7 +40,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// List of special instructions for the side.  Always empty
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -14,6 +14,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class MadOtarGritsTests
     {
+        /// <summary>
+        /// Side should inherit/implement from base Side class
+        /// </summary>
+        [Fact]
+        public void ShouldBeASide()
+        {
+            MadOtarGrits grits = new MadOtarGrits();
+            Assert.IsAssignableFrom<Side>(grits);
+        }
         [Fact]
         public void ShouldBeSmallByDefault()
         {

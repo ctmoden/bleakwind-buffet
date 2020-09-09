@@ -11,17 +11,14 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class VokunSalad
+    public class VokunSalad : Side
     {
-        /// <summary>
-        /// Size property for the size
-        /// </summary>
-        public Size Size { get; set; } = Size.Small;
+        
         
         /// <summary>
         /// Calories Property, changes based on salad size
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -33,7 +30,7 @@ namespace BleakwindBuffet.Data.Sides
         
         /// <summary>
         /// Price Property for salad.  Changes price based on size of drinksalad
-        public double Price
+        public override double Price
         {
             get
             {
@@ -45,7 +42,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// List of special instructions for the side.  Always empty
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

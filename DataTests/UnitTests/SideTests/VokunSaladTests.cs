@@ -14,6 +14,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class VokunSaladTests
     {
+        /// <summary>
+        /// Side should inherit/implement from base Side class
+        /// </summary>
+        [Fact]
+        public void ShouldBeASide()
+        {
+            VokunSalad salad = new VokunSalad();
+            Assert.IsAssignableFrom<Side>(salad);
+        }
         [Fact]
         public void ShouldBeSmallByDefault()
         {

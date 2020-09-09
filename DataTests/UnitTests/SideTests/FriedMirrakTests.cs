@@ -14,6 +14,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class FriedMiraakTests
     {
+        /// <summary>
+        /// Side should inherit/implement from base Side class
+        /// </summary>
+        [Fact]
+        public void ShouldBeASide()
+        {
+            FriedMiraak miraak = new FriedMiraak();
+            Assert.IsAssignableFrom<Side>(miraak);
+        }
         [Fact]
         public void ShouldBeSmallByDefault()
         {
