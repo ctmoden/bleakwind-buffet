@@ -10,17 +10,17 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class GardenOrcOmelette
+    public class GardenOrcOmelette : Entree
     {
         /// <summary>
         /// Price property for the omlette. 
         /// Uses the shorthand method for a property
         /// </summary>
-        public double Price => 4.57;
+        public override double Price => 4.57;
         /// <summary>
         /// Property Gets the calories in the breakfast 
         /// </summary>
-        public uint Calories => 404;
+        public override uint Calories => 404;
         /// <summary>
         /// Property for Broccoli.  T/F values
         /// </summary>
@@ -40,7 +40,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// List property of special instruction specific to omlette.  Creates a new list each time new instruction needs to be added.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -15,6 +15,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class WarriorWaterTests
     {
+        /// <summary>
+        /// Drink should inherit/implement from base Drink class
+        /// </summary>
+        [Fact]
+        public void ShouldBeADrink()
+        {
+            WarriorWater water = new WarriorWater();
+            Assert.IsAssignableFrom<Drink>(water);
+        }
         [Fact]
         public void ShouldIncludeIceByDefault()
         {

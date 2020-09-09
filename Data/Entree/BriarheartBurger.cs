@@ -10,17 +10,17 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class BriarheartBurger
+    public class BriarheartBurger : Entree
     {
         /// <summary>
         /// Price property for the Briarheart.  Gets price for the burger  
         /// Uses the shorthand method for a property
         /// </summary>
-        public double Price => 6.32;
+        public override double Price => 6.32;
         /// <summary>
         /// Gets the whopping amount of calories packed in the burger 
         /// </summary>
-        public uint Calories => 743;
+        public override uint Calories => 743;
         /// <summary>
         /// getter/setter for Bun Property
         /// </summary>
@@ -45,7 +45,7 @@ namespace BleakwindBuffet.Data.Entrees
         ///List of special instructions specific to the Briarheart burger.
         ///Updates the list based on properties, creates a new list with each update.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             { 

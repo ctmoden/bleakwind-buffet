@@ -10,17 +10,14 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class MarkarthMilk
+    public class MarkarthMilk : Drink
     {
-        /// <summary>
-        /// Size property for the drink
-        /// </summary>
-        public Size Size { get; set; } = Size.Small;
+        
         
         /// <summary>
         /// Calories Property, changes based on drink size
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -30,13 +27,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
         /// <summary>
-        /// Backing variable for Price property
-        /// </summary>
-        public double price;
-        /// <summary>
         /// Price Property for milk.  Changes price based on size of drink
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -52,7 +45,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Special instructions list property tailored for this specific drink
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

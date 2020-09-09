@@ -11,8 +11,18 @@ using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
+    
     public class GardenOrcOmeletteTests
     {
+        /// <summary>
+        /// Entree should inherit/implement from base Entree class
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnEntree()
+        {
+            GardenOrcOmelette omelette = new GardenOrcOmelette();
+            Assert.IsAssignableFrom<Entree>(omelette);
+        }
         [Fact]
         public void ShouldInlcudeBroccoliByDefault()
         {

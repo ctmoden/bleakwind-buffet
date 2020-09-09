@@ -9,17 +9,17 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class SmokehouseSkeleton
+    public class SmokehouseSkeleton : Entree
     {
         /// <summary>
         /// Price property for the Smokehouse Skeleton. 
         /// Uses the shorthand method for a property
         /// </summary>
-        public double Price => 5.62;
+        public override double Price => 5.62;
         /// <summary>
         /// Property Gets the whopping amount of calories packed in the breakfast 
         /// </summary>
-        public uint Calories => 602;
+        public override uint Calories => 602;
         /// <summary>
         /// Property for sausage link.  T/F values 
         /// </summary>
@@ -41,7 +41,7 @@ namespace BleakwindBuffet.Data.Entrees
         ///List of special instructions specific to the Skeleton Smokehouse.
         ///Updates the list based on property states, creates a new list with each update.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

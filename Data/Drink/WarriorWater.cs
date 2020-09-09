@@ -10,20 +10,17 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class WarriorWater
+    public class WarriorWater : Drink
     {
-        /// <summary>
-        /// Size property for the drink
-        /// </summary>
-        public Size Size { get; set; } = Size.Small;      
+           
         /// <summary>
         /// Calories Property, 0 for all water sizes
         /// </summary>
-        public uint Calories => 0;
+        public override uint Calories => 0;
         /// <summary>
         /// Price Property for water, 0 for all sizes
         /// </summary>
-        public double Price => 0.00;
+        public override double Price => 0.00;
         /// <summary>
         /// Ice property for the drink
         /// </summary>
@@ -35,7 +32,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Special instructions list property for water.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

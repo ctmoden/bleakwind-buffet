@@ -10,21 +10,17 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class SailorSoda
+    public class SailorSoda : Drink
     {
         /// <summary>
         /// Flavor property, default flavor is cherry.  Accesses Flavor enum
         /// </summary>
         public SodaFlavor Flavor { get; set; } = SodaFlavor.Cherry;
-        /// <summary>
-        /// Size property for drink, accesses Size enum 
-        /// </summary>
-        public Size Size { get; set; } = Size.Small;
         
         /// <summary>
         /// Calories Property, changes based on drink size
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -38,7 +34,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Price Property for soda.  Changes price based on size of drink
         /// </summary>
-        public double Price 
+        public override double Price 
         {
             get
             {
@@ -54,7 +50,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Special instructions list property tailored for this specific drink
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
