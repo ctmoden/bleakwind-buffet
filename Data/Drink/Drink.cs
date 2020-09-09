@@ -10,7 +10,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// Abstract class for all drinks, cannot create an instance of this class alone.
     /// Base class representing common properties for drinks
     /// </summary>
-    public abstract class Drink
+    public abstract class Drink : IOrderItem
     {
         /// <summary>
         /// Size of the drink

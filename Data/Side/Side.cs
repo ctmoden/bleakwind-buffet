@@ -8,7 +8,7 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// Base class for all sides
     /// </summary>
-    public abstract class Side
+    public abstract class Side : IOrderItem
     {/// <summary>
     /// Size property
     /// </summary>
