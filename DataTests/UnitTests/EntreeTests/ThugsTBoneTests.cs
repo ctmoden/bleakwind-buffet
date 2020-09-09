@@ -12,6 +12,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class ThugsTBoneTests
     {
+        /// <summary>
+        /// Entree should inherit/implement from base Entree class
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnEntree()
+        {
+            ThugsTBone tBone = new ThugsTBone();
+            Assert.IsAssignableFrom<Entree>(tBone);
+        }
         [Fact]
         public void ShouldReturnCorrectPrice()
         {

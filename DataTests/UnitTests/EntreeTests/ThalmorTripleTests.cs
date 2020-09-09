@@ -13,6 +13,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class ThalmorTripleTests
     {
+        /// <summary>
+        /// Entree should inherit/implement from base Entree class
+        /// </summary>
+        [Fact]
+        public void ShouldBeAnEntree()
+        {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.IsAssignableFrom<Entree>(triple);
+        }
         [Fact]
         public void ShouldIncludeBunByDefault()
         {
