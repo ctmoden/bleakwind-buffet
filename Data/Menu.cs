@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using BleakwindBuffet.Data.Drinks;
 
 namespace BleakwindBuffet.Data
 {
@@ -20,6 +21,7 @@ namespace BleakwindBuffet.Data
         /// <returns>list of all available entrees</returns>
         public static IEnumerable<IOrderItem> Entrees()
         {
+            
             List<IOrderItem> entrees = new List<IOrderItem>();           
             BriarheartBurger burger = new BriarheartBurger();
             entrees.Add(burger);
@@ -40,28 +42,91 @@ namespace BleakwindBuffet.Data
         /// <summary>
         /// Creates an instance of every available side (in all sizes) and returns a collection of those objects
         /// </summary>
-        /// <returns></returns>
+        /// <returns>list of all available sides</returns>
         public static IEnumerable<IOrderItem> Sides()
         {
             List<IOrderItem> sides = new List<IOrderItem>();
-            DragonbornWaffleFries smallFries = new DragonbornWaffleFries();
-            smallFries.Size = Size.Small;
+            DragonbornWaffleFries smallFries = new DragonbornWaffleFries
+            {
+                Size = Size.Small
+            };
             sides.Add(smallFries);
-            DragonbornWaffleFries medFries = new DragonbornWaffleFries();
-            medFries.Size = Size.Medium;
+            DragonbornWaffleFries medFries = new DragonbornWaffleFries
+            {
+                Size = Size.Medium
+            };
             sides.Add(medFries);
-            DragonbornWaffleFries largeFries = new DragonbornWaffleFries();
-            largeFries.Size = Size.Large;
+            DragonbornWaffleFries largeFries = new DragonbornWaffleFries
+            {
+                Size = Size.Large
+            };
             sides.Add(largeFries);
 
-            FriedMiraak smallMiraak = new FriedMiraak();
-            smallMiraak.Size = Size.Small;
+            FriedMiraak smallMiraak = new FriedMiraak
+            {
+                Size = Size.Small
+            };
             sides.Add(smallMiraak);
-            FriedMiraak medMiraak = new FriedMiraak();
-            medMiraak.Size = Size.Medium;
+            FriedMiraak medMiraak = new FriedMiraak
+            {
+                Size = Size.Medium
+            };
             sides.Add(medMiraak);
 
+            FriedMiraak largeMiraak = new FriedMiraak
+            {
+                Size = Size.Large
+            
+            };
+            sides.Add(largeMiraak);
+
+            MadOtarGrits smallGrits = new MadOtarGrits
+            {
+                Size = Size.Small
+            };
+            sides.Add(smallGrits);
+            MadOtarGrits medGrits = new MadOtarGrits
+            {
+                Size = Size.Medium
+            };
+            sides.Add(medGrits);
+
+            MadOtarGrits largeGrits = new MadOtarGrits
+            {
+                Size = Size.Large
+            };
+
+            sides.Add(largeGrits);
+
+            VokunSalad smallSalad = new VokunSalad()
+            {
+                Size = Size.Small
+            };
+            sides.Add(smallSalad);
+            VokunSalad medSalad = new VokunSalad
+            {
+                Size = Size.Medium
+            };
+            sides.Add(medSalad);
+            VokunSalad largeSalad = new VokunSalad
+            {
+                Size = Size.Large
+            };
+            sides.Add(largeSalad);
             return sides;
+        }
+        /// <summary>
+        /// Creates an instance of every available drink and stores results in a list
+        /// </summary>
+        /// <returns>List of all available drinks</returns>
+        public static IEnumerable<IOrderItem> Drinks()
+        {
+            List<IOrderItem> drinks = new List<IOrderItem>();
+            AretinoAppleJuice smallAj = new AretinoAppleJuice
+            {
+                Size = Size.Small
+            };
+            drinks.Add(smallAj);
         }
     }
 }
