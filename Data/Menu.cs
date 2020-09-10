@@ -121,12 +121,24 @@ namespace BleakwindBuffet.Data
         /// <returns>List of all available drinks</returns>
         public static IEnumerable<IOrderItem> Drinks()
         {
+            //TODO: is it a problem if list is immutable as opposed to an instantiated IEnumerable?
             List<IOrderItem> drinks = new List<IOrderItem>();
             AretinoAppleJuice smallAj = new AretinoAppleJuice
             {
                 Size = Size.Small
             };
             drinks.Add(smallAj);
+            AretinoAppleJuice medAj = new AretinoAppleJuice
+            {
+                Size = Size.Medium
+            };
+            drinks.Add(medAj);
+            AretinoAppleJuice largeAj = new AretinoAppleJuice
+            {
+                Size = Size.Large
+            };
+            drinks.Add(largeAj);
+            return drinks;
         }
     }
 }
