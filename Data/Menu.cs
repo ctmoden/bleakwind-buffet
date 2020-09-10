@@ -138,6 +138,24 @@ namespace BleakwindBuffet.Data
                 Size = Size.Large
             };
             drinks.Add(largeAj);
+
+
+            CandlehearthCoffee smallCoffee = new CandlehearthCoffee
+            {
+                Size = Size.Small
+            };
+            drinks.Add(smallCoffee);
+            CandlehearthCoffee medCoffee = new CandlehearthCoffee
+            {
+                Size = Size.Medium
+            };
+            drinks.Add(medCoffee);
+            CandlehearthCoffee largeCoffee = new CandlehearthCoffee
+            {
+                Size = Size.Large
+            };
+            drinks.Add(largeCoffee);
+
             return drinks;
         }
     }
