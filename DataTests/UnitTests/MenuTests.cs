@@ -25,7 +25,63 @@ namespace BleakwindBuffet.DataTests.MenuTests
         [Fact]
         public void EntreesMethodShouldReturnIEnumerable()
         {
-            Assert.Collection(Menu.Entrees(),)
+            Assert.Collection(Menu.Entrees(),
+            item=>
+            {
+                Assert.IsAssignableFrom<IOrderItem>(new BriarheartBurger());
+            },
+            item =>
+            {
+                Assert.IsAssignableFrom<IOrderItem>(new DoubleDraugr());
+            },
+            item =>
+            {
+                Assert.IsAssignableFrom<IOrderItem>(new GardenOrcOmelette());
+            },
+            item =>
+            {
+                Assert.IsAssignableFrom<IOrderItem>(new PhillyPoacher());
+            },
+            item =>
+            {
+                Assert.IsAssignableFrom<IOrderItem>(new SmokehouseSkeleton());
+            },
+            item =>
+            {
+                Assert.IsAssignableFrom<IOrderItem>(new ThalmorTriple());
+            },
+            item =>
+            {
+                Assert.IsAssignableFrom<IOrderItem>(new ThugsTBone());
+            });
+
+                
+
+        }
+
+        [Fact]
+        public void SidesMethodShouldReturnIEnumerable()
+        {
+
+        }
+
+        [Fact]
+        public void DrinksMethodShouldReturnIEnumerable()
+        {
+            
+            Assert.Collection(Menu.Drinks(),
+                item =>
+                {
+                    Assert.Equal(new AretinoAppleJuice(), item);
+                    Assert.Equal(Size.Small, (AretinoAppleJuice)item.)
+                }
+
+                );
+            
+        }
+        [Fact]
+        public void MenuShouldReturnIEnumerable()
+        {
 
         }
     }
