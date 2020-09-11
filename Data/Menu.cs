@@ -156,6 +156,61 @@ namespace BleakwindBuffet.Data
             };
             drinks.Add(largeCoffee);
 
+            MarkarthMilk smallMilk = new MarkarthMilk()
+            {
+                Size = Size.Small
+            };
+            drinks.Add(smallMilk);
+            MarkarthMilk medMilk = new MarkarthMilk()
+            {
+                Size = Size.Medium
+            };
+            drinks.Add(medMilk);
+            MarkarthMilk largeMilk = new MarkarthMilk()
+            {
+                Size = Size.Large
+            };
+            drinks.Add(largeMilk);
+
+            SailorSoda smallBlackberrySoda = new SailorSoda()
+            {
+                Size = Size.Small
+            
+            };
+            smallBlackberrySoda.Flavor = SodaFlavor.Blackberry;
+            drinks.Add(smallBlackberrySoda);
+            SailorSoda medBlackberrySoda = new SailorSoda()
+            {
+                Size = Size.Medium
+            };
+            medBlackberrySoda.Flavor = SodaFlavor.Blackberry;
+            drinks.Add(medBlackberrySoda);
+            SailorSoda largeBlackberrySoda = new SailorSoda()
+            {
+                Size = Size.Large
+            };
+            largeBlackberrySoda.Flavor = SodaFlavor.Blackberry;
+            drinks.Add(largeBlackberrySoda);
+            SailorSoda smallCherrySoda = new SailorSoda()
+            {
+                Size = Size.Small
+            };
+            smallCherrySoda.Flavor = SodaFlavor.Cherry;
+            drinks.Add(smallCherrySoda);
+            SailorSoda medCherrySoda = new SailorSoda()
+            {
+                Size = Size.Medium
+            };
+            medCherrySoda.Flavor = SodaFlavor.Cherry;
+            drinks.Add(medCherrySoda);
+            SailorSoda largeCherrySoda = new SailorSoda()
+            {
+                Size = Size.Large
+            };
+            largeCherrySoda.Flavor = SodaFlavor.Cherry;
+            drinks.Add(largeCherrySoda);
+
+            SailorSoda smallGrapefruitSoda
             return drinks;
         }
     }
