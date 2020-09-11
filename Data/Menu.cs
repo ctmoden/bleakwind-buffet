@@ -310,6 +310,15 @@ namespace BleakwindBuffet.Data
         /// <returns>Dictionary containing all entrees, sides, and drinks, with keys associating each type of item with all available versions</returns>
         public static IEnumerable<IOrderItem> FullMenu()
         {
+            List<IOrderItem> menuList = new List<IOrderItem>();
+            menuList.AddRange(Entrees());
+            menuList.AddRange(Sides());
+            menuList.AddRange(Drinks());
+            return menuList;
+                //menuList [[list], [list], [list]]
+            
+
+            /*
             Dictionary<string, IEnumerable<IOrderItem>> menuDictionary= new Dictionary<string, IEnumerable<IOrderItem>>();
             IEnumerable<IOrderItem> entrees = Entrees();
             menuDictionary.Add("Entrees",entrees);
@@ -319,6 +328,7 @@ namespace BleakwindBuffet.Data
             menuDictionary.Add("Drinks", drinks);
             //FIXME will this cast actually work?
             return (IEnumerable<IOrderItem>) menuDictionary;
+            */
 
         }
     }
