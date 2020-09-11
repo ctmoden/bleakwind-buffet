@@ -210,8 +210,116 @@ namespace BleakwindBuffet.Data
             largeCherrySoda.Flavor = SodaFlavor.Cherry;
             drinks.Add(largeCherrySoda);
 
-            SailorSoda smallGrapefruitSoda
+            SailorSoda smallGrapefruitSoda = new SailorSoda()
+            {
+                Size = Size.Small
+            };
+            smallGrapefruitSoda.Flavor = SodaFlavor.Grapefruit;
+            drinks.Add(smallGrapefruitSoda);
+            SailorSoda medGrapefruitSoda = new SailorSoda()
+            {
+                Size = Size.Medium
+            };
+            medGrapefruitSoda.Flavor = SodaFlavor.Grapefruit;
+            drinks.Add(medGrapefruitSoda);
+            SailorSoda largeGrapefruitSoda = new SailorSoda()
+            {
+                Size = Size.Large
+            };
+            largeGrapefruitSoda.Flavor = SodaFlavor.Grapefruit;
+            drinks.Add(largeGrapefruitSoda);
+
+            SailorSoda smallLemonSoda = new SailorSoda()
+            {
+                Size = Size.Small
+            };
+            smallLemonSoda.Flavor = SodaFlavor.Lemon;
+            drinks.Add(smallLemonSoda);
+            SailorSoda medLemonSoda = new SailorSoda()
+            {
+                Size = Size.Medium
+            };
+            medLemonSoda.Flavor = SodaFlavor.Lemon;
+            drinks.Add(medLemonSoda);
+            SailorSoda largeLemonSoda = new SailorSoda()
+            {
+                Size = Size.Large
+            };
+            largeLemonSoda.Flavor = SodaFlavor.Lemon;
+            drinks.Add(largeLemonSoda);
+
+            SailorSoda smallPeachSoda = new SailorSoda()
+            {
+                Size = Size.Small
+            };
+            smallPeachSoda.Flavor = SodaFlavor.Peach;
+            drinks.Add(smallPeachSoda);
+            SailorSoda medPeachSoda = new SailorSoda()
+            {
+                Size = Size.Medium
+            };
+            medPeachSoda.Flavor = SodaFlavor.Peach;
+            drinks.Add(medPeachSoda);
+            SailorSoda largePeachSoda = new SailorSoda()
+            {
+                Size = Size.Large
+            };
+            largePeachSoda.Flavor = SodaFlavor.Peach;
+            drinks.Add(largePeachSoda);
+
+            SailorSoda smallWatermelonSoda = new SailorSoda()
+            {
+                Size = Size.Small
+            };
+            smallWatermelonSoda.Flavor = SodaFlavor.Watermelon;
+            drinks.Add(smallWatermelonSoda);
+            SailorSoda medWatermelonSoda = new SailorSoda()
+            {
+                Size = Size.Medium
+            };
+            medWatermelonSoda.Flavor = SodaFlavor.Watermelon;
+            drinks.Add(medWatermelonSoda);
+            SailorSoda largeWatermelonSoda = new SailorSoda()
+            {
+                Size = Size.Large
+            };
+            largeWatermelonSoda.Flavor = SodaFlavor.Watermelon;
+            drinks.Add(largeWatermelonSoda);
+
+            WarriorWater smallWater = new WarriorWater()
+            {
+                Size = Size.Small
+            };
+            drinks.Add(smallWater);
+            WarriorWater medWater = new WarriorWater()
+            {
+                Size = Size.Medium
+            };
+            drinks.Add(medWater);
+            WarriorWater largeWater = new WarriorWater()
+            {
+                Size = Size.Large
+            };
+            drinks.Add(largeWater);
             return drinks;
+            
+        }
+        /// <summary>
+        /// Collects a full menu from all available items on the menu
+        /// </summary>
+        /// <returns>Dictionary containing all entrees, sides, and drinks, with keys associating each type of item with all available versions</returns>
+        public static IEnumerable<IOrderItem> FullMenu()
+        {
+            Dictionary<string, IEnumerable<IOrderItem>> menuDictionary= new Dictionary<string, IEnumerable<IOrderItem>>();
+            IEnumerable<IOrderItem> entrees = Entrees();
+            menuDictionary.Add("Entrees",entrees);
+            IEnumerable<IOrderItem> sides = Sides();
+            menuDictionary.Add("Sides", sides);
+            IEnumerable<IOrderItem> drinks = Drinks();
+            menuDictionary.Add("Drinks", drinks);
+            //FIXME will this cast actually work?
+            return (IEnumerable<IOrderItem>) menuDictionary;
+
         }
     }
 }
