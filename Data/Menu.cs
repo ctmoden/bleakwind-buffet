@@ -1,7 +1,7 @@
 ﻿/*
  * Author:  Christian Moden
  * Class: Menu.cs
- * Purpose: REpreents full menu of the Bleakwind Cafe 
+ * Purpose: Repreents full menu of the Bleakwind Buffett 
  */
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
