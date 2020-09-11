@@ -15,6 +15,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class BriarheartBurgerTests
     {
+        [Fact]
+        public void ShouldBeAnIorderable()
+        {
+            BriarheartBurger burger = new BriarheartBurger();
+            Assert.IsAssignableFrom<IOrderItem>(burger);
+        }
         /// <summary>
         /// Entree should inherit/implement from base Entree class
         /// </summary>

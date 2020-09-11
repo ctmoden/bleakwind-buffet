@@ -16,6 +16,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class SailorSodaTests
     {
+        [Fact]
+        public void ShouldBeAnIorderable()
+        {
+            SailorSoda soda = new SailorSoda();
+            Assert.IsAssignableFrom<IOrderItem>(soda);
+        }
         /// <summary>
         /// Drink should inherit/implement from base Drink class
         /// </summary>

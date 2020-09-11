@@ -14,6 +14,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class MadOtarGritsTests
     {
+        [Fact]
+        public void ShouldBeAnIorderable()
+        {
+            MadOtarGrits grits = new MadOtarGrits();
+            Assert.IsAssignableFrom<IOrderItem>(grits);
+        }
         /// <summary>
         /// Side should inherit/implement from base Side class
         /// </summary>

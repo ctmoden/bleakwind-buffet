@@ -15,6 +15,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class WarriorWaterTests
     {
+        [Fact]
+        public void ShouldBeAnIorderable()
+        {
+            WarriorWater water = new WarriorWater();
+            Assert.IsAssignableFrom<IOrderItem>(water);
+        }
         /// <summary>
         /// Drink should inherit/implement from base Drink class
         /// </summary>

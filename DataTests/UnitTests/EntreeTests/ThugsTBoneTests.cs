@@ -12,6 +12,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class ThugsTBoneTests
     {
+        [Fact]
+        public void ShouldBeAnIorderable()
+        {
+            ThugsTBone tBone = new ThugsTBone();
+            Assert.IsAssignableFrom<IOrderItem>(tBone);
+        }
         /// <summary>
         /// Entree should inherit/implement from base Entree class
         /// </summary>

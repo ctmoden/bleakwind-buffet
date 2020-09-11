@@ -13,6 +13,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class ThalmorTripleTests
     {
+        [Fact]
+        public void ShouldBeAnIorderable()
+        {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.IsAssignableFrom<IOrderItem>(triple);
+        }
         /// <summary>
         /// Entree should inherit/implement from base Entree class
         /// </summary>

@@ -14,6 +14,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class FriedMiraakTests
     {
+        [Fact]
+        public void ShouldBeAnIorderable()
+        {
+            FriedMiraak miraak = new FriedMiraak();
+            Assert.IsAssignableFrom<IOrderItem>(miraak);
+        }
         /// <summary>
         /// Side should inherit/implement from base Side class
         /// </summary>

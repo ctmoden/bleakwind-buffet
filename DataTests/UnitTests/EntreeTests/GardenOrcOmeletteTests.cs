@@ -14,6 +14,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     
     public class GardenOrcOmeletteTests
     {
+        [Fact]
+        public void ShouldBeAnIorderable()
+        {
+            GardenOrcOmelette omelette = new GardenOrcOmelette();
+            Assert.IsAssignableFrom<IOrderItem>(omelette);
+        }
         /// <summary>
         /// Entree should inherit/implement from base Entree class
         /// </summary>

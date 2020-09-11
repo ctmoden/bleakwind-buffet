@@ -13,6 +13,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class DoubleDraugrTests
     {
+        [Fact]
+        public void ShouldBeAnIorderable()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+            Assert.IsAssignableFrom<IOrderItem>(dd);
+        }
         /// <summary>
         /// Entree should inherit/implement from base Entree class
         /// </summary>

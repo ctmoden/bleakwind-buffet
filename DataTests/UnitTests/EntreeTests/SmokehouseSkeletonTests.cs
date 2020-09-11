@@ -13,6 +13,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class SmokehouseSkeletonTests
     {
+        [Fact]
+        public void ShouldBeAnIorderable()
+        {
+            SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
+            Assert.IsAssignableFrom<IOrderItem>(skeleton);
+        }
         /// <summary>
         /// Entree should inherit/implement from base Entree class
         /// </summary>

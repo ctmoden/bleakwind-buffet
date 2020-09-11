@@ -14,6 +14,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class PhillyPoacherTests
     {
+        [Fact]
+        public void ShouldBeAnIorderable()
+        {
+            PhillyPoacher philly = new PhillyPoacher();
+            Assert.IsAssignableFrom<IOrderItem>(philly);
+        }
         /// <summary>
         /// Entree should inherit/implement from base Entree class
         /// </summary>

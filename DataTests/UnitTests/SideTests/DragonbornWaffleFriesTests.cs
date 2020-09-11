@@ -14,6 +14,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class DragonbornWaffleFriesTests
     {
+        [Fact]
+        public void ShouldBeAnIorderable()
+        {
+            DragonbornWaffleFries fries = new DragonbornWaffleFries();
+            Assert.IsAssignableFrom<IOrderItem>(fries);
+        }
         /// <summary>
         /// Side should inherit/implement from base Side class
         /// </summary>
