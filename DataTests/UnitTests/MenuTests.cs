@@ -1,6 +1,6 @@
 ﻿/*
  * Author:  Christian Moden
- * Class: Menu.cs
+ * Class: MenuTests.cs
  * Purpose: Tests the Menu.cs class methods 
  */
 using Xunit;
@@ -181,8 +181,8 @@ namespace BleakwindBuffet.DataTests.MenuTests
         [Fact]
         public void FullMenuShouldBeCorrectLength()
         {
-            IEnumerable<IOrderItem> fulMenu = Menu.FullMenu();
-
+            IEnumerable<IOrderItem> fullMenu = Menu.FullMenu();
+            Assert.Equal(49, fullMenu.Count());
         }
     }
 }

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author:  Christian Moden
+ * Class: IOrderItem.cs.cs
+ * Purpose: Interface for all items available to order 
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

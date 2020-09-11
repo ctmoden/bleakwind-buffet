@@ -1,4 +1,9 @@
-﻿using BleakwindBuffet.Data.Enums;
+﻿/*
+ * Author:  Christian Moden
+ * Class: Entree.cs
+ * Purpose: Super class for all entrees 
+ */
+using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -1,4 +1,9 @@
-﻿using BleakwindBuffet.Data.Enums;
+﻿/*
+ * Author:  Christian Moden
+ * Class: Drink.cs
+ * Purpose: Super class for all drinks 
+ */
+using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;

@@ -1,4 +1,9 @@
-﻿using BleakwindBuffet.Data.Entrees;
+﻿/*
+ * Author:  Christian Moden
+ * Class: Menu.cs
+ * Purpose: REpreents full menu of the Bleakwind Cafe 
+ */
+using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
 using System;
