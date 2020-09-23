@@ -130,5 +130,41 @@ namespace PointOfSale
         {
 
         }
+        /// <summary>
+        /// Button event for vokun salad
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">dparameters of event</param>
+        private void SelectCoffee(object sender, RoutedEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Button event for markarth milk
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">dparameters of event</param>
+        private void SelectMilk(object sender, RoutedEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Button event for sailor soda
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">dparameters of event</param>
+        private void SelectSoda(object sender, RoutedEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Button event for sailor soda
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">dparameters of event</param>
+        private void SelectWater(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

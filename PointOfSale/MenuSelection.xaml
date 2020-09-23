@@ -47,8 +47,11 @@
         <Button Grid.Row="1" Grid.Column="2" Width="200" Height="90" Click="SelectAppleJuice">
             <TextBlock FontSize="23" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center">Aretino Apple Juice</TextBlock>
         </Button>
-        <Button Grid.Row="2" Grid.Column="3" Width="200" Height="90"  Click="SelectSalad">
+        <Button Grid.Row="2" Grid.Column="3" Width="200" Height="90"  Click="SelectCoffee">
             <TextBlock FontSize="23" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center">Candlehearth Coffee</TextBlock>
         </Button>
+        <Button Grid.Row="3" Grid.Column="2" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectMilk">Markarth Milk</Button>
+        <Button Grid.Row="4" Grid.Column="2" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectSoda">Sailor Soda</Button>
+        <Button Grid.Row="5" Grid.Column="2" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectWater">Warrior Water</Button>
     </Grid>
 </UserControl>
