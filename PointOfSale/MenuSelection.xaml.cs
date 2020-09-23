@@ -94,5 +94,41 @@ namespace PointOfSale
         {
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">dparameters of event</param>
+        private void SelectFriedMiraak(object sender, RoutedEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">dparameters of event</param>
+        private void SelectGrits(object sender, RoutedEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Button event for vokun salad
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">dparameters of event</param>
+        private void SelectSalad(object sender, RoutedEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Button event for vokun salad
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">dparameters of event</param>
+        private void SelectAppleJuice(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

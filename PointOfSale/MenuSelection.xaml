@@ -37,9 +37,18 @@
         </Button>
         <Button Grid.Row="7" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectThugsTBone">Thugs T-Bone</Button>
         <!--Side Buttons-->
-        <Button Grid.Row="1" Grid.Column="1" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectWaffleFries">
+        <Button Grid.Row="1" Grid.Column="1" Width="200" Height="90" Click="SelectWaffleFries">
             <TextBlock FontSize="23" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center">Dragonborn Waffle Fries</TextBlock>
         </Button>
-        <Button Grid.Row="2" Grid.Column="1" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectThugsTBone">Fried Miraak</Button>
+        <Button Grid.Row="2" Grid.Column="1" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectFriedMiraak">Fried Miraak</Button>
+        <Button Grid.Row="3" Grid.Column="1" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectGrits">Mad Otar Grits</Button>
+        <Button Grid.Row="4" Grid.Column="1" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectSalad">Vokun Salad</Button>
+        <!--Drink Buttons-->
+        <Button Grid.Row="1" Grid.Column="2" Width="200" Height="90" Click="SelectAppleJuice">
+            <TextBlock FontSize="23" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center">Aretino Apple Juice</TextBlock>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="3" Width="200" Height="90"  Click="SelectSalad">
+            <TextBlock FontSize="23" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center">Candlehearth Coffee</TextBlock>
+        </Button>
     </Grid>
 </UserControl>
