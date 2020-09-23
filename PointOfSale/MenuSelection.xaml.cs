@@ -40,7 +40,59 @@ namespace PointOfSale
         {
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">dparameters of event</param>
+        private void SelectThalmorTriple(object sender, RoutedEventArgs e)
+        {
 
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">dparameters of event</param>
+        private void SelectPhillyPoacher(object sender, RoutedEventArgs e)
+        {
 
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">dparameters of event</param>
+        private void SelectGardenOrcOmelette(object sender, RoutedEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">dparameters of event</param>
+        private void SelectSmokeHouse(object sender, RoutedEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">dparameters of event</param>
+        private void SelectThugsTBone(object sender, RoutedEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">dparameters of event</param>
+        private void SelectWaffleFries(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

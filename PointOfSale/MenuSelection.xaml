@@ -5,9 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="850" d:DesignWidth="800">
+             d:DesignHeight="850" d:DesignWidth="850">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -21,10 +22,24 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" FontFamily="Gothic" FontSize="25" >Entrees</Label>
-        <Label Grid.Row="0" Grid.Column="1" FontFamily="Gothic" FontSize="25">Sides</Label>
-        <Label Grid.Row="0" Grid.Column="2" FontFamily="Gothic" FontSize="25">Drinks</Label>
-        <Button Grid.Row="1" Grid.Column="0" Width="200" Height="100" FontSize="23" FontWeight="Bold" Click="SelectBriarheartBurger">Briarheart Burger</Button>
-        <Button Grid.Row="2" Grid.Column="0" Width="200" Height="100" FontSize="23" FontWeight="Bold" Click="SelectDoubleDraugr">Double Draugr</Button>
+        <TextBlock Grid.Row="0" Grid.Column="0" FontFamily="Gothic" FontSize="60" TextAlignment="Center" FontWeight="ExtraBold">Entrees</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="1" FontFamily="Gothic" FontSize="60" TextAlignment="Center" FontWeight="ExtraBold">Sides</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="2" FontFamily="Gothic" FontSize="60" TextAlignment="Center" FontWeight="ExtraBold">Drinks</TextBlock>
+        <Button Grid.Row="1" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectBriarheartBurger">Briarheart Burger</Button>
+        <Button Grid.Row="2" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectDoubleDraugr">Double Draugr</Button>
+        <Button Grid.Row="3" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectThalmorTriple">Thalmor Triple</Button>
+        <Button Grid.Row="4" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectPhillyPoacher">Philly Poacher</Button>
+        <Button Grid.Row="5" Grid.Column="0" Width="200" Height="90" Click="SelectSmokeHouse">
+            <TextBlock FontSize="23" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center">Smokehouse Skeleton</TextBlock>
+        </Button>
+        <Button Grid.Row="6" Grid.Column="0" Width="200" Click="SelectGardenOrcOmelette">
+            <TextBlock FontSize="23" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center">Garden Orc Omelette</TextBlock>
+        </Button>
+        <Button Grid.Row="7" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectThugsTBone">Thugs T-Bone</Button>
+        <!--Side Buttons-->
+        <Button Grid.Row="1" Grid.Column="1" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectWaffleFries">
+            <TextBlock FontSize="23" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center">Dragonborn Waffle Fries</TextBlock>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="1" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectThugsTBone">Fried Miraak</Button>
     </Grid>
 </UserControl>
