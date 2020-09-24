@@ -5,8 +5,41 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale.Customization_Screens.Drinks"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             d:DesignHeight="650" d:DesignWidth="800">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontSize="40" FontWeight="Bold">Sailor Soda Options</TextBlock>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" FontSize="60" FontWeight="Bold" FontStyle="Italic" TextAlignment="Center">
+                Flavor
+            </TextBlock>
+            <StackPanel Grid.Column="0" Grid.Row="1">
+                <RadioButton Margin="10" Content="Blackberry" FontSize="40" FontWeight="Bold"/>
+                <RadioButton Margin="10" Content="Cherry" FontSize="40" FontWeight="Bold"/>
+                <RadioButton Margin="10" Content="Grapefruit" FontSize="40" FontWeight="Bold"/>
+                <RadioButton Margin="10" Content="Lemon" FontSize="40" FontWeight="Bold"/>
+                <RadioButton Margin="10" Content="Peach" FontSize="40" FontWeight="Bold"/>
+                <RadioButton Margin="10" Content="Watermelon" FontSize="40" FontWeight="Bold"/>
+            </StackPanel>
+            <TextBlock Grid.Column="1" Grid.Row="0" FontSize="60" FontWeight="Bold" FontStyle="Italic" TextAlignment="Center">
+                Size
+            </TextBlock>
+            <StackPanel Grid.Column="1" Grid.Row="1">
+                <Button Margin="30" Content="Small" FontSize="50" FontWeight="Bold"></Button>
+                <Button Margin="30" Content="Medium" FontSize="50" FontWeight="Bold"></Button>
+                <Button Margin="30" Content="Large" FontSize="50" FontWeight="Bold"></Button>
+                <Button Margin="0,60,0,0" Content="Complete" FontStyle="Oblique" FontSize="50" FontWeight="Bold"></Button>
+            </StackPanel>
             
-    </Grid>
+        </Grid>
+        
+    </DockPanel>
+    
 </UserControl>
