@@ -18,9 +18,11 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuSelection : UserControl
     {
+        BriarhearthCustomization briarheartScreen = new BriarhearthCustomization();
         public MenuSelection()
         {
             InitializeComponent();
+            
         }
         /// <summary>
         /// Button event for briarheart
@@ -29,7 +31,9 @@ namespace PointOfSale
         /// <param name="e">parameters of event</param>
         private void SelectBriarheartBurger(object sender, RoutedEventArgs e)
         {
-
+            
+            containerBorder.Child = briarheartScreen;
+            
         }
         /// <summary>
         /// 
