@@ -18,8 +18,8 @@ namespace PointOfSale
     /// </summary>
     public partial class ScreenSwitcher : UserControl
     {
-        BriarhearthCustomization briarhearthScreen = new BriarhearthCustomization();
-        MenuSelection menu = new MenuSelection();
+        private BriarhearthCustomization briarhearthScreen = new BriarhearthCustomization();
+        private MenuSelection menu = new MenuSelection();
         public ScreenSwitcher()
         {
             InitializeComponent();
@@ -32,8 +32,10 @@ namespace PointOfSale
         /// <param name="e">parameters of event</param>
         private void SelectBriarheartBurger(object sender, RoutedEventArgs e)
         {
+            var children = menuControls.Children;
             ClearPreviousScreen();
             //containerBorder.Child = briarhearthScreen;
+            
             menuControls.Children.Add(briarhearthScreen);
 
         }
