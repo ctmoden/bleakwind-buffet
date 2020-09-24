@@ -22,5 +22,14 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">parameters of event</param>
+        void ReturnToMenu(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

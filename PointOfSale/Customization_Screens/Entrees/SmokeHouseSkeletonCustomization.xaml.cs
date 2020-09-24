@@ -11,17 +11,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PointOfSale
+namespace PointOfSale.Customization_Screens
 {
     /// <summary>
-    /// Interaction logic for BriarhearthCustomization.xaml
+    /// Interaction logic for SmokeHouseSkeletonCustomization.xaml
     /// </summary>
-    public partial class BriarhearthCustomization : UserControl
+    public partial class SmokeHouseSkeletonCustomization : UserControl
     {
-        public BriarhearthCustomization()
+        public SmokeHouseSkeletonCustomization()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">parameters of event</param>
         void ReturnToMenu(object sender, RoutedEventArgs e)
         {
 
