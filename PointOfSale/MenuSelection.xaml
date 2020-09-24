@@ -8,52 +8,6 @@
              d:DesignHeight="850" d:DesignWidth="850">
     <Grid>
         
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" FontFamily="Gothic" FontSize="60" TextAlignment="Center" FontWeight="ExtraBold">Entrees</TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="1" FontFamily="Gothic" FontSize="60" TextAlignment="Center" FontWeight="ExtraBold">Sides</TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="2" FontFamily="Gothic" FontSize="60" TextAlignment="Center" FontWeight="ExtraBold">Drinks</TextBlock>
-        <Button Grid.Row="1" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectBriarheartBurger">Briarheart Burger</Button>
-        <Button Grid.Row="2" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectDoubleDraugr">Double Draugr</Button>
-        <Button Grid.Row="3" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectThalmorTriple">Thalmor Triple</Button>
-        <Button Grid.Row="4" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectPhillyPoacher">Philly Poacher</Button>
-        <Button Grid.Row="5" Grid.Column="0" Width="200" Height="90" Click="SelectSmokeHouse">
-            <TextBlock FontSize="23" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center">Smokehouse Skeleton</TextBlock>
-        </Button>
-        <Button Grid.Row="6" Grid.Column="0" Width="200" Click="SelectGardenOrcOmelette">
-            <TextBlock FontSize="23" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center">Garden Orc Omelette</TextBlock>
-        </Button>
-        <Button Grid.Row="7" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectThugsTBone">Thugs T-Bone</Button>
-        <!--Side Buttons-->
-        <Button Grid.Row="1" Grid.Column="1" Width="200" Height="90" Click="SelectWaffleFries">
-            <TextBlock FontSize="23" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center">Dragonborn Waffle Fries</TextBlock>
-        </Button>
-        <Button Grid.Row="2" Grid.Column="1" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectFriedMiraak">Fried Miraak</Button>
-        <Button Grid.Row="3" Grid.Column="1" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectGrits">Mad Otar Grits</Button>
-        <Button Grid.Row="4" Grid.Column="1" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectSalad">Vokun Salad</Button>
-        <!--Drink Buttons-->
-        <Button Grid.Row="1" Grid.Column="2" Width="200" Height="90" Click="SelectAppleJuice">
-            <TextBlock FontSize="23" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center">Aretino Apple Juice</TextBlock>
-        </Button>
-        <Button Grid.Row="2" Grid.Column="3" Width="200" Height="90"  Click="SelectCoffee">
-            <TextBlock FontSize="23" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center">Candlehearth Coffee</TextBlock>
-        </Button>
-        <Button Grid.Row="3" Grid.Column="2" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectMilk">Markarth Milk</Button>
-        <Button Grid.Row="4" Grid.Column="2" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectSoda">Sailor Soda</Button>
-        <Button Grid.Row="5" Grid.Column="2" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectWater">Warrior Water</Button>
-        <Border x:Name="containerBorder" Grid.ColumnSpan="3" Grid.RowSpan="8"></Border>
+        
     </Grid>
 </UserControl>

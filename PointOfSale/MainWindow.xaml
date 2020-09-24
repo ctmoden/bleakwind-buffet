@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Welcome to the Bleakwind Buffett!" Height="900" Width="1200">
     <Grid>
-        <local:MenuSelection></local:MenuSelection>
+        <local:ScreenSwitcher></local:ScreenSwitcher>
 
     </Grid>
 </Window>
