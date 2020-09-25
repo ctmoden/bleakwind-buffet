@@ -6,8 +6,5 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="850" d:DesignWidth="850">
-    <Grid>
-        
-        
-    </Grid>
+    
 </UserControl>

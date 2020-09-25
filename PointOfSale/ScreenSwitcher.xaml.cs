@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PointOfSale.Customization_Screens;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,12 +19,17 @@ namespace PointOfSale
     /// </summary>
     public partial class ScreenSwitcher : UserControl
     {
-        private BriarhearthCustomization briarhearthScreen = new BriarhearthCustomization();
-        private MenuSelection menu = new MenuSelection();
+       
         public ScreenSwitcher()
         {
             InitializeComponent();
             containerBorder.Child = menu;
+        }
+        BriarhearthCustomization briarhearthScreen = new BriarhearthCustomization();
+        private MenuSelection menu = new MenuSelection();
+        private void ClearPreviousScreen()
+        {
+           // menuBorder.Children.Clear();
         }
         /// <summary>
         /// Button event for briarheart
@@ -32,17 +38,10 @@ namespace PointOfSale
         /// <param name="e">parameters of event</param>
         private void SelectBriarheartBurger(object sender, RoutedEventArgs e)
         {
-            var children = menuControls.Children;
-            ClearPreviousScreen();
-            //containerBorder.Child = briarhearthScreen;
             
-            menuControls.Children.Add(briarhearthScreen);
-
+            containerBorder.Child = briarhearthScreen;         
         }
-        private void ClearPreviousScreen()
-        {
-            menuControls.Children.Clear();
-        }
+       
         /// <summary>
         /// 
         /// </summary>
@@ -50,6 +49,8 @@ namespace PointOfSale
         /// <param name="e">parameters of event</param>
         private void SelectDoubleDraugr(object sender, RoutedEventArgs e)
         {
+            DoubleDraugrCustomization doubleScreen = new DoubleDraugrCustomization();
+            
 
         }
         /// <summary>
