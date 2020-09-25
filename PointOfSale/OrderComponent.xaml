@@ -5,8 +5,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="900" d:DesignWidth="1200">
+             d:DesignHeight="900" d:DesignWidth="1800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1200"/>
+            <ColumnDefinition Width="600"/>
+        </Grid.ColumnDefinitions>
+        <local:ScreenSwitcher x:Name="screenSwitch" Grid.Column="0"/>
+        <DockPanel x:Name="orderDock" Grid.Column="1" Width="600">
+            <TextBlock DockPanel.Dock="Top" FontWeight="Bold" TextAlignment="Center" FontSize="60">
+                       Order Details
+            </TextBlock>
+            <TextBlock x:Name="totalPrice" DockPanel.Dock="Bottom" FontSize="50" TextAlignment="Center"/>
+            <TextBlock x:Name="taxPrice" DockPanel.Dock="Bottom" FontSize="50" TextAlignment="Center"/>
+            <TextBlock x:Name="orderPrice" DockPanel.Dock="Bottom" FontSize="50" TextAlignment="Center"/>
+            <ListView Name ="itemsListView" FontSize="50"/>
+
+        </DockPanel>
         
 
         

@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="Welcome to the Bleakwind Buffett!" Height="900" Width="1200">
+        Title="Welcome to the Bleakwind Buffett!" Height="900" Width="1800">
     <Grid>
-        <local:ScreenSwitcher></local:ScreenSwitcher>
+        <local:OrderComponent></local:OrderComponent>
+        
 
     </Grid>
 </Window>
