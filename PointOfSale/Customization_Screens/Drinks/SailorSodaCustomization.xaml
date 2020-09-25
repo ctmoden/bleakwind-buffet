@@ -35,7 +35,7 @@
                 <Button Margin="30" Content="Small" FontSize="50" FontWeight="Bold"></Button>
                 <Button Margin="30" Content="Medium" FontSize="50" FontWeight="Bold"></Button>
                 <Button Margin="30" Content="Large" FontSize="50" FontWeight="Bold"></Button>
-                <Button Margin="0,60,0,0" Content="Complete" FontStyle="Oblique" FontSize="50" FontWeight="Bold"></Button>
+                <Button Click="ReturnToMainMenu" Margin="0,60,0,0" Content="Complete" FontStyle="Oblique" FontSize="50" FontWeight="Bold"></Button>
             </StackPanel>
             
         </Grid>

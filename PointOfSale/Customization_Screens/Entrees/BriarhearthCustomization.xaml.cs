@@ -16,20 +16,20 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for BriarhearthCustomization.xaml
     /// </summary>
-    public partial class BriarhearthCustomization : UserControl
+    public partial class BriarhearthCustomization : UserControl 
     {
         public BriarhearthCustomization()
         {
             InitializeComponent();
         }
         /// <summary>
-        /// 
+        /// Returns to main menu screen to continue order process
         /// </summary>
         /// <param name="sender">object that sent event we are handling</param>
         /// <param name="e">parameters of event</param>
-        void ReturnToMenu(object sender, RoutedEventArgs e)
+        void ReturnToMainMenu(object sender, RoutedEventArgs e)
         {
-
+            ReturnToMenu.ReturnToMenuScreen(this);
         }
     }
 }

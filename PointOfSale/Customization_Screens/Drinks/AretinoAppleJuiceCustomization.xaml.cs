@@ -11,14 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PointOfSale.Customization_Screens
+namespace PointOfSale.Customization_Screens.Drinks
 {
     /// <summary>
-    /// Interaction logic for PhillyPoacherCustomization.xaml
+    /// Interaction logic for AretinoAppleJuiceCustomization.xaml
     /// </summary>
-    public partial class PhillyPoacherCustomization : UserControl
+    public partial class AretinoAppleJuiceCustomization : UserControl
     {
-        public PhillyPoacherCustomization()
+        public AretinoAppleJuiceCustomization()
         {
             InitializeComponent();
         }
