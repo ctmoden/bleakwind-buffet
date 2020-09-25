@@ -27,6 +27,6 @@
             
 
         </StackPanel>
-        <Button Content="Complete" FontSize="40" FontWeight="Bold" Width="250" Height="70" Grid.Row="2" Click="ReturnToMenu"/>
+        <Button Content="Complete" FontSize="40" FontWeight="Bold" Width="250" Height="70" Grid.Row="2" Click="ReturnToMainMenu"/>
     </Grid>
 </UserControl>

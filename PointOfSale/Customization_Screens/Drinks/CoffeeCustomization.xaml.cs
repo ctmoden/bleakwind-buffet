@@ -22,5 +22,14 @@ namespace PointOfSale.Customization_Screens.Drinks
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Returns to main menu screen to continue order process
+        /// </summary>
+        /// <param name="sender">object that sent event we are handling</param>
+        /// <param name="e">parameters of event</param>
+        void ReturnToMainMenu(object sender, RoutedEventArgs e)
+        {
+            ReturnToMenu.ReturnToMenuScreen(this);
+        }
     }
 }

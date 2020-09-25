@@ -16,7 +16,7 @@
             <Button BorderThickness="5" FontSize="75" FontWeight="Bold" Margin="20">Medium</Button>
             <Button BorderThickness="5" FontSize="75" FontWeight="Bold" Margin="20">Large</Button>
         </StackPanel>
-        <Button BorderThickness="5" Grid.Row="1" FontSize="75" FontWeight="Bold" Margin="20">Complete</Button>
+        <Button Click="ReturnToMainMenu" BorderThickness="5" Grid.Row="1" FontSize="75" FontWeight="Bold" Margin="20">Complete</Button>
             
     </Grid>
 </UserControl>

@@ -30,13 +30,14 @@ namespace PointOfSale
         }
         
         /// <summary>
-        /// 
+        /// Finds the parent control and creates an object out of that then calls 
+        /// newly created order control objects screen switching method
         /// </summary>
-        /// <param name="screenToSwitchTo"></param>
+        /// <param name="screenToSwitchTo">specifies which screen to switch to from current screen</param>
         private void SendToScreenSwitcher(FrameworkElement screenToSwitchTo)
         {
-            OrderComponent orderControl = this.FindControl<OrderComponent>();
-            orderControl.SwitchScreens(screenToSwitchTo);
+            OrderComponent orderControler = this.FindControl<OrderComponent>();
+            orderControler.SwitchScreens(screenToSwitchTo);
         }
         /// <summary>
         /// Button event for briarheart
@@ -48,11 +49,8 @@ namespace PointOfSale
             SendToScreenSwitcher(new BriarhearthCustomization());
           
         }
-
-        
-
         /// <summary>
-        /// 
+        /// Switches to customization screen
         /// </summary>
         /// <param name="sender">object that sent event we are handling</param>
         /// <param name="e">parameters of event</param>
@@ -63,7 +61,7 @@ namespace PointOfSale
 
         }
         /// <summary>
-        /// 
+        /// Switches to customization screen
         /// </summary>
         /// <param name="sender">object that sent event we are handling</param>
         /// <param name="e">parameters of event</param>
@@ -74,7 +72,7 @@ namespace PointOfSale
 
         }
         /// <summary>
-        /// 
+        /// Switches to customization screen
         /// </summary>
         /// <param name="sender">object that sent event we are handling</param>
         /// <param name="e">parameters of event</param>
@@ -84,7 +82,7 @@ namespace PointOfSale
 
         }
         /// <summary>
-        /// 
+        /// Switches to customization screen
         /// </summary>
         /// <param name="sender">object that sent event we are handling</param>
         /// <param name="e">parameters of event</param>
@@ -93,7 +91,7 @@ namespace PointOfSale
             SendToScreenSwitcher(new GardenOrcOmeletteCustomization());
         }
         /// <summary>
-        /// 
+        /// Switches to customization screen
         /// </summary>
         /// <param name="sender">object that sent event we are handling</param>
         /// <param name="e">parameters of event</param>
@@ -102,33 +100,33 @@ namespace PointOfSale
             SendToScreenSwitcher(new SmokeHouseSkeletonCustomization());
 
         }
-        
+
         /// <summary>
-        /// 
+        /// Switches to customization screen
         /// </summary>
         /// <param name="sender">object that sent event we are handling</param>
         /// <param name="e">parameters of event</param>
         private void SelectWaffleFries(object sender, RoutedEventArgs e)
         {
-
+            SendToScreenSwitcher(new SideCustomization());
         }
         /// <summary>
-        /// 
+        /// Switches to customization screen
         /// </summary>
         /// <param name="sender">object that sent event we are handling</param>
         /// <param name="e">parameters of event</param>
         private void SelectFriedMiraak(object sender, RoutedEventArgs e)
         {
-
+            SendToScreenSwitcher(new SideCustomization());
         }
         /// <summary>
-        /// 
+        /// Switches to customization screen
         /// </summary>
         /// <param name="sender">object that sent event we are handling</param>
         /// <param name="e">parameters of event</param>
         private void SelectGrits(object sender, RoutedEventArgs e)
         {
-
+            SendToScreenSwitcher(new SideCustomization());
         }
         /// <summary>
         /// Button event for vokun salad
@@ -137,7 +135,7 @@ namespace PointOfSale
         /// <param name="e">parameters of event</param>
         private void SelectSalad(object sender, RoutedEventArgs e)
         {
-
+            SendToScreenSwitcher(new SideCustomization());
         }
         /// <summary>
         /// Button event for vokun salad
@@ -184,11 +182,5 @@ namespace PointOfSale
         {
             SendToScreenSwitcher(new WarriorWaterCustomizations());
         }
-
-        private void ReturnToMainMenu()
-        {
-
-        }
-
     }
 }
