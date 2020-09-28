@@ -26,7 +26,7 @@
         <TextBlock Grid.Row="0" Grid.Column="0" FontFamily="Gothic" FontSize="60" TextAlignment="Center" FontWeight="ExtraBold">Entrees</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="1" FontFamily="Gothic" FontSize="60" TextAlignment="Center" FontWeight="ExtraBold">Sides</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="2" FontFamily="Gothic" FontSize="60" TextAlignment="Center" FontWeight="ExtraBold">Drinks</TextBlock>
-        <Button Grid.Row="1" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectBriarhearthBurger">Briarheart Burger</Button>
+        <Button Grid.Row="1" Grid.Column="0" Height="90" FontSize="23" FontWeight="Bold" Click="SelectBriarhearthBurger" Margin="42,8,10,8">Briarhearth Burger</Button>
         <Button Grid.Row="2" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectDoubleDraugr">Double Draugr</Button>
         <Button Grid.Row="3" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectThalmorTriple">Thalmor Triple</Button>
         <Button Grid.Row="4" Grid.Column="0" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectPhillyPoacher">Philly Poacher</Button>
