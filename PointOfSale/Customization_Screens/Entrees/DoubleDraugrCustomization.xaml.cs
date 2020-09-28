@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PointOfSale.Customization_Screens
+namespace PointOfSale
 {
     /// <summary>
     /// Interaction logic for DoubleDraugrCustomization.xaml
