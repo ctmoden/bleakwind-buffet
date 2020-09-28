@@ -11,7 +11,7 @@ namespace PointOfSale
     public static class ReturnToMenu
     {
         /// <summary>
-        /// Finds the elements parent control and 
+        /// Finds the elements parent control and switches screens 
         /// </summary>
         /// <param name="element"></param>
         public static void ReturnToMenuScreen(FrameworkElement element)

@@ -25,6 +25,7 @@ namespace PointOfSale
             InitializeComponent();
             UpdateTotal();
             UpdateSubTotal();
+            UpdateTaxTotal();
         }
         public void SwitchScreens(FrameworkElement element)
         {

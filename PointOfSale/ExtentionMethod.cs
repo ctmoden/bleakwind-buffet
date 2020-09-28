@@ -6,6 +6,9 @@ using System.Windows;
 using System.Windows.Media;
 namespace PointOfSale
 {
+    /// <summary>
+    /// Implements a method to find the parent control when user is in a nested 
+    /// </summary>
     public static class ExtentionMethod
     {
         public static T FindControl<T>(this DependencyObject element) where T : DependencyObject
