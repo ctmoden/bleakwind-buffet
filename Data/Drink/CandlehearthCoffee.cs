@@ -6,6 +6,7 @@
 using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
@@ -13,9 +14,20 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing the coffee drink and it's properties
     /// </summary>
-    public class CandlehearthCoffee : Drink
+    public class CandlehearthCoffee : Drink, INotifyPropertyChanged
     {
-        
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Invokes the property changed event handler for a property
+        /// </summary>
+        /// <param name="propertyName">name of property that just changed</param>
+        public void InvokePropertyChange(string propertyName)
+        {
+
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         /// <summary>
         /// Calories Property, changes based on drink size
         /// </summary>
@@ -23,9 +35,22 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                if (Size == Size.Small) return 7;
-                if (Size == Size.Medium) return 10;
-                else return 20;
+                if (Size == Size.Small)
+                {
+                    InvokePropertyChange("Calories");
+                    return 7;
+                }
+                if (Size == Size.Medium)
+                {
+                    InvokePropertyChange("Calories");
+                    return 10;
+                }
+                else 
+                {
+                    InvokePropertyChange("Calories");
+                    return 20;
+                }
+                
             }
         }
         
@@ -36,23 +61,63 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                if (Size == Size.Small) return .75;
-                if (Size == Size.Medium) return 1.25;
-                else return 1.75;
+                if (Size == Size.Small)
+                {
+                    InvokePropertyChange("Price");
+                    return .75;
+                }
+                if (Size == Size.Medium)
+                {
+                    InvokePropertyChange("Price");
+                    return 1.25;
+                }
+                else
+                {
+                    InvokePropertyChange("Price");
+                    return 1.75;
+                }
+
             }
         }
+        private bool ice = false;
         /// <summary>
         /// Ice property for the drink
         /// </summary>
-        public bool Ice { get; set; } = false;
+        public bool Ice
+        {
+            get => ice;
+            set
+            {
+                ice = value;
+                InvokePropertyChange("Ice");
+            }
+        }
+        private bool roomForCream = false;
         /// <summary>
         /// Cream property for coffee
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream
+        {
+            get => roomForCream;
+            set
+            {
+                roomForCream = value;
+                InvokePropertyChange("Room for cream");
+            }
+        }
+        private bool decaf = false;
         /// <summary>
         /// Decaf property for coffee
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf
+        {
+            get => decaf;
+            set
+            {
+                decaf = value;
+                InvokePropertyChange("Decaf");
+            }
+        }
         /// <summary>
         /// Special instructions list property tailored for this specific drink
         /// </summary>
@@ -61,8 +126,16 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> specialInstructions = new List<string>();
-                if (Ice) specialInstructions.Add("Add ice");
-                if (RoomForCream) specialInstructions.Add("Add cream");
+                if (Ice)
+                {
+                    InvokePropertyChange("Special Instructions");
+                    specialInstructions.Add("Add ice");
+                }
+                if (RoomForCream)
+                {
+                    InvokePropertyChange("Special Instructions");
+                    specialInstructions.Add("Add cream");
+                }
                 return specialInstructions;
             }
         }

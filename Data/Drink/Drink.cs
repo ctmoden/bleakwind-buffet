@@ -15,18 +15,10 @@ namespace BleakwindBuffet.Data.Drinks
     /// Abstract class for all drinks, cannot create an instance of this class alone.
     /// Base class representing common properties for drinks
     /// </summary>
-    public abstract class Drink : IOrderItem, INotifyPropertyChanged
+    public abstract class Drink : IOrderItem
     {
-        public virtual event PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// Invokes the property changed event handler for a property
-        /// </summary>
-        /// <param name="propertyName">name of property that just changed</param>
-        public virtual void InvokePropertyChange(string propertyName)
-        {
-
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        
+        
         /// <summary>
         /// Size of the drink
         /// </summary>
