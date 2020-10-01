@@ -6,16 +6,36 @@
 using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class SailorSoda : Drink
+    public class SailorSoda : Drink, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// Invokes the property changed event handler for a property
+        /// </summary>
+        /// <param name="propertyName">name of property that just changed</param>
+        public void InvokePropertyChange(string propertyName)
+        {
+
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        private SodaFlavor flavor = SodaFlavor.Cherry;
         /// <summary>
         /// Flavor property, default flavor is cherry.  Accesses Flavor enum
         /// </summary>
-        public SodaFlavor Flavor { get; set; } = SodaFlavor.Cherry;
+        public SodaFlavor Flavor
+        {
+            get => flavor;
+            set
+            {
+                flavor = value;
+                InvokePropertyChange("Flavor");
+            }
+        }
         
         /// <summary>
         /// Calories Property, changes based on drink size
@@ -24,7 +44,11 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                if (Size == Size.Small) return 117;
+                if (Size == Size.Small)
+                {
+                    InvokePropertyChange("Calories");
+                    return 117;
+                }
                 if (Size == Size.Medium) return 153;
                 else return 205;
             }
