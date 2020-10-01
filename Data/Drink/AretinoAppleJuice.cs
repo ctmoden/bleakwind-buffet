@@ -22,7 +22,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 if (Size == Size.Small)
                 {
-                    InvokePropertyChange("calories");
+                    InvokePropertyChange("Calories");
                     return 44;
                 }
                 if (Size == Size.Medium)
