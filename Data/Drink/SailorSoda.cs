@@ -49,8 +49,16 @@ namespace BleakwindBuffet.Data.Drinks
                     InvokePropertyChange("Calories");
                     return 117;
                 }
-                if (Size == Size.Medium) return 153;
-                else return 205;
+                if (Size == Size.Medium)
+                {
+                    InvokePropertyChange("Calories");
+                    return 153;
+                }
+                else
+                {
+                    InvokePropertyChange("Calories");
+                    return 205;
+                }
             }
         }
 
@@ -62,15 +70,36 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                if (Size == Size.Small) return 1.42;
-                if (Size == Size.Medium) return 1.74;
-                else return 2.07;
+                if (Size == Size.Small)
+                {
+                    InvokePropertyChange("Price");
+                    return 1.42;
+                }
+                if (Size == Size.Medium)
+                {
+                    InvokePropertyChange("Price");
+                    return 1.74;
+                }
+                else
+                {
+                    InvokePropertyChange("Price");
+                    return 2.07;
+                }
             }
         }
+        private bool ice = false;
         /// <summary>
         /// Ice property for the drink
         /// </summary>
-        public bool Ice { get; set; } = true;
+        public bool Ice
+        {
+            get => ice;
+            set
+            {
+                ice = value;
+                InvokePropertyChange("Ice");
+            }
+        }
         /// <summary>
         /// Special instructions list property tailored for this specific drink
         /// </summary>
@@ -79,7 +108,11 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> specialInstructions = new List<string>();
-                if (!Ice) specialInstructions.Add("Hold ice");
+                if (!Ice)
+                {
+                    InvokePropertyChange("Special Instructions");
+                    specialInstructions.Add("Add ice");
+                }
                 return specialInstructions;
             }
         }
