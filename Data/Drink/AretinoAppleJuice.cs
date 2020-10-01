@@ -7,13 +7,12 @@ using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     public class AretinoAppleJuice : Drink
     {
-        //deleted size, using base class implementation
-        
         /// <summary>
         /// Calories Property, changes based on drink size
         /// </summary>
@@ -21,11 +20,27 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                if (Size == Size.Small) return 44;
-                if (Size == Size.Medium) return 88;
-                else return 132;
+                if (Size == Size.Small)
+                {
+                    InvokePropertyChange("Calories");
+                    return 44;
+                }
+                if (Size == Size.Medium)
+                {
+                    InvokePropertyChange("Calories");
+                    return 88;
+                }
+                else 
+                {
+                    InvokePropertyChange("Calories");
+                    return 132;
+                } 
             }
+            
+                
+            
         }
+        
         
         /// <summary>
         /// Price Property for juice.  Changes price based on size of drink
@@ -34,15 +49,36 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                if (Size == Size.Small) return .62;
-                if (Size == Size.Medium) return .87;
-                else return 1.01;
+                if (Size == Size.Small)
+                {
+                    InvokePropertyChange("Price");
+                    return .62;
+                }
+                if (Size == Size.Medium)
+                {
+                    InvokePropertyChange("Price");
+                    return .87;
+                }
+                else
+                {
+                    InvokePropertyChange("Price");
+                    return 1.01;
+                }
             }
         }
+        private bool ice = false;
         /// <summary>
         /// Ice property for the drink
         /// </summary>
-        public bool Ice { get; set; } = false;
+        public bool Ice
+        {
+            get => ice;
+            set
+            {
+                ice = value;
+                InvokePropertyChange("Ice");
+            }
+        }
         /// <summary>
         /// Special instructions list property tailored for this specific drink
         /// </summary>
@@ -51,7 +87,11 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> specialInstructions = new List<string>();
-                if (Ice) specialInstructions.Add("Add ice");
+                if (Ice) 
+                {
+                    InvokePropertyChange("Special Instructions");
+                    specialInstructions.Add("Add ice");
+                } 
                 return specialInstructions;
             }
         }
