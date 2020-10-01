@@ -17,7 +17,6 @@ namespace BleakwindBuffet.Data.Drinks
     public class CandlehearthCoffee : Drink, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
         /// <summary>
         /// Invokes the property changed event handler for a property
         /// </summary>
