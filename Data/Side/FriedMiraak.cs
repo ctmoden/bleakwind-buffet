@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Sides
 {
     public class FriedMiraak : Side, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public override event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// Invokes the property changed event handler for a property
         /// </summary>

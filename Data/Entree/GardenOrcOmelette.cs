@@ -31,17 +31,17 @@ namespace BleakwindBuffet.Data.Entrees
         /// Property Gets the calories in the breakfast 
         /// </summary>
         public override uint Calories => 404;
-        private bool brocolli = true; 
+        private bool broccoli = true; 
         /// <summary>
         /// Property for Broccoli.  T/F values
         /// </summary>
         public bool Broccoli
         {
-            get => brocolli;
+            get => broccoli;
             set
             {
-                brocolli = value;
-                InvokePropertyChange("Brocolli");
+                broccoli = value;
+                InvokePropertyChange("Broccoli");
             }
         }
         private bool mushrooms = true;

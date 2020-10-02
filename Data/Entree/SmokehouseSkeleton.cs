@@ -40,10 +40,10 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 sausageLink = value;
-                InvokePropertyChange("Sausage Link");
+                InvokePropertyChange("SausageLink");
             }
         }
-        private bool egg;
+        private bool egg = true;
         /// <summary>
         /// Property for the Egg. T/F values
         /// </summary>
@@ -66,7 +66,7 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 hashBrowns = value;
-                InvokePropertyChange("Hash Browns");
+                InvokePropertyChange("HashBrowns");
             }
         }
         private bool pancake = true;
@@ -95,22 +95,22 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!SausageLink)
                 {
                     specialInstructions.Add("Hold sausage");
-                    InvokePropertyChange("Special Instructions");
+                    InvokePropertyChange("SpecialInstructions");
                 }
                 if (!Egg)
                 {
                     specialInstructions.Add("Hold eggs");
-                    InvokePropertyChange("Special Instructions");
+                    InvokePropertyChange("SpecialInstructions");
                 }
                 if (!HashBrowns)
                 {
                     specialInstructions.Add("Hold hash browns");
-                    InvokePropertyChange("Special Instructions");
+                    InvokePropertyChange("SpecialInstructions");
                 }
                 if (!Pancake)
                 {
                     specialInstructions.Add("Hold pancakes");
-                    InvokePropertyChange("Special Instructions");
+                    InvokePropertyChange("SpecialInstructions");
                 }
                     return specialInstructions;
             }

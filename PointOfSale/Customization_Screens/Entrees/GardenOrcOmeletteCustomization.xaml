@@ -16,7 +16,7 @@
                 Garden Orc Omelette Options
         </TextBlock>
         <StackPanel Grid.Row="1">
-            <CheckBox Content="Broccoli" IsChecked="{Binding Path=Brocolli}" FontSize="30"></CheckBox>
+            <CheckBox Content="Broccoli" IsChecked="{Binding Path=Broccoli}" FontSize="30"></CheckBox>
             <CheckBox Content="Mushrooms" IsChecked="{Binding Path=Mushrooms}" FontSize="30"></CheckBox>
             <CheckBox Content="Tomato" IsChecked="{Binding Path=Tomato}" FontSize="30"></CheckBox>
             <CheckBox Content="Cheddar" IsChecked="{Binding Path=Cheddar}" FontSize="30"></CheckBox>

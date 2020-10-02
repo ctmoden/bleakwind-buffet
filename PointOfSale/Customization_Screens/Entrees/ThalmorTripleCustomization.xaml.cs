@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Entrees;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,12 @@ namespace PointOfSale
     /// </summary>
     public partial class ThalmorTripleCustomization : UserControl
     {
+        ThalmorTriple triple;
         public ThalmorTripleCustomization()
         {
             InitializeComponent();
+            triple = new ThalmorTriple();
+            DataContext = triple;
         }
         /// <summary>
         /// Returns to main menu screen to continue order process

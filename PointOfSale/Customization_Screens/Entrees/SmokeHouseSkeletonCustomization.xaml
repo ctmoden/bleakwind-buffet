@@ -16,10 +16,10 @@
                 Smokehouse Skeleton Options
         </TextBlock>
         <StackPanel Grid.Row="1">
-            <CheckBox Content="Sausage" IsChecked="True" FontSize="30"></CheckBox>
-            <CheckBox Content="Eggs" IsChecked="True" FontSize="30"></CheckBox>
-            <CheckBox Content="Hash Browns" IsChecked="True" FontSize="30"></CheckBox>
-            <CheckBox Content="Pancakes" IsChecked="True" FontSize="30"></CheckBox>
+            <CheckBox Content="Sausage" IsChecked="{Binding Path=SausageLink}" FontSize="30"></CheckBox>
+            <CheckBox Content="Eggs" IsChecked="{Binding Path=Egg}" FontSize="30"></CheckBox>
+            <CheckBox Content="Hash Browns" IsChecked="{Binding Path=HashBrowns}" FontSize="30"></CheckBox>
+            <CheckBox Content="Pancakes" IsChecked="{Binding Path=Pancake}" FontSize="30"></CheckBox>
 
 
         </StackPanel>
