@@ -27,11 +27,20 @@ namespace PointOfSale.Customization_Screens.Drinks
             aj = new AretinoAppleJuice();
             DataContext = aj;
         }
-
+        /// <summary>
+        /// Sets the size for the selected drink.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void SelectSize(object sender, RoutedEventArgs e)
         {
-            Size size = SizeSelectionMethod.SizeSelection(this, sender);
-            aj.Size = size;
+            
+            if (DataContext is Drink)
+            {
+                Size size = SizeSelectionMethod.DrinkSizeSelection(this, sender);
+                aj.Size = size;
+            }
+            else throw new NotImplementedException("Invalid type");
         }
         /// <summary>
         /// Returns to main menu screen to continue order process
