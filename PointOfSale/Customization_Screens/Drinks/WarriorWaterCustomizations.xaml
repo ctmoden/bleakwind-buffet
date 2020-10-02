@@ -21,8 +21,8 @@
                 Add-Ins
             </TextBlock>
             <StackPanel Grid.Column="0" Grid.Row="1">
-                <CheckBox IsChecked="True" Margin="30" Content="Ice" FontSize="40" FontWeight="Bold"/>
-                <CheckBox IsChecked="False" Margin="30" Content="Lemon" FontSize="40" FontWeight="Bold"/>
+                <CheckBox IsChecked="{Binding Path=Ice}" Margin="30" Content="Ice" FontSize="40" FontWeight="Bold"/>
+                <CheckBox IsChecked="{Binding Path=Lemon}" Margin="30" Content="Lemon" FontSize="40" FontWeight="Bold"/>
 
             </StackPanel>
             <TextBlock Grid.Column="1" Grid.Row="0" FontSize="60" FontWeight="Bold" FontStyle="Italic" TextAlignment="Center">

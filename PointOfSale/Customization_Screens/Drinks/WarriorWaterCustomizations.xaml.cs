@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Drinks;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,12 @@ namespace PointOfSale.Customization_Screens.Drinks
     /// </summary>
     public partial class WarriorWaterCustomizations : UserControl
     {
+        WarriorWater water;
         public WarriorWaterCustomizations()
         {
             InitializeComponent();
+            water = new WarriorWater();
+            DataContext = water;
         }
         /// <summary>
         /// Returns to main menu screen to continue order process
