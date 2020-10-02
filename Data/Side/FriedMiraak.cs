@@ -6,14 +6,23 @@
 using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class FriedMiraak : Side
+    public class FriedMiraak : Side, INotifyPropertyChanged
     {
-        
-       
+        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// Invokes the property changed event handler for a property
+        /// </summary>
+        /// <param name="propertyName">name of property that just changed</param>
+        public void InvokePropertyChange(string propertyName)
+        {
+
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// Calories Property, changes based on side size
         /// </summary>
@@ -21,9 +30,21 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                if (Size == Size.Small) return 151;
-                if (Size == Size.Medium) return 236;
-                else return 306;
+                if (Size == Size.Small)
+                {
+                    InvokePropertyChange("Calories");
+                    return 151;
+                }
+                if (Size == Size.Medium)
+                {
+                    InvokePropertyChange("Calories");
+                    return 236;
+                }
+                else
+                {
+                    InvokePropertyChange("Calories");
+                    return 306;
+                }
             }
         }
         
@@ -33,9 +54,21 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                if (Size == Size.Small) return 1.78;
-                if (Size == Size.Medium) return 2.01;
-                else return 2.88;
+                if (Size == Size.Small)
+                {
+                    InvokePropertyChange("Price");
+                    return 1.78;
+                }
+                if (Size == Size.Medium)
+                {
+                    InvokePropertyChange("Price");
+                    return 2.01;
+                }
+                else
+                {
+                    InvokePropertyChange("Price");
+                    return 2.88;
+                }
             }
         }
         /// <summary>

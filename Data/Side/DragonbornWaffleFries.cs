@@ -6,13 +6,23 @@
 using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class DragonbornWaffleFries : Side
+    public class DragonbornWaffleFries : Side, INotifyPropertyChanged
     {
-        
+        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// Invokes the property changed event handler for a property
+        /// </summary>
+        /// <param name="propertyName">name of property that just changed</param>
+        public void InvokePropertyChange(string propertyName)
+        {
+
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// Calories Property, changes based on side size
         /// </summary>
@@ -20,9 +30,21 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                if (Size == Size.Small) return 77;
-                if (Size == Size.Medium) return 89;
-                else return 100;               
+                if (Size == Size.Small)
+                {
+                    InvokePropertyChange("Calories");
+                    return 77;
+                }
+                if (Size == Size.Medium)
+                {
+                    InvokePropertyChange("Calories");
+                    return 89;
+                }
+                else
+                {
+                    InvokePropertyChange("Calories");
+                    return 100;
+                }
             }
         }
         
@@ -32,9 +54,21 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                if (Size == Size.Small) return.42;
-                if (Size == Size.Medium) return .76;
-                else return .96;
+                if (Size == Size.Small)
+                {
+                    InvokePropertyChange("Price");
+                    return .42;
+                }
+                if (Size == Size.Medium)
+                {
+                    InvokePropertyChange("Price");
+                    return .76;
+                }
+                else
+                {
+                    InvokePropertyChange("Price");
+                    return .96;
+                }
             }
         }
         /// <summary>
