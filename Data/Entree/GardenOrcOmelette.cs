@@ -5,13 +5,23 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Runtime.CompilerServices;
 using System.Text;
-
+using System.ComponentModel;
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class GardenOrcOmelette : Entree
+    public class GardenOrcOmelette : Entree, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// Invokes the property changed event handler for a property
+        /// </summary>
+        /// <param name="propertyName">name of property that just changed</param>
+        public void InvokePropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// Price property for the omlette. 
         /// Uses the shorthand method for a property
@@ -21,22 +31,58 @@ namespace BleakwindBuffet.Data.Entrees
         /// Property Gets the calories in the breakfast 
         /// </summary>
         public override uint Calories => 404;
+        private bool brocolli = true; 
         /// <summary>
         /// Property for Broccoli.  T/F values
         /// </summary>
-        public bool Broccoli { get; set; } = true;
+        public bool Broccoli
+        {
+            get => brocolli;
+            set
+            {
+                brocolli = value;
+                InvokePropertyChange("Brocolli");
+            }
+        }
+        private bool mushrooms = true;
         /// <summary>
         /// Property for Mushrooms.  T/F values
         /// </summary>
-        public bool Mushrooms { get; set; } = true;
+        public bool Mushrooms
+        {
+            get => mushrooms;
+            set
+            {
+                mushrooms = value;
+                InvokePropertyChange("Mushrooms");
+            }
+        }
+        private bool tomato = true;
         /// <summary>
         /// Property for Tomatos.  T/F values
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato
+        {
+            get => tomato;
+            set
+            {
+                tomato = value;
+                InvokePropertyChange("Tomato");
+            }
+        }
+        private bool cheddar = true;
         /// <summary>
         /// Cheddar property.  T/F values.
         /// </summary>
-        public bool Cheddar { get; set; } = true;
+        public bool Cheddar
+        {
+            get => cheddar;
+            set
+            {
+                cheddar = value;
+                InvokePropertyChange("Cheddar");
+            }
+        }
         /// <summary>
         /// List property of special instruction specific to omlette.  Creates a new list each time new instruction needs to be added.
         /// </summary>
@@ -45,10 +91,26 @@ namespace BleakwindBuffet.Data.Entrees
             get
             {
                 List<string> specialInstructions = new List<string>();
-                if (!Broccoli) specialInstructions.Add("Hold broccoli");
-                if (!Mushrooms) specialInstructions.Add("Hold mushrooms");
-                if (!Tomato) specialInstructions.Add("Hold tomato");
-                if (!Cheddar) specialInstructions.Add("Hold cheddar");
+                if (!Broccoli)
+                {
+                    specialInstructions.Add("Hold broccoli");
+                    InvokePropertyChange("Special Instructions");
+                }
+                if (!Mushrooms)
+                {
+                    specialInstructions.Add("Hold mushrooms");
+                    InvokePropertyChange("Special Instructions");
+                }
+                if (!Tomato)
+                {
+                    specialInstructions.Add("Hold tomato");
+                    InvokePropertyChange("Special Instructions");
+                }
+                if (!Cheddar)
+                {
+                    specialInstructions.Add("Hold cheddar");
+                    InvokePropertyChange("Special Instructions");
+                }
                 return specialInstructions;
             }
         }
