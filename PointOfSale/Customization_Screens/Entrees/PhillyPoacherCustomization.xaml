@@ -16,9 +16,9 @@
                 Philly Poacher Options
         </TextBlock>
         <StackPanel Grid.Row="1">
-            <CheckBox Content="Sirloin" IsChecked="True" FontSize="30"></CheckBox>
-            <CheckBox Content="Onion" IsChecked="True" FontSize="30"></CheckBox>
-            <CheckBox Content="Roll" IsChecked="True" FontSize="30"></CheckBox>
+            <CheckBox Content="Sirloin" IsChecked="{Binding Path=Sirloin}" FontSize="30"></CheckBox>
+            <CheckBox Content="Onion" IsChecked="{Binding Path=Onion}" FontSize="30"></CheckBox>
+            <CheckBox Content="Roll" IsChecked="{Binding Path=Roll}" FontSize="30"></CheckBox>
         </StackPanel>
         <Button Content="Complete" FontSize="40" FontWeight="Bold" Width="250" Height="70" Grid.Row="2" Click="ReturnToMainMenu"/>
     </Grid>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Entrees;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,12 @@ namespace PointOfSale
     /// </summary>
     public partial class DoubleDraugrCustomization : UserControl
     {
+        DoubleDraugr dd;
         public DoubleDraugrCustomization()
         {
             InitializeComponent();
+            dd = new DoubleDraugr();
+            DataContext = dd;
         }
         /// <summary>
         /// Returns to main menu screen to continue order process

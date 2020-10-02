@@ -16,14 +16,14 @@
                 Double Draugr Options
         </TextBlock>
         <StackPanel Grid.Row="1">
-            <CheckBox Content="Bun" IsChecked="True" FontSize="30"></CheckBox>
-            <CheckBox Content="Ketchup" IsChecked="True" FontSize="30"></CheckBox>
-            <CheckBox Content="Mustard" IsChecked="True" FontSize="30"></CheckBox>
-            <CheckBox Content="Pickle" IsChecked="True" FontSize="30"></CheckBox>
-            <CheckBox Content="Cheese" IsChecked="True" FontSize="30"></CheckBox>
-            <CheckBox Content="Tomato" IsChecked="True" FontSize="30"></CheckBox>
-            <CheckBox Content="Lettuce" IsChecked="True" FontSize="30"></CheckBox>
-            <CheckBox Content="Mayo" IsChecked="True" FontSize="30"></CheckBox>
+            <CheckBox Content="Bun" IsChecked="{Binding Path=Bun}" FontSize="30"></CheckBox>
+            <CheckBox Content="Ketchup" IsChecked="{Binding Path=Ketchup}" FontSize="30"></CheckBox>
+            <CheckBox Content="Mustard" IsChecked="{Binding Path=Mustard}" FontSize="30"></CheckBox>
+            <CheckBox Content="Pickle" IsChecked="{Binding Path=Pickle}" FontSize="30"></CheckBox>
+            <CheckBox Content="Cheese" IsChecked="{Binding Path=Cheese}" FontSize="30"></CheckBox>
+            <CheckBox Content="Tomato" IsChecked="{Binding Path=Tomato}" FontSize="30"></CheckBox>
+            <CheckBox Content="Lettuce" IsChecked="{Binding Path=Lettuce}" FontSize="30"></CheckBox>
+            <CheckBox Content="Mayo" IsChecked="{Binding Path=Mayo}" FontSize="30"></CheckBox>
             
 
         </StackPanel>
