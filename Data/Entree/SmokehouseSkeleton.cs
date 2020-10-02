@@ -5,12 +5,22 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class SmokehouseSkeleton : Entree
+    public class SmokehouseSkeleton : Entree, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// Invokes the property changed event handler for a property
+        /// </summary>
+        /// <param name="propertyName">name of property that just changed</param>
+        public void InvokePropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// Price property for the Smokehouse Skeleton. 
         /// Uses the shorthand method for a property
@@ -20,22 +30,58 @@ namespace BleakwindBuffet.Data.Entrees
         /// Property Gets the whopping amount of calories packed in the breakfast 
         /// </summary>
         public override uint Calories => 602;
+        private bool sausageLink = true;
         /// <summary>
         /// Property for sausage link.  T/F values 
         /// </summary>
-        public bool SausageLink { get; set; } = true;
+        public bool SausageLink
+        {
+            get => sausageLink;
+            set
+            {
+                sausageLink = value;
+                InvokePropertyChange("Sausage Link");
+            }
+        }
+        private bool egg;
         /// <summary>
         /// Property for the Egg. T/F values
         /// </summary>
-        public bool Egg { get; set; } = true;
+        public bool Egg
+        {
+            get => egg;
+            set
+            {
+                egg = value;
+                InvokePropertyChange("Egg");
+            }
+        }
+        private bool hashBrowns = true;
         /// <summary>
         /// Property for the HashBrowns.  T/F values.
         /// </summary>
-        public bool HashBrowns { get; set; } = true;
+        public bool HashBrowns
+        {
+            get => hashBrowns;
+            set
+            {
+                hashBrowns = value;
+                InvokePropertyChange("Hash Browns");
+            }
+        }
+        private bool pancake = true;
         /// <summary>
         /// Pancake property.  T/F values
         /// </summary>
-        public bool Pancake { get; set; } = true;
+        public bool Pancake
+        {
+            get => pancake;
+            set
+            {
+                pancake = value;
+                InvokePropertyChange("Pancake");
+            }
+        }
 
         /// <summary>
         ///List of special instructions specific to the Skeleton Smokehouse.
@@ -46,11 +92,27 @@ namespace BleakwindBuffet.Data.Entrees
             get
             {
                 List<string> specialInstructions = new List<string>();
-                if (!SausageLink) specialInstructions.Add("Hold sausage");
-                if (!Egg) specialInstructions.Add("Hold eggs");
-                if (!HashBrowns) specialInstructions.Add("Hold hash browns");
-                if (!Pancake) specialInstructions.Add("Hold pancakes");
-                return specialInstructions;
+                if (!SausageLink)
+                {
+                    specialInstructions.Add("Hold sausage");
+                    InvokePropertyChange("Special Instructions");
+                }
+                if (!Egg)
+                {
+                    specialInstructions.Add("Hold eggs");
+                    InvokePropertyChange("Special Instructions");
+                }
+                if (!HashBrowns)
+                {
+                    specialInstructions.Add("Hold hash browns");
+                    InvokePropertyChange("Special Instructions");
+                }
+                if (!Pancake)
+                {
+                    specialInstructions.Add("Hold pancakes");
+                    InvokePropertyChange("Special Instructions");
+                }
+                    return specialInstructions;
             }
         }
         /// <summary>
