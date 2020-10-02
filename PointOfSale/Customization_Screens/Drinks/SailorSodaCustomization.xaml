@@ -21,12 +21,12 @@
                 Flavor
             </TextBlock>
             <StackPanel Grid.Column="0" Grid.Row="1">
-                <RadioButton Margin="10" Content="Blackberry" FontSize="40" FontWeight="Bold"/>
-                <RadioButton Margin="10" Content="Cherry" FontSize="40" FontWeight="Bold"/>
-                <RadioButton Margin="10" Content="Grapefruit" FontSize="40" FontWeight="Bold"/>
-                <RadioButton Margin="10" Content="Lemon" FontSize="40" FontWeight="Bold"/>
-                <RadioButton Margin="10" Content="Peach" FontSize="40" FontWeight="Bold"/>
-                <RadioButton Margin="10" Content="Watermelon" FontSize="40" FontWeight="Bold"/>
+                <RadioButton IsChecked="{Binding Path=Blackberry}" Margin="10" Content="Blackberry" FontSize="40" FontWeight="Bold"/>
+                <RadioButton IsChecked="{Binding Path=Cherry}" Margin="10" Content="Cherry" FontSize="40" FontWeight="Bold"/>
+                <RadioButton IsChecked="{Binding Path=Grapefruit}" Margin="10" Content="Grapefruit" FontSize="40" FontWeight="Bold"/>
+                <RadioButton IsChecked="{Binding Path=Lemon}" Margin="10" Content="Lemon" FontSize="40" FontWeight="Bold"/>
+                <RadioButton IsChecked="{Binding Path=Peach}" Margin="10" Content="Peach" FontSize="40" FontWeight="Bold"/>
+                <RadioButton IsChecked="{Binding Path=Watermelon}" Margin="10" Content="Watermelon" FontSize="40" FontWeight="Bold"/>
             </StackPanel>
             <TextBlock Grid.Column="1" Grid.Row="0" FontSize="60" FontWeight="Bold" FontStyle="Italic" TextAlignment="Center">
                 Size

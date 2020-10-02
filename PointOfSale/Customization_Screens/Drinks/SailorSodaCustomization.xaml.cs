@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Drinks;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,12 @@ namespace PointOfSale.Customization_Screens.Drinks
     /// </summary>
     public partial class SailorSodaCustomization : UserControl
     {
+        SailorSoda soda;
         public SailorSodaCustomization()
         {
             InitializeComponent();
+            soda = new SailorSoda();
+            DataContext = soda;
         }
         /// <summary>
         /// Returns to main menu screen to continue order process
@@ -29,6 +33,7 @@ namespace PointOfSale.Customization_Screens.Drinks
         /// <param name="e">parameters of event</param>
         void ReturnToMainMenu(object sender, RoutedEventArgs e)
         {
+            
             ReturnToMenu.ReturnToMenuScreen(this);
         }
     }
