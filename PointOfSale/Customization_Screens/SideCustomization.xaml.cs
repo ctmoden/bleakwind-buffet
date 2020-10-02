@@ -18,6 +18,7 @@ namespace PointOfSale.Customization_Screens
     /// </summary>
     public partial class SideCustomization : UserControl
     {
+        
         public SideCustomization()
         {
             InitializeComponent();
