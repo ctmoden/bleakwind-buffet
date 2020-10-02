@@ -5,12 +5,22 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class PhillyPoacher : Entree
+    public class PhillyPoacher : Entree, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// Invokes the property changed event handler for a property
+        /// </summary>
+        /// <param name="propertyName">name of property that just changed</param>
+        public void InvokePropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// Price property for the sandwich. 
         /// Uses the shorthand method for a property
@@ -20,18 +30,45 @@ namespace BleakwindBuffet.Data.Entrees
         /// Property Gets the calories in the sandwich 
         /// </summary>
         public override uint Calories => 784;
+        private bool sirloin = true;
         /// <summary>
-        /// Property for Sirloin presence.
+        /// Property for Sirloin.  What kinda commie wouldn't want sirloin though???
         /// </summary>
-        public bool Sirloin { get; set; } = true;
+        public bool Sirloin
+        {
+            get => sirloin;
+            set
+            {
+                sirloin = value;
+                InvokePropertyChange("Sirloin");
+            }
+        }
+        private bool onion = true;
         /// <summary>
         /// Property for Onion Presence
         /// </summary>
-        public bool Onion { get; set; } = true;
+        public bool Onion
+        {
+            get => onion;
+            set
+            {
+                onion = value;
+                InvokePropertyChange("Onion");
+            }
+        }
+        private bool roll = true;
         /// <summary>
         /// Property for Roll presence
         /// </summary>
-        public bool Roll { get; set; } = true;
+        public bool Roll
+        {
+            get => roll;
+            set
+            {
+                roll = value;
+                InvokePropertyChange("Roll");
+            }
+        }
         /// <summary>
         /// List property of special instructions specific to the philly sandwich.
         /// </summary>
@@ -40,9 +77,21 @@ namespace BleakwindBuffet.Data.Entrees
             get
             {
                 List<string> specialInstructions = new List<string>();
-                if (!Sirloin) specialInstructions.Add("Hold sirloin");
-                if (!Onion) specialInstructions.Add("Hold onion");
-                if (!Roll) specialInstructions.Add("Hold roll");
+                if (!Sirloin)
+                {
+                    specialInstructions.Add("Hold sirloin");
+                    InvokePropertyChange("Special Instructions");
+                }
+                if (!Onion)
+                {
+                    specialInstructions.Add("Hold onion");
+                    InvokePropertyChange("Special Instructions");
+                }
+                if (!Roll)
+                {
+                    specialInstructions.Add("Hold roll");
+                    InvokePropertyChange("Special Instructions");
+                }
                 return specialInstructions;
             }
         }
