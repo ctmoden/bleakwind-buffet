@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace PointOfSale.Customization_Screens.Drinks
 {
@@ -25,6 +26,12 @@ namespace PointOfSale.Customization_Screens.Drinks
             InitializeComponent();
             aj = new AretinoAppleJuice();
             DataContext = aj;
+        }
+
+        public void SelectSize(object sender, RoutedEventArgs e)
+        {
+            Size size = SizeSelectionMethod.SizeSelection(this, sender);
+            aj.Size = size;
         }
         /// <summary>
         /// Returns to main menu screen to continue order process

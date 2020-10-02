@@ -12,9 +12,9 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0">
-            <Button BorderThickness="5" FontSize="75" FontWeight="Bold" Margin="20">Small</Button>
-            <Button BorderThickness="5" FontSize="75" FontWeight="Bold" Margin="20">Medium</Button>
-            <Button BorderThickness="5" FontSize="75" FontWeight="Bold" Margin="20">Large</Button>
+            <Button x:Name="smallButton" Click="SelectSize" BorderThickness="5" FontSize="75" FontWeight="Bold" Margin="20">Small</Button>
+            <Button x:Name="mediumButton" Click="SelectSize" BorderThickness="5" FontSize="75" FontWeight="Bold" Margin="20">Medium</Button>
+            <Button x:Name="largeButton" Click="SelectSize" BorderThickness="5" FontSize="75" FontWeight="Bold" Margin="20">Large</Button>
         </StackPanel>
         <Button Click="ReturnToMainMenu" BorderThickness="5" Grid.Row="1" FontSize="75" FontWeight="Bold" Margin="20">Complete</Button>
             

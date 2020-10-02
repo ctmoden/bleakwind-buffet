@@ -1,4 +1,5 @@
 ﻿using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Sides;
 using PointOfSale.Customization_Screens;
 using PointOfSale.Customization_Screens.Drinks;
 using System;
@@ -109,7 +110,7 @@ namespace PointOfSale
         /// <param name="e">parameters of event</param>
         private void SelectWaffleFries(object sender, RoutedEventArgs e)
         {
-            SendToScreenSwitcher(new SideCustomization());
+            SendToScreenSwitcher(new SideCustomization(new DragonbornWaffleFries()));
         }
         /// <summary>
         /// Switches to customization screen
@@ -118,7 +119,8 @@ namespace PointOfSale
         /// <param name="e">parameters of event</param>
         private void SelectFriedMiraak(object sender, RoutedEventArgs e)
         {
-            SendToScreenSwitcher(new SideCustomization());
+            
+            SendToScreenSwitcher(new SideCustomization(new FriedMiraak()));
         }
         /// <summary>
         /// Switches to customization screen
@@ -127,7 +129,7 @@ namespace PointOfSale
         /// <param name="e">parameters of event</param>
         private void SelectGrits(object sender, RoutedEventArgs e)
         {
-            SendToScreenSwitcher(new SideCustomization());
+            SendToScreenSwitcher(new SideCustomization(new MadOtarGrits()));
         }
         /// <summary>
         /// Button event for vokun salad
@@ -136,7 +138,7 @@ namespace PointOfSale
         /// <param name="e">parameters of event</param>
         private void SelectSalad(object sender, RoutedEventArgs e)
         {
-            SendToScreenSwitcher(new SideCustomization());
+            SendToScreenSwitcher(new SideCustomization(new VokunSalad()));
         }
         /// <summary>
         /// Button event for vokun salad
@@ -154,6 +156,7 @@ namespace PointOfSale
         /// <param name="e">parameters of event</param>
         private void SelectCoffee(object sender, RoutedEventArgs e)
         {
+            
             SendToScreenSwitcher(new CoffeeCustomization());
         }
         /// <summary>
