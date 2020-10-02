@@ -46,6 +46,7 @@ namespace PointOfSale
         /// <param name="e">parameters of event</param>
         private void SelectBriarhearthBurger(object sender, RoutedEventArgs e)
         {
+            
             SendToScreenSwitcher(new BriarhearthCustomization());
           
         }

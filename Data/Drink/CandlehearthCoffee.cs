@@ -100,7 +100,7 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 roomForCream = value;
-                InvokePropertyChange("Room for cream");
+                InvokePropertyChange("Cream");
             }
         }
         private bool decaf = false;

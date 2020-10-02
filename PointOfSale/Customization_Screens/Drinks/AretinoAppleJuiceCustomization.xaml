@@ -21,7 +21,7 @@
                 Add-Ins
             </TextBlock>
 
-            <CheckBox Grid.Column="0" Grid.Row="1" IsChecked="False" Margin="30" Content="Ice" FontSize="40" FontWeight="Bold"/>
+            <CheckBox IsChecked="{Binding Path=Ice}" Grid.Column="0" Grid.Row="1"  Margin="30" Content="Ice" FontSize="40" FontWeight="Bold"/>
 
             <TextBlock Grid.Column="1" Grid.Row="0" FontSize="60" FontWeight="Bold" FontStyle="Italic" TextAlignment="Center">
                 Size
