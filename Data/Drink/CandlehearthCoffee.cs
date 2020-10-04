@@ -103,6 +103,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 ice = value;
                 InvokePropertyChange("Ice");
+                InvokePropertyChange("Special Instructions");
             }
         }
         private bool roomForCream = false;
@@ -116,6 +117,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 roomForCream = value;
                 InvokePropertyChange("Cream");
+                InvokePropertyChange("Special Instructions");
             }
         }
         private bool decaf = false;
@@ -129,6 +131,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 decaf = value;
                 InvokePropertyChange("Decaf");
+                InvokePropertyChange("Special Instructions");
             }
         }
         /// <summary>
@@ -141,12 +144,12 @@ namespace BleakwindBuffet.Data.Drinks
                 List<string> specialInstructions = new List<string>();
                 if (Ice)
                 {
-                    InvokePropertyChange("Special Instructions");
+                    
                     specialInstructions.Add("Add ice");
                 }
                 if (RoomForCream)
                 {
-                    InvokePropertyChange("Special Instructions");
+                    
                     specialInstructions.Add("Add cream");
                 }
                 return specialInstructions;

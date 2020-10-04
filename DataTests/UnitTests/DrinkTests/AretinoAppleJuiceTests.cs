@@ -10,6 +10,7 @@ using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
 using Size = BleakwindBuffet.Data.Enums.Size;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -98,6 +99,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
                 AJ.Ice = false;
             });
 
+        }
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            AretinoAppleJuice AJ = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(AJ);
         }
 
 
