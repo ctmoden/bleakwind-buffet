@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace PointOfSale.Customization_Screens.Drinks
 {
@@ -25,6 +26,21 @@ namespace PointOfSale.Customization_Screens.Drinks
             InitializeComponent();
             water = new WarriorWater();
             DataContext = water;
+        }
+        /// <summary>
+        /// Sets the size for the selected drink.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void SelectSize(object sender, RoutedEventArgs e)
+        {
+
+            if (DataContext is Drink)
+            {
+                Size size = SizeSelectionMethod.DrinkSizeSelection(this, sender);
+                water.Size = size;
+            }
+            else throw new NotImplementedException("Invalid type");
         }
         /// <summary>
         /// Returns to main menu screen to continue order process

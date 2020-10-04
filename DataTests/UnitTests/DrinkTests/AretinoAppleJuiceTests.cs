@@ -15,6 +15,23 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class AretinoAppleJuiceTests
     {
         [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var AJ = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(AJ, "Ice", () =>
+            {
+                AJ.Ice = true;
+            });
+
+            Assert.PropertyChanged(AJ, "Ice", () =>
+            {
+                AJ.Ice = false;
+            });
+        }
+
+
+        [Fact]
         public void ShouldBeAnIorderable()
         {
             AretinoAppleJuice aj = new AretinoAppleJuice();

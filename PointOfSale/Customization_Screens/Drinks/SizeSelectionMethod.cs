@@ -11,10 +11,10 @@ namespace PointOfSale
     public static class SizeSelectionMethod
     {
         /// <summary>
-        /// 
+        /// Returns appropriate size based on which size button is selected
         /// </summary>
-        /// <param name="element"></param>
-        /// <param name="sender"></param>
+        /// <param name="element">current customization screen</param>
+        /// <param name="sender">object that sent event we are handling, in this case a button</param>
         /// <returns></returns>
         public static Size DrinkSizeSelection(FrameworkElement element, object sender)
         {
