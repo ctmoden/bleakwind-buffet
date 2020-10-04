@@ -16,7 +16,22 @@ namespace BleakwindBuffet.Data.Drinks
     /// </summary>
     public class CandlehearthCoffee : Drink, INotifyPropertyChanged
     {
-        public override event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
+        private Size size = Size.Small;
+        /// <summary>
+        /// Size of the drink
+        /// </summary>
+        public Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                InvokePropertyChange("Size");
+                InvokePropertyChange("Calories");
+                InvokePropertyChange("Price");
+            }
+        }
         /// <summary>
         /// Invokes the property changed event handler for a property
         /// </summary>
@@ -35,17 +50,17 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 if (Size == Size.Small)
                 {
-                    InvokePropertyChange("Calories");
+                    //InvokePropertyChange("Calories");
                     return 7;
                 }
                 if (Size == Size.Medium)
                 {
-                    InvokePropertyChange("Calories");
+                    //InvokePropertyChange("Calories");
                     return 10;
                 }
                 else 
                 {
-                    InvokePropertyChange("Calories");
+                    //InvokePropertyChange("Calories");
                     return 20;
                 }
                 
@@ -61,17 +76,17 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 if (Size == Size.Small)
                 {
-                    InvokePropertyChange("Price");
+                    //InvokePropertyChange("Price");
                     return .75;
                 }
                 if (Size == Size.Medium)
                 {
-                    InvokePropertyChange("Price");
+                    //InvokePropertyChange("Price");
                     return 1.25;
                 }
                 else
                 {
-                    InvokePropertyChange("Price");
+                    //InvokePropertyChange("Price");
                     return 1.75;
                 }
 

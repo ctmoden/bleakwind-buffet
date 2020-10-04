@@ -56,7 +56,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 
             Assert.PropertyChanged(AJ, "Price", () =>
             {
-                AJ.Size = Size.Medium;
+                AJ.Size = Size.Small;
             });
             Assert.PropertyChanged(AJ, "Price", () =>
             {
@@ -66,6 +66,38 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 AJ.Size = Size.Large;
             });
+        }
+        [Fact]
+        public void ChangingCaloriesNotifiesCaloriesProperty()
+        {
+            AretinoAppleJuice AJ = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(AJ, "Calories", () =>
+            {
+                AJ.Size = Size.Small;
+            });
+            Assert.PropertyChanged(AJ, "Calories", () =>
+            {
+                AJ.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(AJ, "Calories", () =>
+            {
+                AJ.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
+        {
+            AretinoAppleJuice AJ = new AretinoAppleJuice();
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
+            {
+                AJ.Ice = true;
+            });
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () =>
+            {
+                AJ.Ice = false;
+            });
+
         }
 
 

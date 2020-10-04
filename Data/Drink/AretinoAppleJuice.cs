@@ -13,7 +13,23 @@ namespace BleakwindBuffet.Data.Drinks
 {
     public class AretinoAppleJuice : Drink, INotifyPropertyChanged
     {
-        public new event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private Size size = Size.Small;
+        /// <summary>
+        /// Size of the drink
+        /// </summary>
+        public Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                InvokePropertyChange("Size");
+                InvokePropertyChange("Calories");
+                InvokePropertyChange("Price");
+            }
+        }
         /// <summary>
         /// Invokes the property changed event handler for a property
         /// </summary>
@@ -32,17 +48,17 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 if (Size == Size.Small)
                 {
-                    InvokePropertyChange("Calories");
+                    //InvokePropertyChange("Calories");
                     return 44;
                 }
                 if (Size == Size.Medium)
                 {
-                    InvokePropertyChange("Calories");
+                    //InvokePropertyChange("Calories");
                     return 88;
                 }
                 else 
                 {
-                    InvokePropertyChange("Calories");
+                    //InvokePropertyChange("Calories");
                     return 132;
                 } 
             }           
@@ -59,17 +75,17 @@ namespace BleakwindBuffet.Data.Drinks
                 
                 if (Size == Size.Small)
                 {
-                    InvokePropertyChange("Price");
+                    //InvokePropertyChange("Price");
                     return .62;
                 }
                 if (Size == Size.Medium)
                 {
-                    InvokePropertyChange("Price");
+                    //InvokePropertyChange("Price");
                     return .87;
                 }
                 else
                 {
-                    InvokePropertyChange("Price");
+                    //InvokePropertyChange("Price");
                     return 1.01;
                 }
             }
@@ -85,6 +101,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 ice = value;
                 InvokePropertyChange("Ice");
+                InvokePropertyChange("SpecialInstructions");
             }
         }
         /// <summary>
@@ -97,7 +114,7 @@ namespace BleakwindBuffet.Data.Drinks
                 List<string> specialInstructions = new List<string>();
                 if (Ice) 
                 {
-                    InvokePropertyChange("Special Instructions");
+                    
                     specialInstructions.Add("Add ice");
                 } 
                 return specialInstructions;

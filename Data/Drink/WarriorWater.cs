@@ -13,7 +13,20 @@ namespace BleakwindBuffet.Data.Drinks
 {
     public class WarriorWater : Drink, INotifyPropertyChanged
     {
-        public override event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
+        private Size size = Size.Small;
+        /// <summary>
+        /// Size of the drink
+        /// </summary>
+        public Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
         /// <summary>
         /// Invokes the property changed event handler for a property
         /// </summary>
