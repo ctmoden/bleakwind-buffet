@@ -87,7 +87,7 @@ namespace BleakwindBuffet.Data.Drinks
                 }
             }
         }
-        private bool ice = false;
+        private bool ice = true;
         /// <summary>
         /// Ice property for the drink
         /// </summary>
@@ -111,7 +111,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (!Ice)
                 {
                     InvokePropertyChange("Special Instructions");
-                    specialInstructions.Add("Add ice");
+                    specialInstructions.Add("Hold ice");
                 }
                 return specialInstructions;
             }

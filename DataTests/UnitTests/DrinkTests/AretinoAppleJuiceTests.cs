@@ -9,6 +9,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
+using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -27,6 +28,43 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.PropertyChanged(AJ, "Ice", () =>
             {
                 AJ.Ice = false;
+            });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            AretinoAppleJuice AJ = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(AJ, "Size", () =>
+            {
+                AJ.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(AJ, "Size", () =>
+            {
+                AJ.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(AJ, "Size", () =>
+            {
+                AJ.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingPriceNotifiesPriceProperty()
+        {
+            AretinoAppleJuice AJ = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(AJ, "Price", () =>
+            {
+                AJ.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(AJ, "Price", () =>
+            {
+                AJ.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(AJ, "Price", () =>
+            {
+                AJ.Size = Size.Large;
             });
         }
 

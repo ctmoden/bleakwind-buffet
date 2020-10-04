@@ -17,7 +17,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// </summary>
     public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
-        public virtual event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
         private Size size = Size.Small;
         /// <summary>
         /// Size of the drink
