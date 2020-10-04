@@ -9,11 +9,102 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class MarkarthMilkTests
     {
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            MarkarthMilk milk = new MarkarthMilk();
+
+            Assert.PropertyChanged(milk, "Ice", () =>
+            {
+                milk.Ice = true;
+            });
+
+            Assert.PropertyChanged(milk, "Ice", () =>
+            {
+                milk.Ice = false;
+            });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            MarkarthMilk milk = new MarkarthMilk();
+
+            Assert.PropertyChanged(milk, "Size", () =>
+            {
+                milk.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(milk, "Size", () =>
+            {
+                milk.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(milk, "Size", () =>
+            {
+                milk.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingPriceNotifiesPriceProperty()
+        {
+            MarkarthMilk milk = new MarkarthMilk();
+
+            Assert.PropertyChanged(milk, "Price", () =>
+            {
+                milk.Size = Size.Small;
+            });
+            Assert.PropertyChanged(milk, "Price", () =>
+            {
+                milk.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(milk, "Price", () =>
+            {
+                milk.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingCaloriesNotifiesCaloriesProperty()
+        {
+            MarkarthMilk milk = new MarkarthMilk();
+
+            Assert.PropertyChanged(milk, "Calories", () =>
+            {
+                milk.Size = Size.Small;
+            });
+            Assert.PropertyChanged(milk, "Calories", () =>
+            {
+                milk.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(milk, "Calories", () =>
+            {
+                milk.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
+        {
+            MarkarthMilk milk = new MarkarthMilk();
+            Assert.PropertyChanged(milk, "Special Instructions", () =>
+            {
+                milk.Ice = true;
+            });
+            Assert.PropertyChanged(milk, "Special Instructions", () =>
+            {
+                milk.Ice = false;
+            });
+
+        }
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            AretinoAppleJuice AJ = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(AJ);
+        }
         [Fact]
         public void ShouldBeAnIorderable()
         {

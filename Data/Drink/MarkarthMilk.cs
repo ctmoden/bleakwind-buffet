@@ -24,7 +24,9 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                InvokePropertyChange("Size");
+                InvokePropertyChange("Calories");
+                InvokePropertyChange("Price");
             }
         }
         /// <summary>
@@ -46,17 +48,17 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 if (Size == Size.Small)
                 {
-                    InvokePropertyChange("Calories");
+                    
                     return 56;
                 }
                 if (Size == Size.Medium)
                 {
-                    InvokePropertyChange("Calories");
+                    
                     return 72;
                 }
                 else
                 {
-                    InvokePropertyChange("Calories");
+                    
                     return 93;
                 }
             }
@@ -70,17 +72,17 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 if (Size == Size.Small)
                 {
-                    InvokePropertyChange("Price");
+                    
                     return 1.05;
                 }
                 if (Size == Size.Medium)
                 {
-                    InvokePropertyChange("Price");
+                    
                     return 1.11;
                 }
                 else
                 {
-                    InvokePropertyChange("Price");
+                    
                     return 1.22;
                 }
             }
@@ -96,6 +98,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 ice = value;
                 InvokePropertyChange("Ice");
+                InvokePropertyChange("Special Instructions");
             }
         }
         /// <summary>
@@ -108,7 +111,7 @@ namespace BleakwindBuffet.Data.Drinks
                 List<string> specialInstructions = new List<string>();
                 if (Ice)
                 {
-                    InvokePropertyChange("Special Instructions");
+                    
                     specialInstructions.Add("Add ice");
                 }
                 return specialInstructions;
