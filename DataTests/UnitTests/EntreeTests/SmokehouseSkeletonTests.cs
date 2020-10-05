@@ -8,11 +8,70 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class SmokehouseSkeletonTests
     {
+        [Fact]
+        public void ChangingSausageNotifiesSausageProperty()
+        {
+            SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
+            Assert.PropertyChanged(skeleton, "SausageLink", () =>
+            {
+                skeleton.SausageLink = true;
+            });
+            Assert.PropertyChanged(skeleton, "SausageLink", () =>
+            {
+                skeleton.SausageLink = false;
+            });
+        }
+        [Fact]
+        public void ChangingEggNotifiesEggProperty()
+        {
+            SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
+            Assert.PropertyChanged(skeleton, "Egg", () =>
+            {
+                skeleton.Egg = true;
+            });
+            Assert.PropertyChanged(skeleton, "Egg", () =>
+            {
+                skeleton.Egg = false;
+            });
+        }
+        [Fact]
+        public void ChangingHashBrownsNotifiesHashBrownsProperty()
+        {
+            SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
+            Assert.PropertyChanged(skeleton, "HashBrowns", () =>
+            {
+                skeleton.HashBrowns = true;
+            });
+            Assert.PropertyChanged(skeleton, "HashBrowns", () =>
+            {
+                skeleton.HashBrowns = false;
+            });
+        }
+        [Fact]
+        public void ChangingPancakeNotifiesPancakeProperty()
+        {
+            SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
+            Assert.PropertyChanged(skeleton, "Pancake", () =>
+            {
+                skeleton.Pancake = true;
+            });
+            Assert.PropertyChanged(skeleton, "Pancake", () =>
+            {
+                skeleton.Pancake = false;
+            });
+        }
+        [Fact]
+        public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
+        {
+            SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
+
+        }
         [Fact]
         public void ShouldBeAnIorderable()
         {
