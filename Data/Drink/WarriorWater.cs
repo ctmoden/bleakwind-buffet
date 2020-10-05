@@ -24,7 +24,7 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                InvokePropertyChange("Size");
             }
         }
         /// <summary>
@@ -54,6 +54,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 ice = value;
                 InvokePropertyChange("Ice");
+                InvokePropertyChange("Special Instructions");
             }
         }
         private bool lemon = false;
@@ -67,6 +68,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 lemon = value;
                 InvokePropertyChange("Lemon");
+                InvokePropertyChange("Special Instructions");
             }
         }
         /// <summary>
@@ -79,12 +81,12 @@ namespace BleakwindBuffet.Data.Drinks
                 List<string> specialInstructions = new List<string>();
                 if (!Ice)
                 {
-                    InvokePropertyChange("Special Instructions");
+                    
                     specialInstructions.Add("Hold ice");
                 }
                 if (Lemon)
                 {
-                    InvokePropertyChange("Special Instructions");
+                    
                     specialInstructions.Add("Add lemon");
                 }
                 return specialInstructions;
