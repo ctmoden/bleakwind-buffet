@@ -9,6 +9,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
 using Microsoft.VisualStudio.TestPlatform.Common.Interfaces;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -26,6 +27,55 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             {
                 poacher.Sirloin = false;
             });
+        }
+        [Fact]
+        public void ChangingOnionNotifiesOnionProperty()
+        {
+            PhillyPoacher poacher = new PhillyPoacher();
+            Assert.PropertyChanged(poacher, "Onion", () =>
+            {
+                poacher.Onion = true;
+            });
+            Assert.PropertyChanged(poacher, "Onion", () =>
+            {
+                poacher.Onion = false;
+            });
+        }
+        [Fact]
+        public void ChangingRollNotifiesRollProperty()
+        {
+            PhillyPoacher poacher = new PhillyPoacher();
+            Assert.PropertyChanged(poacher, "Roll", () =>
+            {
+                poacher.Roll = true;
+            });
+            Assert.PropertyChanged(poacher, "Roll", () =>
+            {
+                poacher.Roll = false;
+            });
+        }
+        [Fact]
+        public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
+        {
+            PhillyPoacher poacher = new PhillyPoacher();
+            Assert.PropertyChanged(poacher, "Special Instructions", () =>
+            {
+                poacher.Sirloin = false;
+            });
+            Assert.PropertyChanged(poacher, "Special Instructions", () =>
+            {
+                poacher.Onion= false;
+            });
+            Assert.PropertyChanged(poacher, "Special Instructions", () =>
+            {
+                poacher.Roll = false;
+            });
+        }
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            PhillyPoacher poacher = new PhillyPoacher();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(poacher);
         }
         [Fact]
         public void ShouldBeAnIorderable()
