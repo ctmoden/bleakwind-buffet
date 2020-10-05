@@ -42,6 +42,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 broccoli = value;
                 InvokePropertyChange("Broccoli");
+                if (!broccoli) InvokePropertyChange("Special Instructions");
             }
         }
         private bool mushrooms = true;
@@ -55,6 +56,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 mushrooms = value;
                 InvokePropertyChange("Mushrooms");
+                if(!mushrooms) InvokePropertyChange("Special Instructions");
             }
         }
         private bool tomato = true;
@@ -68,6 +70,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 tomato = value;
                 InvokePropertyChange("Tomato");
+                if(!tomato) InvokePropertyChange("Special Instructions");
             }
         }
         private bool cheddar = true;
@@ -81,6 +84,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 cheddar = value;
                 InvokePropertyChange("Cheddar");
+                if(!cheddar) InvokePropertyChange("Special Instructions");
             }
         }
         /// <summary>
@@ -94,22 +98,22 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!Broccoli)
                 {
                     specialInstructions.Add("Hold broccoli");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 if (!Mushrooms)
                 {
                     specialInstructions.Add("Hold mushrooms");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 if (!Tomato)
                 {
                     specialInstructions.Add("Hold tomato");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 if (!Cheddar)
                 {
                     specialInstructions.Add("Hold cheddar");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 return specialInstructions;
             }

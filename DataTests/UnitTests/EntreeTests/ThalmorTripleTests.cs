@@ -8,11 +8,199 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class ThalmorTripleTests
     {
+        [Fact]
+        public void ChangingBunNotifiesBunProperty()
+        {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.PropertyChanged(triple, "Bun", () =>
+            {
+                triple.Bun = true;
+            });
+            Assert.PropertyChanged(triple, "Bun", () =>
+            {
+                triple.Bun = false;
+            });
+        }
+        [Fact]
+        public void ChangingKetchupNotifiesKetchupProperty()
+        {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.PropertyChanged(triple, "Ketchup", () =>
+            {
+                triple.Ketchup = true;
+            });
+            Assert.PropertyChanged(triple, "Ketchup", () =>
+            {
+                triple.Ketchup = false;
+            });
+        }
+        [Fact]
+        public void ChangingMustardNotifiesMustardProperty()
+        {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.PropertyChanged(triple, "Mustard", () =>
+            {
+                triple.Mustard = true;
+            });
+            Assert.PropertyChanged(triple, "Mustard", () =>
+            {
+                triple.Mustard = false;
+            });
+        }
+        [Fact]
+        public void ChangingPickleNotifiesPickleProperty()
+        {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.PropertyChanged(triple, "Pickle", () =>
+            {
+                triple.Pickle = true;
+            });
+            Assert.PropertyChanged(triple, "Pickle", () =>
+            {
+                triple.Pickle = false;
+            });
+        }
+        [Fact]
+        public void ChangingCheeseNotifiesCheeseProperty()
+        {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.PropertyChanged(triple, "Cheese", () =>
+            {
+                triple.Cheese = true;
+            });
+            Assert.PropertyChanged(triple, "Cheese", () =>
+            {
+                triple.Cheese = false;
+            });
+        }
+        [Fact]
+        public void ChangingTomatoNotifiesTomatoProperty()
+        {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.PropertyChanged(triple, "Tomato", () =>
+            {
+                triple.Tomato = true;
+            });
+            Assert.PropertyChanged(triple, "Tomato", () =>
+            {
+                triple.Tomato = false;
+            });
+        }
+        [Fact]
+        public void ChangingLettuceNotifiesLettuceProperty()
+        {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.PropertyChanged(triple, "Lettuce", () =>
+            {
+                triple.Lettuce = true;
+            });
+            Assert.PropertyChanged(triple, "Lettuce", () =>
+            {
+                triple.Lettuce = false;
+            });
+        }
+        [Fact]
+        public void ChangingMayoNotifiesMayoProperty()
+        {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.PropertyChanged(triple, "Mayo", () =>
+            {
+                triple.Mayo = true;
+            });
+            Assert.PropertyChanged(triple, "Mayo", () =>
+            {
+                triple.Mayo = false;
+            });
+        }
+        [Fact]
+        public void ChangingBaconNotifiesBaconProperty()
+        {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.PropertyChanged(triple, "Bacon", () =>
+            {
+                triple.Bacon = true;
+            });
+            Assert.PropertyChanged(triple, "Bacon", () =>
+            {
+                triple.Bacon = false;
+            });
+        }
+        [Fact]
+        public void ChangingEggNotifiesEggProperty()
+        {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.PropertyChanged(triple, "Egg", () =>
+            {
+                triple.Egg = true;
+            });
+            Assert.PropertyChanged(triple, "Egg", () =>
+            {
+                triple.Egg = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
+        {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            {
+                triple.Bun = false;
+            });
+            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            {
+                triple.Ketchup = false;
+            });
+            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            {
+                triple.Ketchup = false;
+            });
+            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            {
+                triple.Mustard = false;
+            });
+            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            {
+                triple.Pickle = false;
+            });
+            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            {
+                triple.Cheese = false;
+            });
+            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            {
+                triple.Tomato = false;
+            });
+            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            {
+                triple.Lettuce = false;
+            });
+            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            {
+                triple.Mayo = false;
+            });
+            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            {
+                triple.Bacon = false;
+            });
+            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            {
+                triple.Egg = false;
+            });
+
+        }
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            ThalmorTriple triple = new ThalmorTriple();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(triple);
+        }
         [Fact]
         public void ShouldBeAnIorderable()
         {

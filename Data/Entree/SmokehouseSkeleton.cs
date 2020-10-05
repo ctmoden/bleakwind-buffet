@@ -41,6 +41,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 sausageLink = value;
                 InvokePropertyChange("SausageLink");
+                if (!sausageLink) InvokePropertyChange("Special Instructions");
             }
         }
         private bool egg = true;
@@ -54,6 +55,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 egg = value;
                 InvokePropertyChange("Egg");
+                if(!egg) InvokePropertyChange("Special Instructions");
             }
         }
         private bool hashBrowns = true;
@@ -67,6 +69,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 hashBrowns = value;
                 InvokePropertyChange("HashBrowns");
+                if(!hashBrowns) InvokePropertyChange("Special Instructions");
             }
         }
         private bool pancake = true;
@@ -80,6 +83,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 pancake = value;
                 InvokePropertyChange("Pancake");
+                if(!pancake) InvokePropertyChange("Special Instructions");
             }
         }
 
@@ -95,22 +99,22 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!SausageLink)
                 {
                     specialInstructions.Add("Hold sausage");
-                    InvokePropertyChange("SpecialInstructions");
+                    
                 }
                 if (!Egg)
                 {
                     specialInstructions.Add("Hold eggs");
-                    InvokePropertyChange("SpecialInstructions");
+                    
                 }
                 if (!HashBrowns)
                 {
                     specialInstructions.Add("Hold hash browns");
-                    InvokePropertyChange("SpecialInstructions");
+                    
                 }
                 if (!Pancake)
                 {
                     specialInstructions.Add("Hold pancakes");
-                    InvokePropertyChange("SpecialInstructions");
+                    
                 }
                     return specialInstructions;
             }
