@@ -70,7 +70,29 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
         {
             SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
+            Assert.PropertyChanged(skeleton, "Special Instructions", () =>
+            {
+                skeleton.SausageLink = false;
+            });
+            Assert.PropertyChanged(skeleton, "Special Instructions", () =>
+            {
+                skeleton.Egg = false;
+            });
+            Assert.PropertyChanged(skeleton, "Special Instructions", () =>
+            {
+                skeleton.HashBrowns = false;
+            });
+            Assert.PropertyChanged(skeleton, "Special Instructions", () =>
+            {
+                skeleton.Pancake = false;
+            });
 
+        }
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(skeleton);
         }
         [Fact]
         public void ShouldBeAnIorderable()

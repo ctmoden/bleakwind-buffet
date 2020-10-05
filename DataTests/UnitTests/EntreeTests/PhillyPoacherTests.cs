@@ -15,6 +15,19 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class PhillyPoacherTests
     {
         [Fact]
+        public void ChangingSirloinNotifiesSirloinProperty()
+        {
+            PhillyPoacher poacher = new PhillyPoacher();
+            Assert.PropertyChanged(poacher, "Sirloin", () =>
+            {
+                poacher.Sirloin = true;
+            });
+            Assert.PropertyChanged(poacher, "Sirloin", () =>
+            {
+                poacher.Sirloin = false;
+            });
+        }
+        [Fact]
         public void ShouldBeAnIorderable()
         {
             PhillyPoacher philly = new PhillyPoacher();

@@ -41,6 +41,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 sirloin = value;
                 InvokePropertyChange("Sirloin");
+                if (!sirloin) InvokePropertyChange("Special Instructions");
             }
         }
         private bool onion = true;
@@ -54,6 +55,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 onion = value;
                 InvokePropertyChange("Onion");
+                if(!onion) InvokePropertyChange("Special Instructions");
             }
         }
         private bool roll = true;
@@ -67,6 +69,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 roll = value;
                 InvokePropertyChange("Roll");
+                if(!roll) InvokePropertyChange("Special Instructions");
             }
         }
         /// <summary>
@@ -80,17 +83,17 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!Sirloin)
                 {
                     specialInstructions.Add("Hold sirloin");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 if (!Onion)
                 {
                     specialInstructions.Add("Hold onion");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 if (!Roll)
                 {
                     specialInstructions.Add("Hold roll");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 return specialInstructions;
             }
