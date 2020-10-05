@@ -9,11 +9,69 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class DragonbornWaffleFriesTests
     {
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            DragonbornWaffleFries fries = new DragonbornWaffleFries();
+            Assert.PropertyChanged(fries, "Size", () =>
+            {
+                fries.Size = Size.Small;
+            });
+            Assert.PropertyChanged(fries, "Size", () =>
+            {
+                fries.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(fries, "Size", () =>
+            {
+                fries.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingCaloriesNotifiesCaloriesProperty()
+        {
+            DragonbornWaffleFries fries = new DragonbornWaffleFries();
+            Assert.PropertyChanged(fries, "Calories", () =>
+            {
+                fries.Size = Size.Small;
+            });
+            Assert.PropertyChanged(fries, "Calories", () =>
+            {
+                fries.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(fries, "Calories", () =>
+            {
+                fries.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingPriceNotifiesPriceProperty()
+        {
+            DragonbornWaffleFries fries = new DragonbornWaffleFries();
+            Assert.PropertyChanged(fries, "Price", () =>
+            {
+                fries.Size = Size.Small;
+            });
+            Assert.PropertyChanged(fries, "Price", () =>
+            {
+                fries.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(fries, "Price", () =>
+            {
+                fries.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            DragonbornWaffleFries fries = new DragonbornWaffleFries();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(fries);
+        }
         [Fact]
         public void ShouldBeAnIorderable()
         {

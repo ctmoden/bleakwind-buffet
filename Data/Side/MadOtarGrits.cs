@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Sides
 {
     public class MadOtarGrits : Side, INotifyPropertyChanged
     {
-        public override event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// Invokes the property changed event handler for a property
         /// </summary>
@@ -22,6 +22,21 @@ namespace BleakwindBuffet.Data.Sides
         {
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        private Size size = Size.Small;
+        /// <summary>
+        /// Size of the drink
+        /// </summary>
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                InvokePropertyChange("Size");
+                InvokePropertyChange("Calories");
+                InvokePropertyChange("Price");
+            }
         }
 
         /// <summary>

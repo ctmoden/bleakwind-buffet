@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Sides
 {
     public class DragonbornWaffleFries : Side, INotifyPropertyChanged
     {
-        public override event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// Invokes the property changed event handler for a property
         /// </summary>
@@ -22,6 +22,21 @@ namespace BleakwindBuffet.Data.Sides
         {
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        private Size size = Size.Small;
+        /// <summary>
+        /// Size of the drink
+        /// </summary>
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                InvokePropertyChange("Size");
+                InvokePropertyChange("Calories");
+                InvokePropertyChange("Price");
+            }
         }
         /// <summary>
         /// Calories Property, changes based on side size
@@ -32,17 +47,17 @@ namespace BleakwindBuffet.Data.Sides
             {
                 if (Size == Size.Small)
                 {
-                    InvokePropertyChange("Calories");
+                    
                     return 77;
                 }
                 if (Size == Size.Medium)
                 {
-                    InvokePropertyChange("Calories");
+                    
                     return 89;
                 }
                 else
                 {
-                    InvokePropertyChange("Calories");
+                    
                     return 100;
                 }
             }
@@ -56,17 +71,17 @@ namespace BleakwindBuffet.Data.Sides
             {
                 if (Size == Size.Small)
                 {
-                    InvokePropertyChange("Price");
+                    
                     return .42;
                 }
                 if (Size == Size.Medium)
                 {
-                    InvokePropertyChange("Price");
+                    
                     return .76;
                 }
                 else
                 {
-                    InvokePropertyChange("Price");
+                    
                     return .96;
                 }
             }

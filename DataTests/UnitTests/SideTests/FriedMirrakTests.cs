@@ -9,11 +9,69 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class FriedMiraakTests
     {
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            FriedMiraak miraak = new FriedMiraak();
+            Assert.PropertyChanged(miraak, "Size", () =>
+            {
+                miraak.Size = Size.Small;
+            });
+            Assert.PropertyChanged(miraak, "Size", () =>
+            {
+                miraak.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(miraak, "Size", () =>
+            {
+                miraak.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingCaloriesNotifiesCaloriesProperty()
+        {
+            FriedMiraak miraak = new FriedMiraak();
+            Assert.PropertyChanged(miraak, "Calories", () =>
+            {
+                miraak.Size = Size.Small;
+            });
+            Assert.PropertyChanged(miraak, "Calories", () =>
+            {
+                miraak.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(miraak, "Calories", () =>
+            {
+                miraak.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingPriceNotifiesPriceProperty()
+        {
+            FriedMiraak miraak = new FriedMiraak();
+            Assert.PropertyChanged(miraak, "Price", () =>
+            {
+                miraak.Size = Size.Small;
+            });
+            Assert.PropertyChanged(miraak, "Price", () =>
+            {
+                miraak.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(miraak, "Price", () =>
+            {
+                miraak.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            FriedMiraak miraak = new FriedMiraak();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(miraak);
+        }
         [Fact]
         public void ShouldBeAnIorderable()
         {

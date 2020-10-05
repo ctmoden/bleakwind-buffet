@@ -15,23 +15,9 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// Base class for all sides
     /// </summary>
-    public abstract class Side : IOrderItem, INotifyPropertyChanged
+    public abstract class Side : IOrderItem
     {
-        public virtual event PropertyChangedEventHandler PropertyChanged;
-        private Size size = Size.Small;
-        /// <summary>
-        /// Size of the drink
-        /// </summary>
-        public virtual Size Size
-        {
-            get => size;
-            set
-            {
-                size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-            }
-        }
-        
+        public abstract Size Size { get; set; }
         /// <summary>
         /// Price property
         /// </summary>
