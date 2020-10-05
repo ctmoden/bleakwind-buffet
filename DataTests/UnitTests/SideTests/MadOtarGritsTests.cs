@@ -15,6 +15,57 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
     public class MadOtarGritsTests
     {
         [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            MadOtarGrits grits = new MadOtarGrits();
+            Assert.PropertyChanged(grits, "Size", () =>
+            {
+                grits.Size = Size.Small;
+            });
+            Assert.PropertyChanged(grits, "Size", () =>
+            {
+                grits.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(grits, "Size", () =>
+            {
+                grits.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingCaloriesNotifiesCaloriesProperty()
+        {
+            MadOtarGrits grits = new MadOtarGrits();
+            Assert.PropertyChanged(grits, "Calories", () =>
+            {
+                grits.Size = Size.Small;
+            });
+            Assert.PropertyChanged(grits, "Calories", () =>
+            {
+                grits.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(grits, "Calories", () =>
+            {
+                grits.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingPriceNotifiesPriceProperty()
+        {
+            MadOtarGrits grits = new MadOtarGrits();
+            Assert.PropertyChanged(grits, "Price", () =>
+            {
+                grits.Size = Size.Small;
+            });
+            Assert.PropertyChanged(grits, "Price", () =>
+            {
+                grits.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(grits, "Price", () =>
+            {
+                grits.Size = Size.Large;
+            });
+        }
+        [Fact]
         public void ShouldBeAnIorderable()
         {
             MadOtarGrits grits = new MadOtarGrits();
