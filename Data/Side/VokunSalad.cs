@@ -49,17 +49,17 @@ namespace BleakwindBuffet.Data.Sides
             {
                 if (Size == Size.Small)
                 {
-                    InvokePropertyChange("Calories");
+                    
                     return 41;
                 }
                 if (Size == Size.Medium)
                 {
-                    InvokePropertyChange("Calories");
+                    
                     return 52;
                 }
                 else
                 {
-                    InvokePropertyChange("Calories");
+                    
                     return 73;
                 }
             }
@@ -73,17 +73,17 @@ namespace BleakwindBuffet.Data.Sides
             {
                 if (Size == Size.Small)
                 {
-                    InvokePropertyChange("Price");
+                    
                     return .93;
                 }
                 if (Size == Size.Medium)
                 {
-                    InvokePropertyChange("Price");
+                    
                     return 1.28;
                 }
                 else
                 {
-                    InvokePropertyChange("Price");
+                    
                     return 1.82;
                 }
             }

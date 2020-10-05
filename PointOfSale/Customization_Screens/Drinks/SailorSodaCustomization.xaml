@@ -27,6 +27,7 @@
                 <RadioButton IsChecked="{Binding Path=Lemon}" Margin="10" Content="Lemon" FontSize="40" FontWeight="Bold"/>
                 <RadioButton IsChecked="{Binding Path=Peach}" Margin="10" Content="Peach" FontSize="40" FontWeight="Bold"/>
                 <RadioButton IsChecked="{Binding Path=Watermelon}" Margin="10" Content="Watermelon" FontSize="40" FontWeight="Bold"/>
+                <CheckBox IsChecked="{Binding Path=Ice}" Margin="10" Content="Ice" FontSize="40" FontWeight="Bold"/>
             </StackPanel>
             <TextBlock Grid.Column="1" Grid.Row="0" FontSize="60" FontWeight="Bold" FontStyle="Italic" TextAlignment="Center">
                 Size

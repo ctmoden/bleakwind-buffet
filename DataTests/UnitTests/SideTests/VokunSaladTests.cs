@@ -9,11 +9,69 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class VokunSaladTests
     {
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            VokunSalad salad = new VokunSalad();
+            Assert.PropertyChanged(salad, "Size", () =>
+            {
+                salad.Size = Size.Small;
+            });
+            Assert.PropertyChanged(salad, "Size", () =>
+            {
+                salad.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(salad, "Size", () =>
+            {
+                salad.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingCaloriesNotifiesCaloriesProperty()
+        {
+            VokunSalad salad = new VokunSalad();
+            Assert.PropertyChanged(salad, "Calories", () =>
+            {
+                salad.Size = Size.Small;
+            });
+            Assert.PropertyChanged(salad, "Calories", () =>
+            {
+                salad.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(salad, "Calories", () =>
+            {
+                salad.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingPriceNotifiesPriceroperty()
+        {
+            VokunSalad salad = new VokunSalad();
+            Assert.PropertyChanged(salad, "Price", () =>
+            {
+                salad.Size = Size.Small;
+            });
+            Assert.PropertyChanged(salad, "Price", () =>
+            {
+                salad.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(salad, "Price", () =>
+            {
+                salad.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            VokunSalad salad = new VokunSalad();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(salad);
+        }
         [Fact]
         public void ShouldBeAnIorderable()
         {
