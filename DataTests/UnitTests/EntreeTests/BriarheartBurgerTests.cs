@@ -11,10 +11,112 @@ using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
+using System.ComponentModel;
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class BriarheartBurgerTests
     {
+        [Fact]
+        public void ChangingBunNotifiesBunProperty()
+        {
+            BriarheartBurger burger = new BriarheartBurger();
+            Assert.PropertyChanged(burger, "Bun", () =>
+            {
+                burger.Bun = true;
+            });
+            Assert.PropertyChanged(burger, "Bun", () =>
+            {
+                burger.Bun = false;
+            });
+        }
+        [Fact]
+        public void ChangingKetchupNotifiesKetchupProperty()
+        {
+            BriarheartBurger burger = new BriarheartBurger();
+            Assert.PropertyChanged(burger, "Ketchup", () =>
+            {
+                burger.Ketchup = true;
+            });
+            Assert.PropertyChanged(burger, "Ketchup", () =>
+            {
+                burger.Ketchup = false;
+            });
+        }
+        [Fact]
+        public void ChangingMustardNotifiesMustardProperty()
+        {
+            BriarheartBurger burger = new BriarheartBurger();
+            Assert.PropertyChanged(burger, "Mustard", () =>
+            {
+                burger.Mustard = true;
+            });
+            Assert.PropertyChanged(burger, "Mustard", () =>
+            {
+                burger.Mustard = false;
+            });
+        }
+        [Fact]
+        public void ChangingPickleNotifiesPickleProperty()
+        {
+            BriarheartBurger burger = new BriarheartBurger();
+            Assert.PropertyChanged(burger, "Pickle", () =>
+            {
+                burger.Pickle = true;
+            });
+            Assert.PropertyChanged(burger, "Pickle", () =>
+            {
+                burger.Pickle = false;
+            });
+        }
+        [Fact]
+        public void ChangingCheeseNotifiesCheeseProperty()
+        {
+            BriarheartBurger burger = new BriarheartBurger();
+            Assert.PropertyChanged(burger, "Cheese", () =>
+            {
+                burger.Cheese = true;
+            });
+            Assert.PropertyChanged(burger, "Cheese", () =>
+            {
+                burger.Cheese = false;
+            });
+        }
+        [Fact]
+        public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
+        {
+            BriarheartBurger burger = new BriarheartBurger();
+            Assert.PropertyChanged(burger, "Special Instructions", () =>
+            {
+                burger.Bun = false;
+            });
+            Assert.PropertyChanged(burger, "Special Instructions", () =>
+            {
+                burger.Ketchup = false;
+            });
+            Assert.PropertyChanged(burger, "Special Instructions", () =>
+            {
+                burger.Ketchup = false;
+            });
+            Assert.PropertyChanged(burger, "Special Instructions", () =>
+            {
+                burger.Mustard = false;
+            });
+            Assert.PropertyChanged(burger, "Special Instructions", () =>
+            {
+                burger.Pickle = false;
+            });
+            Assert.PropertyChanged(burger, "Special Instructions", () =>
+            {
+                burger.Cheese = false;
+            });
+
+        }
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            BriarheartBurger b = new BriarheartBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(b);
+        }
         [Fact]
         public void ShouldBeAnIorderable()
         {

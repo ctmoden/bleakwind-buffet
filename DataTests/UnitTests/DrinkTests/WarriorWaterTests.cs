@@ -10,11 +10,80 @@ using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
 using System.Diagnostics.Contracts;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class WarriorWaterTests
     {
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            WarriorWater water = new WarriorWater();
+
+            Assert.PropertyChanged(water, "Ice", () =>
+            {
+                water.Ice = true;
+            });
+
+            Assert.PropertyChanged(water, "Ice", () =>
+            {
+                water.Ice = false;
+            });
+        }
+        [Fact]
+        public void ChangingLemonNotifieslemonProperty()
+        {
+            WarriorWater water = new WarriorWater();
+            Assert.PropertyChanged(water, "Lemon", () =>
+            {
+                water.Lemon = true;
+            });
+
+            Assert.PropertyChanged(water, "Lemon", () =>
+            {
+                water.Lemon = false;
+            });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            WarriorWater water = new WarriorWater();
+
+            Assert.PropertyChanged(water, "Size", () =>
+            {
+                water.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(water, "Size", () =>
+            {
+                water.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(water, "Size", () =>
+            {
+                water.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
+        {
+            WarriorWater water = new WarriorWater();
+            Assert.PropertyChanged(water, "Special Instructions", () =>
+            {
+                water.Ice = false;
+            });
+            Assert.PropertyChanged(water, "Special Instructions", () =>
+            {
+                water.Lemon = true;
+            });
+
+        }
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            WarriorWater water = new WarriorWater();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(water);
+        }
         [Fact]
         public void ShouldBeAnIorderable()
         {

@@ -43,6 +43,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 bun = value;
                 InvokePropertyChange("Bun");
+                if (!bun) InvokePropertyChange("Special Instructions");
             }
         }
         private bool ketchup = true;
@@ -56,6 +57,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 ketchup = value;
                 InvokePropertyChange("Ketchup");
+                if(!ketchup) InvokePropertyChange("Special Instructions");
             }
         }
         private bool mustard = true;
@@ -69,6 +71,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 mustard = value;
                 InvokePropertyChange("Mustard");
+                if(!mustard) InvokePropertyChange("Special Instructions");
             }
         }
         private bool pickle = true;
@@ -82,6 +85,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 pickle = value;
                 InvokePropertyChange("Pickle");
+                if (!pickle) InvokePropertyChange("Special Instructions");
             }
         }
         private bool cheese = true;
@@ -95,6 +99,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 cheese = value;
                 InvokePropertyChange("Cheese");
+                if(!cheese) InvokePropertyChange("Special Instructions");
             }
         }
         /// <summary>
@@ -109,27 +114,27 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!Bun)
                 {
                     specialInstructions.Add("Hold bun");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 if (!Ketchup)
                 {
                     specialInstructions.Add("Hold ketchup");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 if (!Mustard)
                 {
                     specialInstructions.Add("Hold mustard");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 if (!Pickle)
                 {
                     specialInstructions.Add("Hold pickle");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 if (!Cheese)
                 {
                     specialInstructions.Add("Hold cheese");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 return specialInstructions;
             }
