@@ -41,6 +41,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 bun = value;
                 InvokePropertyChange("Bun");
+                if (!bun) InvokePropertyChange("Special Instructions");
             }
         }
         private bool ketchup = true;
@@ -54,6 +55,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 ketchup = value;
                 InvokePropertyChange("Ketchup");
+                if (!ketchup) InvokePropertyChange("Special Instructions");
             }
         }
         private bool mustard = true;
@@ -67,6 +69,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 mustard = value;
                 InvokePropertyChange("Mustard");
+                if (!mustard) InvokePropertyChange("Special Instructions");
             }
         }
         private bool pickle = true;
@@ -80,6 +83,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 pickle = value;
                 InvokePropertyChange("Pickle");
+                if (!pickle) InvokePropertyChange("Special Instructions");
             }
         }
         private bool cheese = true;
@@ -93,6 +97,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 cheese = value;
                 InvokePropertyChange("Cheese");
+                if (!cheese) InvokePropertyChange("Special Instructions");
             }
         }
         private bool tomato = true;
@@ -106,6 +111,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 tomato = value;
                 InvokePropertyChange("Tomato");
+                if (!tomato) InvokePropertyChange("Special Instructions");
             }
         }
         private bool lettuce = true;
@@ -119,6 +125,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 lettuce = value;
                 InvokePropertyChange("Lettuce");
+                if (!lettuce) InvokePropertyChange("Special Instructions");
             }
         }
         private bool mayo = true;
@@ -132,6 +139,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 mayo = value;
                 InvokePropertyChange("Mayo");
+                if (!mayo) InvokePropertyChange("Special Instructions");
             }
         }
         private bool bacon = true;
@@ -144,7 +152,7 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 bacon = value;
-                InvokePropertyChange("Bacon");
+                if(!bacon) InvokePropertyChange("Bacon");
             }
 
         }

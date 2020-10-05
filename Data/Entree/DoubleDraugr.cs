@@ -125,6 +125,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 lettuce = value;
                 InvokePropertyChange("Lettuce");
+                if(!lettuce) InvokePropertyChange("Special Instructions");
             }
         }
         private bool mayo = true;
@@ -138,6 +139,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 mayo = value;
                 InvokePropertyChange("Mayo");
+                if(!mayo) InvokePropertyChange("Special Instructions");
             }
         }
         /// <summary>
@@ -152,42 +154,42 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!Bun)
                 {
                     specialInstructions.Add("Hold bun");
-                    InvokePropertyChange("Special Instructions");
+
                 }
                 if (!Ketchup)
                 {
                     specialInstructions.Add("Hold ketchup");
-                    InvokePropertyChange("Special Instructions");
+
                 }
                 if (!Mustard)
                 {
                     specialInstructions.Add("Hold mustard");
-                    InvokePropertyChange("Special Instructions");
+
                 }
                 if (!Pickle)
                 {
                     specialInstructions.Add("Hold pickle");
-                    InvokePropertyChange("Special Instructions");
+
                 }
                 if (!Cheese)
                 {
                     specialInstructions.Add("Hold cheese");
-                    InvokePropertyChange("Special Instructions");
+
                 }
                 if (!Tomato)
                 {
                     specialInstructions.Add("Hold tomato");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 if (!Lettuce)
                 {
                     specialInstructions.Add("Hold lettuce");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 if (!Mayo)
                 {
                     specialInstructions.Add("Hold mayo");
-                    InvokePropertyChange("Special Instructions");
+                    
                 }
                 return specialInstructions;
             }
