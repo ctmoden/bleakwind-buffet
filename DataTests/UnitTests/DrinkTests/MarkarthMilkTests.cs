@@ -102,8 +102,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldImplementINotifyPropertyChanged()
         {
-            AretinoAppleJuice AJ = new AretinoAppleJuice();
-            Assert.IsAssignableFrom<INotifyPropertyChanged>(AJ);
+            MarkarthMilk milk = new MarkarthMilk();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(milk);
         }
         [Fact]
         public void ShouldBeAnIorderable()
