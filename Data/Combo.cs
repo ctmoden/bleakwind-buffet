@@ -5,13 +5,17 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Collections.Specialized;
+using System.Collections.ObjectModel;
+using BleakwindBuffet.Data.Enums;
+using System.Runtime.CompilerServices;
 
 namespace BleakwindBuffet.Data
 {
     /// <summary>
     /// Represents a combination of menu items in an order 
     /// </summary>
-    public class Combo: IOrderItem, INotifyPropertyChanged
+    public class Combo: ObservableCollection<IOrderItem>, IOrderItem, INotifyPropertyChanged 
     {
         /// <summary>
         /// Invokes the property changed event handler for a property
@@ -21,21 +25,60 @@ namespace BleakwindBuffet.Data
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        public event PropertyChangedEventHandler PropertyChanged;
+        //FIXME I was having this issue before... how the heck do I resolve it again?
+        public new  event PropertyChangedEventHandler PropertyChanged;
+        private double price = 0.0;
         /// <summary>
         /// Price property, sum of all selected menu items with a $1 discount
         /// </summary>
-        public double Price { get; }
+        public double Price
+        {
+            get
+            {
+               
+                foreach (IOrderItem item in this)
+                {
+                    price += item.Price;
+                }
+                return price;
+            }
+        }
+        //public MyEnumerator GetEnumerator();
+        private uint calories = 0;
         /// <summary>
         /// Sum of calories for the entire combo
         /// </summary>
-        public uint Calories { get; }
+        public uint Calories
+        {
+            get
+            {
+                //FIXME need to attach event listener
+                foreach (IOrderItem item in this)
+                {
+                    calories += item.Calories;
+                }
+                return calories;
+            }
+            
+        }
         /// <summary>
         /// list of special instructions for each of the added items to the combo
         /// </summary>
         public List<string> SpecialInstructions
         {
-            get;
+            get
+            {
+                List<string> specialInstructions = new List<string>();
+                foreach(IOrderItem item in this)
+                {
+                    foreach(string instruction in item.SpecialInstructions)
+                    {
+                        specialInstructions.Add($"{item.SpecialInstructions},");
+                    }
+                    
+                }
+                return specialInstructions;
+            }
         }
         private Drink drink;
         /// <summary>
