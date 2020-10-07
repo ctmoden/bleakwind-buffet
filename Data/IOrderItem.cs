@@ -6,15 +6,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Collections.Specialized;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data
 {
     /// <summary>
     /// Interface for all items available to order
     /// </summary>
-    public interface IOrderItem
+    public interface IOrderItem: INotifyPropertyChanged
     {
-         
+        
         /// <summary>
         /// Price property
         /// </summary>
