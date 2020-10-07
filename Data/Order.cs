@@ -4,6 +4,7 @@ using System.Text;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Collections.Specialized;
 
 namespace BleakwindBuffet.Data
 {
@@ -14,20 +15,47 @@ namespace BleakwindBuffet.Data
         /// </summary>
         public Order()
         {
+            CollectionChanged += CollectionChangedListener;
             Number = nextOrderNum;
             nextOrderNum++;
         }
-        private static int nextOrderNum = 1;
         /// <summary>
-        /// Invokes the property changed event handler for a property
+        /// 
         /// </summary>
-        /// <param name="propertyName">name of property that just changed</param>
-        public void InvokePropertyChange(string propertyName)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void CollectionChangedListener(object sender, NotifyCollectionChangedEventArgs e)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            switch (e.Action)
+            {
+                case NotifyCollectionChangedAction.Add:
+                    foreach(IOrderItem item in e.NewItems)
+                    {
+                        item.PropertyChanged+= CollectionItemChangedListener;//FIXME need to figure out how to get preoperty changed event into 
+                    }
+                    break;
+            }
+
         }
+        /// <summary>
+        /// listening for individual property changed events
+        /// </summary>
+        void CollectionItemChangedListener(object sender, PropertyChangedEventArgs e)
+        {
+            switch (e.PropertyName)
+            {
+                case "SubTotal":
+                    OnPropertyChanged(new PropertyChangedEventArgs("SubTotal"));
+                    break;
+                case ""
+            }
+        }
+
+
+        private static int nextOrderNum = 1;
+        
         //FIXME I was having this issue before... how the heck do I resolve it again?
-        public new event PropertyChangedEventHandler PropertyChanged;
+        
         /// <summary>
         /// 
         /// </summary>

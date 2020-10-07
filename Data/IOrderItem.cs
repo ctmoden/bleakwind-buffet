@@ -14,6 +14,7 @@ namespace BleakwindBuffet.Data
     /// </summary>
     public interface IOrderItem
     {
+         
         /// <summary>
         /// Price property
         /// </summary>
