@@ -41,7 +41,7 @@ namespace BleakwindBuffet.Data
             get
             {
                 
-                return Drink.Price + Entree.Price + Side.Price;
+                return Drink.Price + Entree.Price + Side.Price - 1.00;
             }
         }
         //public MyEnumerator GetEnumerator();
