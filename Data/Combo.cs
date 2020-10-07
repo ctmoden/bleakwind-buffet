@@ -53,13 +53,7 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-                uint calories = 0;
-                //FIXME need to attach event listener
-                foreach (IOrderItem item in this)
-                {
-                    calories += item.Calories;
-                }
-                return calories;
+                return Drink.Calories + Entree.Calories + Side.Calories;
             }
             
         }
@@ -71,14 +65,9 @@ namespace BleakwindBuffet.Data
             get
             {//list add range 
                 List<string> specialInstructions = new List<string>();
-                foreach(IOrderItem item in this)
-                {
-                    foreach(string instruction in item.SpecialInstructions)
-                    {
-                        specialInstructions.Add($"{instruction},");
-                    }
-                    
-                }
+                specialInstructions.AddRange(Drink.SpecialInstructions);
+                specialInstructions.AddRange(Entree.SpecialInstructions);
+                specialInstructions.AddRange(Side.SpecialInstructions);
                 return specialInstructions;
             }
         }
@@ -101,34 +90,47 @@ namespace BleakwindBuffet.Data
                 InvokePropertyChange("Price");
                 InvokePropertyChange("Calories");
                 InvokePropertyChange("SpecialInstructions");
+                
             }
         }
+        private Entree entree = new BriarheartBurger();
         /// <summary>
         /// Represents an entree in the combo
         /// </summary>
         public Entree Entree
         {
             //how do I know what to set it to?  Use a switch statement?
-            get => new BriarheartBurger();
+            get => entree;//treating entree as a general area, not a specific entree because we don't know what specific entre they chose
             set
             {
+                //we are now replacing old entree, get rid of old reference or else we cause a memory leak
+                entree.PropertyChanged -= PropertyChangedListener;
+                entree = value;
+                //add new listener to entree once old listener has been deleted.
+                //changes for specific item itself (size, price, special instructions, etc)
+                entree.PropertyChanged += PropertyChangedListener;//if entree changes in some specific property.  Special instructions just for now
+                
                 InvokePropertyChange("Entree");
-                InvokePropertyChange("Price");
+                InvokePropertyChange("Price");//if entree changes completely
                 InvokePropertyChange("Calories");
                 InvokePropertyChange("SpecialInstructions");
             }
         }
+        private Side side = new DragonbornWaffleFries();
         /// <summary>
         /// Represents a side in the combo
         /// </summary>
         public Side Side
         {
             //FIXME just implementing this as a filler
-            get => new DragonbornWaffleFries();
+            get => side;
             
             set
             {
-                InvokePropertyChange("Side");
+                side.PropertyChanged -= PropertyChangedListener;
+                side = value;
+                side.PropertyChanged += PropertyChangedListener;
+                InvokePropertyChange("Side"); //invoke here or as a side (side.Invoke...?)
                 InvokePropertyChange("Price");
                 InvokePropertyChange("Calories");
                 InvokePropertyChange("SpecialInstructions");
@@ -143,6 +145,7 @@ namespace BleakwindBuffet.Data
         {
             if (e.PropertyName == "Price") InvokePropertyChange("Price");
             if (e.PropertyName == "Calories") InvokePropertyChange("Calories");
+            if (e.PropertyName == "SpecialInstructions") InvokePropertyChange("SpecialInstructions");//FIXME check spacing on all of these calls
         }
         
         
