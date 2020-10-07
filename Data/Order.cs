@@ -47,7 +47,17 @@ namespace BleakwindBuffet.Data
                 case "SubTotal":
                     OnPropertyChanged(new PropertyChangedEventArgs("SubTotal"));
                     break;
-                case ""
+                case "Tax":
+                    OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
+                    break;
+                case "Total":
+                    OnPropertyChanged(new PropertyChangedEventArgs("Total"));
+                    break;
+                case "Calories":
+                    OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
+                    break;
+                default:
+                    throw new NotImplementedException("Field does not exist");
             }
         }
 
