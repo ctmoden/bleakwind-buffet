@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Drinks
 {
     public class AretinoAppleJuice : Drink, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        
 
         private Size size = Size.Small;
         /// <summary>
@@ -30,15 +30,7 @@ namespace BleakwindBuffet.Data.Drinks
                 InvokePropertyChange("Price");
             }
         }
-        /// <summary>
-        /// Invokes the property changed event handler for a property
-        /// </summary>
-        /// <param name="propertyName">name of property that just changed</param>
-        public void InvokePropertyChange(string propertyName)
-        {
-
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        
         /// <summary>
         /// Calories Property, changes based on drink size
         /// </summary>

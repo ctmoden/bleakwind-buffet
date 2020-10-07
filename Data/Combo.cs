@@ -15,19 +15,24 @@ namespace BleakwindBuffet.Data
     /// <summary>
     /// Represents a combination of menu items in an order 
     /// </summary>
-    public class Combo: ObservableCollection<IOrderItem>, IOrderItem, INotifyPropertyChanged 
+    public class Combo: IOrderItem, INotifyPropertyChanged 
     {
+        public Combo()
+        {
+            drink.PropertyChanged += PropertyChangedListener;
+            //same process for entree and side 
+        }
         /// <summary>
         /// Invokes the property changed event handler for a property
         /// </summary>
         /// <param name="propertyName">name of property that just changed</param>
         public void InvokePropertyChange(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this,new PropertyChangedEventArgs(propertyName));
         }
         //FIXME I was having this issue before... how the heck do I resolve it again?
-        public new  event PropertyChangedEventHandler PropertyChanged;
-        private double price = 0.0;
+        public event PropertyChangedEventHandler PropertyChanged;
+        
         /// <summary>
         /// Price property, sum of all selected menu items with a $1 discount
         /// </summary>
@@ -35,16 +40,12 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-               
-                foreach (IOrderItem item in this)
-                {
-                    price += item.Price;
-                }
-                return price;
+                
+                return Drink.Price + Entree.Price + Side.Price;
             }
         }
         //public MyEnumerator GetEnumerator();
-        private uint calories = 0;
+        
         /// <summary>
         /// Sum of calories for the entire combo
         /// </summary>
@@ -52,6 +53,7 @@ namespace BleakwindBuffet.Data
         {
             get
             {
+                uint calories = 0;
                 //FIXME need to attach event listener
                 foreach (IOrderItem item in this)
                 {
@@ -67,28 +69,34 @@ namespace BleakwindBuffet.Data
         public List<string> SpecialInstructions
         {
             get
-            {
+            {//list add range 
                 List<string> specialInstructions = new List<string>();
                 foreach(IOrderItem item in this)
                 {
                     foreach(string instruction in item.SpecialInstructions)
                     {
-                        specialInstructions.Add($"{item.SpecialInstructions},");
+                        specialInstructions.Add($"{instruction},");
                     }
                     
                 }
                 return specialInstructions;
             }
         }
-        private Drink drink;
+        private Drink drink = new AretinoAppleJuice();
         /// <summary>
         /// Represents a drink in the combo
         /// </summary>
         public Drink Drink
         {
-            get => new AretinoAppleJuice();
+            //FIXME just a filler for now
+            get => drink;
             set
             {
+                drink.PropertyChanged -= PropertyChangedListener;//replacing old drink with new drink
+                //will create a memory link if the old 
+                drink = value;
+                //this.Add
+                drink.PropertyChanged += PropertyChangedListener;
                 InvokePropertyChange("Drink");
                 InvokePropertyChange("Price");
                 InvokePropertyChange("Calories");
@@ -125,6 +133,16 @@ namespace BleakwindBuffet.Data
                 InvokePropertyChange("Calories");
                 InvokePropertyChange("SpecialInstructions");
             } 
+        }
+        /// <summary>
+        /// Event listener for price and calories properties
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void PropertyChangedListener(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "Price") InvokePropertyChange("Price");
+            if (e.PropertyName == "Calories") InvokePropertyChange("Calories");
         }
         
         
