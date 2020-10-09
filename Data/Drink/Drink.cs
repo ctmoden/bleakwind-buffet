@@ -45,5 +45,9 @@ namespace BleakwindBuffet.Data.Drinks
         /// list of special instruction for particular drink
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+        /// <summary>
+        /// Name Property for access to to string method return 
+        /// </summary>
+        public virtual string Name { get => ToString(); }
     }
 }

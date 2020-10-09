@@ -10,7 +10,7 @@ using System.Text;
 using System.ComponentModel;
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class BriarheartBurger : Entree
+    public class BriarheartBurger : Entree, INotifyPropertyChanged
     {
         
 
@@ -35,7 +35,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 bun = value;
                 InvokePropertyChange("Bun");
-                if (!bun) InvokePropertyChange("Special Instructions");
+                InvokePropertyChange("SpecialInstructions");
             }
         }
         private bool ketchup = true;
@@ -49,7 +49,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 ketchup = value;
                 InvokePropertyChange("Ketchup");
-                if(!ketchup) InvokePropertyChange("Special Instructions");
+                InvokePropertyChange("SpecialInstructions");
             }
         }
         private bool mustard = true;
@@ -61,9 +61,9 @@ namespace BleakwindBuffet.Data.Entrees
             get => mustard;
             set
             {
-                mustard = value;
+                mustard = value;//FIXME move ifs to be around setting private bool to value
                 InvokePropertyChange("Mustard");
-                if(!mustard) InvokePropertyChange("Special Instructions");
+                if(!mustard) InvokePropertyChange("SpecialInstructions");
             }
         }
         private bool pickle = true;
@@ -77,7 +77,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 pickle = value;
                 InvokePropertyChange("Pickle");
-                if (!pickle) InvokePropertyChange("Special Instructions");
+                if (!pickle) InvokePropertyChange("SpecialInstructions");
             }
         }
         private bool cheese = true;
@@ -91,7 +91,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 cheese = value;
                 InvokePropertyChange("Cheese");
-                if(!cheese) InvokePropertyChange("Special Instructions");
+                if(!cheese) InvokePropertyChange("SpecialInstructions");
             }
         }
         /// <summary>
@@ -141,13 +141,7 @@ namespace BleakwindBuffet.Data.Entrees
             return "Briarheart Burger";
         }
 
-        public string Name
-        {
-            get
-            {
-                return ToString();
-            }
-        }
+        
 
     }
 }

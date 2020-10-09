@@ -1,4 +1,5 @@
-﻿using BleakwindBuffet.Data.Entrees;
+﻿using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using PointOfSale.Customization_Screens;
 using PointOfSale.Customization_Screens.Drinks;
@@ -15,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Order;
+
 
 namespace PointOfSale
 {
@@ -47,8 +50,13 @@ namespace PointOfSale
         /// <param name="e">parameters of event</param>
         private void SelectBriarhearthBurger(object sender, RoutedEventArgs e)
         {
+            if(DataContext is Order order)
+            {
+                BriarheartBurger burger = new BriarheartBurger();
+                order.Add(burger);
+                SendToScreenSwitcher(new BriarhearthCustomization(burger));
+            }
             
-            SendToScreenSwitcher(new BriarhearthCustomization());
           
         }
         /// <summary>

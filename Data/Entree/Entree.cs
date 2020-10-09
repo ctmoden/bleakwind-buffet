@@ -14,14 +14,14 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Base class for all entrees
     /// </summary>
-    public abstract class Entree : IOrderItem
+    public abstract class Entree : IOrderItem, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// Invokes the property changed event handler for a property
         /// </summary>
         /// <param name="propertyName">name of property that just changed</param>
-        public void InvokePropertyChange(string propertyName)
+        protected void InvokePropertyChange(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -37,5 +37,9 @@ namespace BleakwindBuffet.Data.Entrees
         /// Property for special instrctions list 
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+        /// <summary>
+        /// Name 
+        /// </summary>
+        public virtual string Name{ get => ToString(); }
     }
 }

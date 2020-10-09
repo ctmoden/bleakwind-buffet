@@ -20,10 +20,10 @@ namespace PointOfSale
     public partial class BriarhearthCustomization : UserControl 
     {
         BriarheartBurger burger;
-        public BriarhearthCustomization()
+        public BriarhearthCustomization(BriarheartBurger b)
         {
             InitializeComponent();
-            burger = new BriarheartBurger();
+            burger = b;
             DataContext = burger;
         }
         /// <summary>

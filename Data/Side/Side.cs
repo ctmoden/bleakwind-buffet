@@ -40,6 +40,10 @@ namespace BleakwindBuffet.Data.Sides
         /// Special Instructions list property
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+        /// <summary>
+        /// Name Property for access to to string method return 
+        /// </summary>
+        public virtual string Name { get => ToString(); }
 
     }
 }

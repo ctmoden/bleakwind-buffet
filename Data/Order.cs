@@ -6,11 +6,11 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.Specialized;
 
-namespace BleakwindBuffet.Data
+namespace BleakwindBuffet.Data.Order
 {
     public class Order: ObservableCollection<IOrderItem>, INotifyPropertyChanged
     {
-        private List<IOrderItem> itemList = new List<IOrderItem>();
+        
         /// <summary>
         /// Constructor
         /// </summary>
@@ -20,9 +20,9 @@ namespace BleakwindBuffet.Data
             Number = nextOrderNum;
             nextOrderNum++;
         }
-        
+        /*
         /// <summary>
-        /// 
+        /// Gets 
         /// </summary>
         public List<IOrderItem> List
         {
@@ -35,6 +35,7 @@ namespace BleakwindBuffet.Data
                 return itemList;
             }
         }
+        */
         /// <summary>
         /// Event handler for when the collection changes
         /// </summary>
@@ -48,27 +49,30 @@ namespace BleakwindBuffet.Data
                     foreach(IOrderItem item in e.NewItems)
                     {
                         item.PropertyChanged += CollectionItemChangedListener;//FIXME need to figure out how to get preoperty changed event into 
-                        /*
-                        OnCollectionChanged(e);//FIXME create a new NoifyCollection Changed Args?
+                        //only for one item added
+                        //OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));//FIXME create a new NoifyCollection Changed Args?
                         
                         OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Total"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
-                        */
+                        
+                        
                     }
                     break;
                 case NotifyCollectionChangedAction.Remove:
                     foreach (IOrderItem item in e.OldItems)
                     {
-                        item.PropertyChanged += CollectionItemChangedListener;//FIXME need to figure out how to get preoperty changed event into 
-                        /*
-                        OnCollectionChanged(e);//FIXME create a new NoifyCollection Changed Args?
+                        //have to subtract listener when item is removed
+                        item.PropertyChanged -= CollectionItemChangedListener;//FIXME need to figure out how to get preoperty changed event into 
+                        
+                        //OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, item));//FIXME create a new NoifyCollection Changed Args?
                         OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Total"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
-                        */
+                        
+                        
                     }
                     break;
             }
@@ -81,20 +85,23 @@ namespace BleakwindBuffet.Data
         {
             switch (e.PropertyName)
             {
-                case "SubTotal":
+                case "Price":
+                    
                     OnPropertyChanged(new PropertyChangedEventArgs("SubTotal"));
-                    break;
-                case "Tax":
                     OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
-                    break;
-                case "Total":
                     OnPropertyChanged(new PropertyChangedEventArgs("Total"));
                     break;
+                
                 case "Calories":
                     OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
                     break;
+                    /*
+                case "List":
+                    OnPropertyChanged(new PropertyChangedEventArgs("List"));
+                    break;
+                    */
                 default:
-                    throw new NotImplementedException("Field does not exist");
+                    break;
             }
         }
 
