@@ -10,6 +10,7 @@ namespace BleakwindBuffet.Data
 {
     public class Order: ObservableCollection<IOrderItem>, INotifyPropertyChanged
     {
+        private List<IOrderItem> itemList = new List<IOrderItem>();
         /// <summary>
         /// Constructor
         /// </summary>
@@ -18,6 +19,21 @@ namespace BleakwindBuffet.Data
             CollectionChanged += CollectionChangedListener;
             Number = nextOrderNum;
             nextOrderNum++;
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        public List<IOrderItem> List
+        {
+            get
+            {
+                foreach (IOrderItem item in this)
+                {
+                    itemList.Add(item);
+                }
+                return itemList;
+            }
         }
         /// <summary>
         /// Event handler for when the collection changes
@@ -31,23 +47,28 @@ namespace BleakwindBuffet.Data
                 case NotifyCollectionChangedAction.Add:
                     foreach(IOrderItem item in e.NewItems)
                     {
-                        item.PropertyChanged+= CollectionItemChangedListener;//FIXME need to figure out how to get preoperty changed event into 
+                        item.PropertyChanged += CollectionItemChangedListener;//FIXME need to figure out how to get preoperty changed event into 
+                        /*
                         OnCollectionChanged(e);//FIXME create a new NoifyCollection Changed Args?
+                        
                         OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Total"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
+                        */
                     }
                     break;
                 case NotifyCollectionChangedAction.Remove:
                     foreach (IOrderItem item in e.OldItems)
                     {
                         item.PropertyChanged += CollectionItemChangedListener;//FIXME need to figure out how to get preoperty changed event into 
+                        /*
                         OnCollectionChanged(e);//FIXME create a new NoifyCollection Changed Args?
                         OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Total"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
+                        */
                     }
                     break;
             }
