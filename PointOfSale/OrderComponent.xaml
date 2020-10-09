@@ -11,15 +11,25 @@
             <ColumnDefinition Width="1200"/>
             <ColumnDefinition Width="600"/>
         </Grid.ColumnDefinitions>
-        
+
         <DockPanel x:Name="orderDock" Grid.Column="1" Width="600">
-            <TextBlock DockPanel.Dock="Top" FontWeight="Bold" TextAlignment="Center" FontSize="60">
-                       Order Details
-            </TextBlock>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock FontWeight="Bold" TextAlignment="Center" FontSize="60">Order Number</TextBlock>
+                <TextBlock x:Name="orderNumber" Text="{Binding Path=Number}" DockPanel.Dock="Top" FontWeight="Bold" TextAlignment="Center" FontSize="60"/>
+            </StackPanel>
+            
             <TextBlock x:Name="totalPrice" DockPanel.Dock="Bottom" FontSize="50" TextAlignment="Center"/>
             <TextBlock x:Name="taxPrice" DockPanel.Dock="Bottom" FontSize="50" TextAlignment="Center"/>
             <TextBlock x:Name="subTotalPrice" DockPanel.Dock="Bottom" FontSize="50" TextAlignment="Center"/>
-            <ListView Name ="itemsListView" FontSize="50"/>
+            <ListView Name ="itemsListView" FontSize="50" ItemsSource="{Binding}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Path=}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
         </DockPanel>
         <Border x:Name="menuControl" Grid.Column="0">
