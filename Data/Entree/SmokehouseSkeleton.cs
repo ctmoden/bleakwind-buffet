@@ -10,17 +10,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class SmokehouseSkeleton : Entree, INotifyPropertyChanged
+    public class SmokehouseSkeleton : Entree
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// Invokes the property changed event handler for a property
-        /// </summary>
-        /// <param name="propertyName">name of property that just changed</param>
-        public void InvokePropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        
         /// <summary>
         /// Price property for the Smokehouse Skeleton. 
         /// Uses the shorthand method for a property

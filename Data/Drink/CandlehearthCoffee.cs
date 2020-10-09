@@ -14,9 +14,9 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing the coffee drink and it's properties
     /// </summary>
-    public class CandlehearthCoffee : Drink, INotifyPropertyChanged
+    public class CandlehearthCoffee : Drink
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        
         private Size size = Size.Small;
         /// <summary>
         /// Size of the drink
@@ -32,14 +32,7 @@ namespace BleakwindBuffet.Data.Drinks
                 InvokePropertyChange("Price");
             }
         }
-        /// <summary>
-        /// Invokes the property changed event handler for a property
-        /// </summary>
-        /// <param name="propertyName">name of property that just changed</param>
-        public void InvokePropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        
 
         /// <summary>
         /// Calories Property, changes based on drink size

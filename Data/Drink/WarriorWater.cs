@@ -11,9 +11,9 @@ using System.Text;
 using System.ComponentModel;
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class WarriorWater : Drink, INotifyPropertyChanged
+    public class WarriorWater : Drink
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        
         private Size size = Size.Small;
         /// <summary>
         /// Size of the drink
@@ -27,14 +27,7 @@ namespace BleakwindBuffet.Data.Drinks
                 InvokePropertyChange("Size");
             }
         }
-        /// <summary>
-        /// Invokes the property changed event handler for a property
-        /// </summary>
-        /// <param name="propertyName">name of property that just changed</param>
-        public void InvokePropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        
         /// <summary>
         /// Calories Property, 0 for all water sizes
         /// </summary>

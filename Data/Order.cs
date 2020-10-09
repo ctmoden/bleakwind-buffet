@@ -20,7 +20,7 @@ namespace BleakwindBuffet.Data
             nextOrderNum++;
         }
         /// <summary>
-        /// 
+        /// Event handler for when the collection changes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -32,6 +32,22 @@ namespace BleakwindBuffet.Data
                     foreach(IOrderItem item in e.NewItems)
                     {
                         item.PropertyChanged+= CollectionItemChangedListener;//FIXME need to figure out how to get preoperty changed event into 
+                        OnCollectionChanged(e);//FIXME create a new NoifyCollection Changed Args?
+                        OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
+                        OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
+                        OnPropertyChanged(new PropertyChangedEventArgs("Total"));
+                        OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
+                    }
+                    break;
+                case NotifyCollectionChangedAction.Remove:
+                    foreach (IOrderItem item in e.OldItems)
+                    {
+                        item.PropertyChanged += CollectionItemChangedListener;//FIXME need to figure out how to get preoperty changed event into 
+                        OnCollectionChanged(e);//FIXME create a new NoifyCollection Changed Args?
+                        OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
+                        OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
+                        OnPropertyChanged(new PropertyChangedEventArgs("Total"));
+                        OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
                     }
                     break;
             }
@@ -61,24 +77,10 @@ namespace BleakwindBuffet.Data
             }
         }
 
-
+        //gives the order a unique number
         private static int nextOrderNum = 1;
         
-        //FIXME I was having this issue before... how the heck do I resolve it again?
         
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="item"></param>
-        public void Add(IOrderItem item)
-        {
-
-        }
-
-        public void Remove(IOrderItem item)
-        {
-
-        }
         /// <summary>
         /// Sales tax rate
         /// </summary>
