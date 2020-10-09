@@ -14,23 +14,54 @@
 
         <DockPanel x:Name="orderDock" Grid.Column="1" Width="600">
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock FontWeight="Bold" TextAlignment="Center" FontSize="60">Order Number</TextBlock>
+                <TextBlock FontWeight="Bold" TextAlignment="Center" FontSize="60">Order Number #</TextBlock>
                 <TextBlock x:Name="orderNumber" Text="{Binding Path=Number}" DockPanel.Dock="Top" FontWeight="Bold" TextAlignment="Center" FontSize="60"/>
             </StackPanel>
-            
-            <TextBlock x:Name="totalPrice" DockPanel.Dock="Bottom" FontSize="40" TextAlignment="Center"/>
-            <TextBlock x:Name="taxPrice" DockPanel.Dock="Bottom" FontSize="40" TextAlignment="Center"/>
-            <TextBlock x:Name="subTotalPrice" DockPanel.Dock="Bottom" FontSize="40" TextAlignment="Center"/>
-            
+            <Grid DockPanel.Dock="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="subTotalText" Grid.Row="0" Grid.Column="0" FontSize="30" Text="Subtotal"/>
+                <TextBlock x:Name="taxText" Grid.Row="1" Grid.Column="0" FontSize="30" Text="Tax"/>
+                <TextBlock x:Name="totalText" Grid.Row="2" Grid.Column="0" FontSize="30" Text="Total"/>
+                <TextBlock FontSize="30" Grid.Row="0" Grid.Column="1" Text="$" TextAlignment="Right"/>
+                <TextBlock FontSize="30" Grid.Row="1" Grid.Column="1" Text="$" TextAlignment="Right"/>
+                <TextBlock FontSize="30" Grid.Row="2" Grid.Column="1" Text="$" TextAlignment="Right"/>
+                <TextBlock FontSize="30" Grid.Row="0" Grid.Column="2" Text="{Binding Path=SubTotal}" TextAlignment="Right"/>
+                <TextBlock FontSize="30" Grid.Row="0" Grid.Column="2" Text="{Binding Path=SubTotal}" TextAlignment="Right"/>
+            </Grid>
             
             <Button x:Name="cancelOrder" DockPanel.Dock="Bottom" FontSize="40">Cancel Order</Button>
             <Button x:Name="addOrder" DockPanel.Dock="Bottom" FontSize="40">Add Order</Button>
             <ListView Name ="itemsListView" FontSize="30" ItemsSource="{Binding Path=Items}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding Path=Name}"/>
-                        </StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="150"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Path=Name}"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Path=SpecialInstructions}"/>
+                            <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding Path=Price}"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="$"/>
+                        </Grid>
+                            
+                        
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
