@@ -116,6 +116,7 @@ namespace BleakwindBuffet.Data
                 return SubTotal * SalesTaxRate;
             }
         }
+        
         /// <summary>
         /// Price for combo excluding yax
         /// </summary>
@@ -123,6 +124,7 @@ namespace BleakwindBuffet.Data
         {
             get { return SubTotal + Tax; }
         }
+       
         /// <summary>
         /// Total Price of combo with a $1 discount
         /// </summary>
@@ -130,7 +132,12 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-                return Total + Tax;
+                double subTotal = 0.0;
+                foreach(IOrderItem item in this)
+                {
+                    subTotal += item.Price;
+                }
+                return subTotal;
             }
         }
         /// <summary>

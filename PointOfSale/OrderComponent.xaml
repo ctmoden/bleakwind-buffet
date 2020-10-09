@@ -34,12 +34,10 @@
                 <TextBlock FontSize="30" Grid.Row="0" Grid.Column="1" Text="$" TextAlignment="Right"/>
                 <TextBlock FontSize="30" Grid.Row="1" Grid.Column="1" Text="$" TextAlignment="Right"/>
                 <TextBlock FontSize="30" Grid.Row="2" Grid.Column="1" Text="$" TextAlignment="Right"/>
-                <TextBlock FontSize="30" Grid.Row="0" Grid.Column="2" Text="{Binding Path=SubTotal}" TextAlignment="Right"/>
-                <TextBlock FontSize="30" Grid.Row="0" Grid.Column="2" Text="{Binding Path=SubTotal}" TextAlignment="Right"/>
+                <TextBlock FontSize="30" Grid.Row="0" Grid.Column="2" Text="{Binding Path=SubTotal}" TextAlignment="Left"/>
+                <TextBlock FontSize="30" Grid.Row="1" Grid.Column="2" Text="{Binding Path=Tax}" TextAlignment="Left"/>
+                <TextBlock FontSize="30" Grid.Row="2" Grid.Column="2" Text="{Binding Path=Total}" TextAlignment="Left"/>
             </Grid>
-            
-            <Button x:Name="cancelOrder" DockPanel.Dock="Bottom" FontSize="40">Cancel Order</Button>
-            <Button x:Name="addOrder" DockPanel.Dock="Bottom" FontSize="40">Add Order</Button>
             <ListView Name ="itemsListView" FontSize="30" ItemsSource="{Binding Path=Items}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -53,15 +51,14 @@
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
-                                
+
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Path=Name}"/>
                             <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Path=SpecialInstructions}"/>
+                            <Button Grid.Row="2" Grid.Column="0" Click="ClearOrder">Remove</Button>
                             <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding Path=Price}"/>
                             <TextBlock Grid.Row="0" Grid.Column="1" Text="$"/>
                         </Grid>
-                            
-                        
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

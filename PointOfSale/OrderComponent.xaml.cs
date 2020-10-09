@@ -31,6 +31,15 @@ namespace PointOfSale
             //pass in screen you want to change to
             menuControl.Child = element;
         }
+        /// <summary>
+        /// clears order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ClearOrder(object sender, RoutedEventArgs e)
+        {
+
+        }
         
 
     }
