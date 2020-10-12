@@ -245,7 +245,7 @@ namespace PointOfSale
             {
                 MarkarthMilk milk = new MarkarthMilk();
                 order.Add(milk);
-                SendToScreenSwitcher(new MarkarthMilkCustomizations());
+                SendToScreenSwitcher(new MarkarthMilkCustomizations(milk));
             }
             
         }
@@ -260,7 +260,7 @@ namespace PointOfSale
             {
                 SailorSoda soda = new SailorSoda();
                 order.Add(soda);
-                SendToScreenSwitcher(new SailorSodaCustomization());
+                SendToScreenSwitcher(new SailorSodaCustomization(soda));
             }
             
         }

@@ -21,10 +21,10 @@ namespace PointOfSale.Customization_Screens.Drinks
     public partial class SailorSodaCustomization : UserControl
     {
         SailorSoda soda;
-        public SailorSodaCustomization()
+        public SailorSodaCustomization(SailorSoda s)
         {
             InitializeComponent();
-            soda = new SailorSoda();
+            soda = s;
             DataContext = soda;
         }
         /// <summary>

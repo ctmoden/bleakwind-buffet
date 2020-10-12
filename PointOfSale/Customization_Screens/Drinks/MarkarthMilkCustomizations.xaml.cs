@@ -21,10 +21,10 @@ namespace PointOfSale.Customization_Screens.Drinks
     public partial class MarkarthMilkCustomizations : UserControl
     {
         MarkarthMilk milk;
-        public MarkarthMilkCustomizations()
+        public MarkarthMilkCustomizations(MarkarthMilk m)
         {
             InitializeComponent();
-            milk = new MarkarthMilk();
+            milk = m;
             DataContext = milk;
         }
         /// <summary>

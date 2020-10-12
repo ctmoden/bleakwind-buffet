@@ -106,7 +106,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 ice = value;
                 InvokePropertyChange("Ice");
-                InvokePropertyChange("Special Instructions");
+                InvokePropertyChange("SpecialInstructions");
             }
         }
         /// <summary>
