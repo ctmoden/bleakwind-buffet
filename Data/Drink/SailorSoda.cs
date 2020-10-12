@@ -28,6 +28,7 @@ namespace BleakwindBuffet.Data.Drinks
                 InvokePropertyChange("Calories");
                 InvokePropertyChange("Price");
                 InvokePropertyChange("Name");
+                InvokePropertyChange("Flavor");
             }
         }
         
