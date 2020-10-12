@@ -28,6 +28,7 @@ namespace BleakwindBuffet.Data.Sides
                 InvokePropertyChange("Size");
                 InvokePropertyChange("Calories");
                 InvokePropertyChange("Price");
+                InvokePropertyChange("Name");
             }
         }
 

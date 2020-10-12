@@ -20,11 +20,11 @@ namespace PointOfSale.Customization_Screens.Drinks
     /// </summary>
     public partial class AretinoAppleJuiceCustomization : UserControl
     {
-        AretinoAppleJuice aj;
-        public AretinoAppleJuiceCustomization()
+        
+        public AretinoAppleJuiceCustomization(ArentinoAppleJuice aj)
         {
             InitializeComponent();
-            aj = new AretinoAppleJuice();
+            
             DataContext = aj;
         }
         /// <summary>

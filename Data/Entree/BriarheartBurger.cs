@@ -63,7 +63,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 mustard = value;//FIXME move ifs to be around setting private bool to value
                 InvokePropertyChange("Mustard");
-                if(!mustard) InvokePropertyChange("SpecialInstructions");
+                InvokePropertyChange("SpecialInstructions");
             }
         }
         private bool pickle = true;
@@ -77,7 +77,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 pickle = value;
                 InvokePropertyChange("Pickle");
-                if (!pickle) InvokePropertyChange("SpecialInstructions");
+                InvokePropertyChange("SpecialInstructions");
             }
         }
         private bool cheese = true;
@@ -91,7 +91,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 cheese = value;
                 InvokePropertyChange("Cheese");
-                if(!cheese) InvokePropertyChange("SpecialInstructions");
+                InvokePropertyChange("SpecialInstructions");
             }
         }
         /// <summary>
