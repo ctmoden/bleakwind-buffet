@@ -20,10 +20,10 @@ namespace PointOfSale.Customization_Screens
     public partial class PhillyPoacherCustomization : UserControl
     {
         PhillyPoacher poacher;
-        public PhillyPoacherCustomization()
+        public PhillyPoacherCustomization(PhillyPoacher p)
         {
             InitializeComponent();
-            poacher = new PhillyPoacher();
+            poacher = p;
             DataContext = poacher;
         }
         /// <summary>

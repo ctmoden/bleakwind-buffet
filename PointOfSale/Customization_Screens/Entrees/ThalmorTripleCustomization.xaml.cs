@@ -20,10 +20,10 @@ namespace PointOfSale
     public partial class ThalmorTripleCustomization : UserControl
     {
         ThalmorTriple triple;
-        public ThalmorTripleCustomization()
+        public ThalmorTripleCustomization(ThalmorTriple t)
         {
             InitializeComponent();
-            triple = new ThalmorTriple();
+            triple = t;
             DataContext = triple;
         }
         /// <summary>

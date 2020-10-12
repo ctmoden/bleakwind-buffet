@@ -33,7 +33,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 sausageLink = value;
                 InvokePropertyChange("SausageLink");
-                if (!sausageLink) InvokePropertyChange("Special Instructions");
+                InvokePropertyChange("SpecialInstructions");
             }
         }
         private bool egg = true;
@@ -47,7 +47,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 egg = value;
                 InvokePropertyChange("Egg");
-                if(!egg) InvokePropertyChange("Special Instructions");
+                InvokePropertyChange("SpecialInstructions");
             }
         }
         private bool hashBrowns = true;
@@ -61,7 +61,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 hashBrowns = value;
                 InvokePropertyChange("HashBrowns");
-                if(!hashBrowns) InvokePropertyChange("Special Instructions");
+                InvokePropertyChange("SpecialInstructions");
             }
         }
         private bool pancake = true;
@@ -75,7 +75,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 pancake = value;
                 InvokePropertyChange("Pancake");
-                if(!pancake) InvokePropertyChange("Special Instructions");
+                InvokePropertyChange("SpecialInstructions");
             }
         }
 

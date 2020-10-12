@@ -20,10 +20,10 @@ namespace PointOfSale
     public partial class DoubleDraugrCustomization : UserControl
     {
         DoubleDraugr dd;
-        public DoubleDraugrCustomization()
+        public DoubleDraugrCustomization(DoubleDraugr d)
         {
             InitializeComponent();
-            dd = new DoubleDraugr();
+            dd = d;
             DataContext = dd;
         }
         /// <summary>

@@ -70,7 +70,7 @@ namespace PointOfSale
             {
                 DoubleDraugr dd = new DoubleDraugr();
                 order.Add(dd);
-                SendToScreenSwitcher(new DoubleDraugrCustomization());
+                SendToScreenSwitcher(new DoubleDraugrCustomization(dd));
             }
             
             
@@ -87,7 +87,7 @@ namespace PointOfSale
             {
                 ThalmorTriple triple = new ThalmorTriple();
                 order.Add(triple);
-                SendToScreenSwitcher(new ThalmorTripleCustomization());
+                SendToScreenSwitcher(new ThalmorTripleCustomization(triple));
             }
             
 
@@ -104,7 +104,7 @@ namespace PointOfSale
             {
                 PhillyPoacher poacher = new PhillyPoacher();
                 order.Add(poacher);
-                SendToScreenSwitcher(new PhillyPoacherCustomization());
+                SendToScreenSwitcher(new PhillyPoacherCustomization(poacher));
             }
             
 
@@ -120,7 +120,7 @@ namespace PointOfSale
             {
                 GardenOrcOmelette omelette = new GardenOrcOmelette();
                 order.Add(omelette);
-                SendToScreenSwitcher(new GardenOrcOmeletteCustomization());
+                SendToScreenSwitcher(new GardenOrcOmeletteCustomization(omelette));
             }
             
         }
@@ -135,7 +135,7 @@ namespace PointOfSale
             {
                 SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
                 order.Add(skeleton);
-                SendToScreenSwitcher(new SmokeHouseSkeletonCustomization());
+                SendToScreenSwitcher(new SmokeHouseSkeletonCustomization(skeleton));
             }
             
 

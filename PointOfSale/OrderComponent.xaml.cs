@@ -39,7 +39,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void ClearOrder(object sender, RoutedEventArgs e)
         {
-
+            if(DataContext is Order order)
+            {
+                //order.GetEnumerator();
+                //IEnumerator<IOrderItem> items = order.GetEnumerator();
+                order.Remove(order[0]);
+                
+                //how to find index of one I want to remove?
+            }
         }
         
 

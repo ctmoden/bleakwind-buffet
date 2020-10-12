@@ -20,10 +20,10 @@ namespace PointOfSale.Customization_Screens
     public partial class GardenOrcOmeletteCustomization : UserControl
     {
         GardenOrcOmelette omelette;
-        public GardenOrcOmeletteCustomization()
+        public GardenOrcOmeletteCustomization(GardenOrcOmelette o)
         {
             InitializeComponent();
-            omelette = new GardenOrcOmelette();
+            omelette = o;
             DataContext = omelette;
         }
         /// <summary>

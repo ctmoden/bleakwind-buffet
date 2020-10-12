@@ -20,10 +20,10 @@ namespace PointOfSale.Customization_Screens
     public partial class SmokeHouseSkeletonCustomization : UserControl
     {
         SmokehouseSkeleton skeleton;
-        public SmokeHouseSkeletonCustomization()
+        public SmokeHouseSkeletonCustomization(SmokehouseSkeleton s)
         {
             InitializeComponent();
-            skeleton = new SmokehouseSkeleton();
+            skeleton = s;
             DataContext = skeleton;
         }
         /// <summary>
