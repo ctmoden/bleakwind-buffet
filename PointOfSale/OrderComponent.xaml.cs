@@ -43,9 +43,11 @@ namespace PointOfSale
             {
                 //order.GetEnumerator();
                 //IEnumerator<IOrderItem> items = order.GetEnumerator();
-                order.Remove(order[0]);
+                int index = itemsListView.SelectedIndex; 
+                order.Remove(order[index]);
                 
                 //how to find index of one I want to remove?
+                //need a reference to the item that needs to be deleted
             }
         }
         
