@@ -32,6 +32,16 @@ namespace PointOfSale
             InitializeComponent();
             
         }
+
+        public void MakeCombo(object sender, RoutedEventArgs e)
+        {
+            //only one of each can be selected
+            //set some bool field to true if selected, create new combo instance
+            //when selecting items, check for combo field
+            //add to combo if user slects a combo
+            //diable all other entrees/sides/drinks when one of each is selected
+            //when full combo has been created, n
+        }
         
         /// <summary>
         /// Finds the parent control and creates an object out of that then calls 

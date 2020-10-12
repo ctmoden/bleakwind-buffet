@@ -54,7 +54,9 @@
         <Button Grid.Row="3" Grid.Column="2" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectMilk">Markarth Milk</Button>
         <Button Grid.Row="4" Grid.Column="2" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectSoda">Sailor Soda</Button>
         <Button Grid.Row="5" Grid.Column="2" Width="200" Height="90" FontSize="23" FontWeight="Bold" Click="SelectWater">Warrior Water</Button>
-
+        <Button Grid.Row="7" Grid.Column="2" Click="MakeCombo">
+            <TextBlock x:Name="comboButton" Text="Combo" FontSize="60"/>
+        </Button>
     </Grid>
 
 </UserControl>
