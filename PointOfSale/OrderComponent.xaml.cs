@@ -41,8 +41,7 @@ namespace PointOfSale
         {
             if(DataContext is Order order)
             {
-                //order.GetEnumerator();
-                //IEnumerator<IOrderItem> items = order.GetEnumerator();
+                
                 int index = itemsListView.SelectedIndex; 
                 order.Remove(order[index]);
                 
