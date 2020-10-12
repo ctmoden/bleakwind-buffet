@@ -21,10 +21,10 @@ namespace PointOfSale.Customization_Screens.Drinks
     public partial class WarriorWaterCustomizations : UserControl
     {
         WarriorWater water;
-        public WarriorWaterCustomizations()
+        public WarriorWaterCustomizations(WarriorWater w)
         {
             InitializeComponent();
-            water = new WarriorWater();
+            water = w;
             DataContext = water;
         }
         /// <summary>

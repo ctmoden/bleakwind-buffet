@@ -1,4 +1,5 @@
 ﻿using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -41,6 +42,40 @@ namespace PointOfSale.Customization_Screens.Drinks
                 soda.Size = size;
             }
             else throw new NotImplementedException("Invalid type");
+        }
+
+        public void ChangeFlavor(object sender, RoutedEventArgs e)
+        {
+            if(DataContext is Drink)
+            {
+                
+                if(sender is RadioButton rb)
+                {
+                    switch (rb.Name)
+                    {
+                        case "blackberry":
+                            soda.Flavor = SodaFlavor.Blackberry;
+                            break;
+                        case "cherry":
+                            soda.Flavor = SodaFlavor.Cherry;
+                            break;
+                        case "grapefruit":
+                            soda.Flavor = SodaFlavor.Grapefruit;
+                            break;
+                        case "lemon":
+                            soda.Flavor = SodaFlavor.Lemon;
+                            break;
+                        case "peach":
+                            soda.Flavor = SodaFlavor.Peach;
+                            break;
+                        case "watermelon":
+                            soda.Flavor = SodaFlavor.Watermelon;
+                            break;
+                        default:
+                            throw new NotImplementedException("Invalid flavor");
+                    }
+                }
+            }
         }
         /// <summary>
         /// Returns to main menu screen to continue order process

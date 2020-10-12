@@ -48,7 +48,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 ice = value;
                 InvokePropertyChange("Ice");
-                InvokePropertyChange("Special Instructions");
+                InvokePropertyChange("SpecialInstructions");
             }
         }
         private bool lemon = false;
@@ -62,7 +62,7 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 lemon = value;
                 InvokePropertyChange("Lemon");
-                InvokePropertyChange("Special Instructions");
+                InvokePropertyChange("SpecialInstructions");
             }
         }
         /// <summary>

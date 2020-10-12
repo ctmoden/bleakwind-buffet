@@ -21,12 +21,12 @@
                 Flavor
             </TextBlock>
             <StackPanel Grid.Column="0" Grid.Row="1">
-                <RadioButton IsChecked="{Binding Path=Blackberry}" Margin="10" Content="Blackberry" FontSize="40" FontWeight="Bold"/>
-                <RadioButton IsChecked="{Binding Path=Cherry}" Margin="10" Content="Cherry" FontSize="40" FontWeight="Bold"/>
-                <RadioButton IsChecked="{Binding Path=Grapefruit}" Margin="10" Content="Grapefruit" FontSize="40" FontWeight="Bold"/>
-                <RadioButton IsChecked="{Binding Path=Lemon}" Margin="10" Content="Lemon" FontSize="40" FontWeight="Bold"/>
-                <RadioButton IsChecked="{Binding Path=Peach}" Margin="10" Content="Peach" FontSize="40" FontWeight="Bold"/>
-                <RadioButton IsChecked="{Binding Path=Watermelon}" Margin="10" Content="Watermelon" FontSize="40" FontWeight="Bold"/>
+                <RadioButton Click="ChangeFlavor" x:Name="blackberry" IsChecked="{Binding Path=Flavor}" Margin="10" Content="Blackberry" FontSize="40" FontWeight="Bold"/>
+                <RadioButton Click="ChangeFlavor" x:Name="cherry" IsChecked="{Binding Path=Flavor}" Margin="10" Content="Cherry" FontSize="40" FontWeight="Bold"/>
+                <RadioButton Click="ChangeFlavor" x:Name="grapefruit" IsChecked="{Binding Path=Flavor}" Margin="10" Content="Grapefruit" FontSize="40" FontWeight="Bold"/>
+                <RadioButton Click="ChangeFlavor" x:Name="lemon" IsChecked="{Binding Path=Flavor}" Margin="10" Content="Lemon" FontSize="40" FontWeight="Bold"/>
+                <RadioButton Click="ChangeFlavor" x:Name="peach" IsChecked="{Binding Path=Flavor}" Margin="10" Content="Peach" FontSize="40" FontWeight="Bold"/>
+                <RadioButton Click="ChangeFlavor" x:Name="watermelon" IsChecked="{Binding Path=Flavor}" Margin="10" Content="Watermelon" FontSize="40" FontWeight="Bold"/>
                 <CheckBox IsChecked="{Binding Path=Ice}" Margin="10" Content="Ice" FontSize="40" FontWeight="Bold"/>
             </StackPanel>
             <TextBlock Grid.Column="1" Grid.Row="0" FontSize="60" FontWeight="Bold" FontStyle="Italic" TextAlignment="Center">

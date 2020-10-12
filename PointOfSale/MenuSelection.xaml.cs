@@ -275,7 +275,7 @@ namespace PointOfSale
             {
                 WarriorWater water = new WarriorWater();
                 order.Add(water);
-                SendToScreenSwitcher(new WarriorWaterCustomizations());
+                SendToScreenSwitcher(new WarriorWaterCustomizations(water));
             }
             
         }
