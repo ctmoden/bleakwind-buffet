@@ -229,7 +229,7 @@ namespace PointOfSale
             {
                 CandlehearthCoffee coffee = new CandlehearthCoffee();
                 order.Add(coffee);
-                SendToScreenSwitcher(new CoffeeCustomization());
+                SendToScreenSwitcher(new CoffeeCustomization(coffee));
             }
             
             

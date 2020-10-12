@@ -27,9 +27,9 @@
                 Size
             </TextBlock>
             <StackPanel Grid.Column="1" Grid.Row="1">
-                <Button x:Name="smallButton" Margin="30" Content="Small" FontSize="50" FontWeight="Bold"></Button>
-                <Button x:Name="mediumButton" Margin="30" Content="Medium" FontSize="50" FontWeight="Bold"></Button>
-                <Button x:Name="largeButton" Margin="30" Content="Large" FontSize="50" FontWeight="Bold"></Button>
+                <Button Click="SelectSize" x:Name="smallButton" Margin="30" Content="Small" FontSize="50" FontWeight="Bold"></Button>
+                <Button Click="SelectSize" x:Name="mediumButton" Margin="30" Content="Medium" FontSize="50" FontWeight="Bold"></Button>
+                <Button Click="SelectSize" x:Name="largeButton" Margin="30" Content="Large" FontSize="50" FontWeight="Bold"></Button>
                 <Button Click="ReturnToMainMenu" Margin="0,60,0,0" Content="Complete" FontStyle="Oblique" FontSize="50" FontWeight="Bold"></Button>
             </StackPanel>
 

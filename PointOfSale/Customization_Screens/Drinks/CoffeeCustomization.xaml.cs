@@ -21,10 +21,10 @@ namespace PointOfSale.Customization_Screens.Drinks
     public partial class CoffeeCustomization : UserControl
     {
         CandlehearthCoffee coffee;
-        public CoffeeCustomization()
+        public CoffeeCustomization(CandlehearthCoffee c)
         {
             InitializeComponent();
-            coffee = new CandlehearthCoffee();
+            coffee = c;
             DataContext = coffee;
         }
         /// <summary>
