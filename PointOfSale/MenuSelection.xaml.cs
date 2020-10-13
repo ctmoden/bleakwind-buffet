@@ -40,7 +40,7 @@ namespace PointOfSale
             //when selecting items, check for combo field
             //add to combo if user slects a combo
             //diable all other entrees/sides/drinks when one of each is selected
-            //when full combo has been created, n
+            //when full combo has been created, reenable combo and all other buttons
         }
         
         /// <summary>
