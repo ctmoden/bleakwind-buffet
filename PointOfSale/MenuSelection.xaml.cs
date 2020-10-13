@@ -72,6 +72,11 @@ namespace PointOfSale
                 {
                     combo.Entree = burger;
                     DoubleButton.Visibility = Visibility.Collapsed;
+                    ThalmorButton.Visibility = Visibility.Collapsed;
+                    PoacherButton.Visibility = Visibility.Collapsed;
+                    SmokeButton.Visibility = Visibility.Collapsed;
+                    OmeletteButton.Visibility = Visibility.Collapsed;
+                    TBoneButton.Visibility = Visibility.Collapsed;
                 }
                 SendToScreenSwitcher(new BriarhearthCustomization(this,burger));
                 
@@ -90,6 +95,16 @@ namespace PointOfSale
             {
                 DoubleDraugr dd = new DoubleDraugr();
                 order.Add(dd);
+                if (isCombo)
+                {
+                    combo.Entree = dd;
+                    BriarButton.Visibility = Visibility.Collapsed;
+                    ThalmorButton.Visibility = Visibility.Collapsed;
+                    PoacherButton.Visibility = Visibility.Collapsed;
+                    SmokeButton.Visibility = Visibility.Collapsed;
+                    OmeletteButton.Visibility = Visibility.Collapsed;
+                    TBoneButton.Visibility = Visibility.Collapsed;
+                }
                 SendToScreenSwitcher(new DoubleDraugrCustomization(this,dd));
             }
             
@@ -107,6 +122,16 @@ namespace PointOfSale
             {
                 ThalmorTriple triple = new ThalmorTriple();
                 order.Add(triple);
+                if (isCombo)
+                {
+                    combo.Entree = triple;
+                    BriarButton.Visibility = Visibility.Collapsed;
+                    DoubleButton.Visibility = Visibility.Collapsed;
+                    PoacherButton.Visibility = Visibility.Collapsed;
+                    SmokeButton.Visibility = Visibility.Collapsed;
+                    OmeletteButton.Visibility = Visibility.Collapsed;
+                    TBoneButton.Visibility = Visibility.Collapsed;
+                }
                 SendToScreenSwitcher(new ThalmorTripleCustomization(this, triple));
             }
             
@@ -124,6 +149,16 @@ namespace PointOfSale
             {
                 PhillyPoacher poacher = new PhillyPoacher();
                 order.Add(poacher);
+                if (isCombo)
+                {
+                    combo.Entree = poacher;
+                    BriarButton.Visibility = Visibility.Collapsed;
+                    ThalmorButton.Visibility = Visibility.Collapsed;
+                    DoubleButton.Visibility = Visibility.Collapsed;
+                    SmokeButton.Visibility = Visibility.Collapsed;
+                    OmeletteButton.Visibility = Visibility.Collapsed;
+                    TBoneButton.Visibility = Visibility.Collapsed;
+                }
                 SendToScreenSwitcher(new PhillyPoacherCustomization(this, poacher));
             }
             
@@ -140,6 +175,16 @@ namespace PointOfSale
             {
                 GardenOrcOmelette omelette = new GardenOrcOmelette();
                 order.Add(omelette);
+                if (isCombo)
+                {
+                    combo.Entree = omelette;
+                    BriarButton.Visibility = Visibility.Collapsed;
+                    ThalmorButton.Visibility = Visibility.Collapsed;
+                    PoacherButton.Visibility = Visibility.Collapsed;
+                    SmokeButton.Visibility = Visibility.Collapsed;
+                    DoubleButton.Visibility = Visibility.Collapsed;
+                    TBoneButton.Visibility = Visibility.Collapsed;
+                }
                 SendToScreenSwitcher(new GardenOrcOmeletteCustomization(this, omelette));
             }
             
@@ -155,6 +200,16 @@ namespace PointOfSale
             {
                 SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
                 order.Add(skeleton);
+                if (isCombo)
+                {
+                    combo.Entree = skeleton;
+                    BriarButton.Visibility = Visibility.Collapsed;
+                    ThalmorButton.Visibility = Visibility.Collapsed;
+                    PoacherButton.Visibility = Visibility.Collapsed;
+                    DoubleButton.Visibility = Visibility.Collapsed;
+                    OmeletteButton.Visibility = Visibility.Collapsed;
+                    TBoneButton.Visibility = Visibility.Collapsed;
+                }
                 SendToScreenSwitcher(new SmokeHouseSkeletonCustomization(this, skeleton));
             }
             
@@ -171,8 +226,15 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 DragonbornWaffleFries fries = new DragonbornWaffleFries();
-                SendToScreenSwitcher(new SideCustomization(this, fries));
                 order.Add(fries);
+                if (isCombo)
+                {
+                    MiraakButton.Visibility = Visibility.Collapsed;
+                    GritsButton.Visibility = Visibility.Collapsed;
+                    SaladButton.Visibility = Visibility.Collapsed;
+                }
+                SendToScreenSwitcher(new SideCustomization(this, fries));
+                
                 
             }
             
@@ -188,6 +250,12 @@ namespace PointOfSale
             {
                 FriedMiraak miraak = new FriedMiraak();
                 order.Add(miraak);
+                if (isCombo)
+                {
+                    FriesButton.Visibility = Visibility.Collapsed;
+                    GritsButton.Visibility = Visibility.Collapsed;
+                    SaladButton.Visibility = Visibility.Collapsed;
+                }
                 SendToScreenSwitcher(new SideCustomization(this, miraak));
             }
             
@@ -204,6 +272,12 @@ namespace PointOfSale
             {
                 MadOtarGrits grits = new MadOtarGrits();
                 order.Add(grits);
+                if (isCombo)
+                {
+                    MiraakButton.Visibility = Visibility.Collapsed;
+                    FriesButton.Visibility = Visibility.Collapsed;
+                    SaladButton.Visibility = Visibility.Collapsed;
+                }
                 SendToScreenSwitcher(new SideCustomization(this, grits));
             }
             
@@ -219,6 +293,12 @@ namespace PointOfSale
             {
                 VokunSalad salad = new VokunSalad();
                 order.Add(salad);
+                if (isCombo)
+                {
+                    MiraakButton.Visibility = Visibility.Collapsed;
+                    GritsButton.Visibility = Visibility.Collapsed;
+                    FriesButton.Visibility = Visibility.Collapsed;
+                }
                 SendToScreenSwitcher(new SideCustomization(this, salad));
             }
             
@@ -234,6 +314,13 @@ namespace PointOfSale
             {
                 AretinoAppleJuice aj = new AretinoAppleJuice();
                 order.Add(aj);
+                if (isCombo)
+                {
+                    CoffeeButton.Visibility = Visibility.Collapsed;
+                    MilkButton.Visibility = Visibility.Collapsed;
+                    SodaButton.Visibility = Visibility.Collapsed;
+                    WaterButton.Visibility = Visibility.Collapsed;
+                }
                 SendToScreenSwitcher(new AretinoAppleJuiceCustomization(this, aj));
             }
             
@@ -249,6 +336,13 @@ namespace PointOfSale
             {
                 CandlehearthCoffee coffee = new CandlehearthCoffee();
                 order.Add(coffee);
+                if (isCombo)
+                {
+                    AJButton.Visibility = Visibility.Collapsed;
+                    MilkButton.Visibility = Visibility.Collapsed;
+                    SodaButton.Visibility = Visibility.Collapsed;
+                    WaterButton.Visibility = Visibility.Collapsed;
+                }
                 SendToScreenSwitcher(new CoffeeCustomization(this, coffee));
             }
             
@@ -265,6 +359,13 @@ namespace PointOfSale
             {
                 MarkarthMilk milk = new MarkarthMilk();
                 order.Add(milk);
+                if (isCombo)
+                {
+                    AJButton.Visibility = Visibility.Collapsed;
+                    CoffeeButton.Visibility = Visibility.Collapsed;
+                    SodaButton.Visibility = Visibility.Collapsed;
+                    WaterButton.Visibility = Visibility.Collapsed;
+                }
                 SendToScreenSwitcher(new MarkarthMilkCustomizations(this, milk));
             }
             
@@ -280,6 +381,13 @@ namespace PointOfSale
             {
                 SailorSoda soda = new SailorSoda();
                 order.Add(soda);
+                if (isCombo)
+                {
+                    AJButton.Visibility = Visibility.Collapsed;
+                    MilkButton.Visibility = Visibility.Collapsed;
+                    CoffeeButton.Visibility = Visibility.Collapsed;
+                    WaterButton.Visibility = Visibility.Collapsed;
+                }
                 SendToScreenSwitcher(new SailorSodaCustomization(this, soda));
             }
             
@@ -295,6 +403,13 @@ namespace PointOfSale
             {
                 WarriorWater water = new WarriorWater();
                 order.Add(water);
+                if (isCombo)
+                {
+                    AJButton.Visibility = Visibility.Collapsed;
+                    MilkButton.Visibility = Visibility.Collapsed;
+                    SodaButton.Visibility = Visibility.Collapsed;
+                    CoffeeButton.Visibility = Visibility.Collapsed;
+                }
                 SendToScreenSwitcher(new WarriorWaterCustomizations(this, water));
             }
             

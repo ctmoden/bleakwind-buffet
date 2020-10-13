@@ -85,27 +85,27 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
         {
             BriarheartBurger burger = new BriarheartBurger();
-            Assert.PropertyChanged(burger, "Special Instructions", () =>
+            Assert.PropertyChanged(burger, "SpecialInstructions", () =>
             {
                 burger.Bun = false;
             });
-            Assert.PropertyChanged(burger, "Special Instructions", () =>
+            Assert.PropertyChanged(burger, "SpecialInstructions", () =>
             {
                 burger.Ketchup = false;
             });
-            Assert.PropertyChanged(burger, "Special Instructions", () =>
+            Assert.PropertyChanged(burger, "SpecialInstructions", () =>
             {
                 burger.Ketchup = false;
             });
-            Assert.PropertyChanged(burger, "Special Instructions", () =>
+            Assert.PropertyChanged(burger, "SpecialInstructions", () =>
             {
                 burger.Mustard = false;
             });
-            Assert.PropertyChanged(burger, "Special Instructions", () =>
+            Assert.PropertyChanged(burger, "SpecialInstructions", () =>
             {
                 burger.Pickle = false;
             });
-            Assert.PropertyChanged(burger, "Special Instructions", () =>
+            Assert.PropertyChanged(burger, "SpecialInstructions", () =>
             {
                 burger.Cheese = false;
             });

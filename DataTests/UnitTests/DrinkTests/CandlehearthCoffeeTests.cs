@@ -36,12 +36,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         {
             CandlehearthCoffee coffee = new CandlehearthCoffee();
 
-            Assert.PropertyChanged(coffee, "Cream", () =>
+            Assert.PropertyChanged(coffee, "RoomForCream", () =>
             {
                 coffee.RoomForCream = true;
             });
 
-            Assert.PropertyChanged(coffee, "Cream", () =>
+            Assert.PropertyChanged(coffee, "RoomForCream", () =>
             {
                 coffee.RoomForCream = false;
             });

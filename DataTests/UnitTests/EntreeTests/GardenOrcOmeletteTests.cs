@@ -72,19 +72,19 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
         {
             GardenOrcOmelette omelette = new GardenOrcOmelette();
-            Assert.PropertyChanged(omelette, "Special instructions", () =>
+            Assert.PropertyChanged(omelette, "SpecialInstructions", () =>
             {
                 omelette.Broccoli = false;
             });
-            Assert.PropertyChanged(omelette, "Special Instructions", () =>
+            Assert.PropertyChanged(omelette, "SpecialInstructions", () =>
             {
                 omelette.Cheddar = false;
             });
-            Assert.PropertyChanged(omelette, "Special Instructions", () =>
+            Assert.PropertyChanged(omelette, "SpecialInstructions", () =>
             {
                 omelette.Mushrooms = false;
             });
-            Assert.PropertyChanged(omelette, "Special Instructions", () =>
+            Assert.PropertyChanged(omelette, "SpecialInstructions", () =>
             {
                 omelette.Tomato = false;
             });

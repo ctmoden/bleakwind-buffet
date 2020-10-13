@@ -149,47 +149,47 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
         {
             ThalmorTriple triple = new ThalmorTriple();
-            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            Assert.PropertyChanged(triple, "SpecialInstructions", () =>
             {
                 triple.Bun = false;
             });
-            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            Assert.PropertyChanged(triple, "SpecialInstructions", () =>
             {
                 triple.Ketchup = false;
             });
-            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            Assert.PropertyChanged(triple, "SpecialInstructions", () =>
             {
                 triple.Ketchup = false;
             });
-            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            Assert.PropertyChanged(triple, "SpecialInstructions", () =>
             {
                 triple.Mustard = false;
             });
-            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            Assert.PropertyChanged(triple, "SpecialInstructions", () =>
             {
                 triple.Pickle = false;
             });
-            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            Assert.PropertyChanged(triple, "SpecialInstructions", () =>
             {
                 triple.Cheese = false;
             });
-            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            Assert.PropertyChanged(triple, "SpecialInstructions", () =>
             {
                 triple.Tomato = false;
             });
-            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            Assert.PropertyChanged(triple, "SpecialInstructions", () =>
             {
                 triple.Lettuce = false;
             });
-            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            Assert.PropertyChanged(triple, "SpecialInstructions", () =>
             {
                 triple.Mayo = false;
             });
-            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            Assert.PropertyChanged(triple, "SpecialInstructions", () =>
             {
                 triple.Bacon = false;
             });
-            Assert.PropertyChanged(triple, "Special Instructions", () =>
+            Assert.PropertyChanged(triple, "SpecialInstructions", () =>
             {
                 triple.Egg = false;
             });

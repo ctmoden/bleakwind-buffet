@@ -10,16 +10,16 @@ namespace PointOfSale
     /// </summary>
     public static class ReturnToMenu
     {
-        static MenuSelection menu;
+        //static MenuSelection menu;
         /// <summary>
         /// Finds the elements parent control and switches screens 
         /// </summary>
         /// <param name="element"></param>
-        public static void ReturnToMenuScreen(FrameworkElement element, MenuSelection m)
+        public static void ReturnToMenuScreen(FrameworkElement element, MenuSelection menu)
         {
-            menu = m;
+            
             OrderComponent orderControl = element.FindControl<OrderComponent>();
-            orderControl.SwitchScreens(menu);
+            orderControl.SwitchScreens(menu);//make sure you are only changing uppermost border.
         }
     }
 }

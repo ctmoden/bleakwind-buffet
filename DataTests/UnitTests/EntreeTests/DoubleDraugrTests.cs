@@ -123,39 +123,39 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
         {
             DoubleDraugr dd = new DoubleDraugr();
-            Assert.PropertyChanged(dd, "Special Instructions", () =>
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
             {
                 dd.Bun = false;
             });
-            Assert.PropertyChanged(dd, "Special Instructions", () =>
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
             {
                 dd.Ketchup = false;
             });
-            Assert.PropertyChanged(dd, "Special Instructions", () =>
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
             {
                 dd.Ketchup = false;
             });
-            Assert.PropertyChanged(dd, "Special Instructions", () =>
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
             {
                 dd.Mustard = false;
             });
-            Assert.PropertyChanged(dd, "Special Instructions", () =>
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
             {
                 dd.Pickle = false;
             });
-            Assert.PropertyChanged(dd, "Special Instructions", () =>
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
             {
                 dd.Cheese = false;
             });
-            Assert.PropertyChanged(dd, "Special Instructions", () =>
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
             {
                 dd.Tomato = false;
             });
-            Assert.PropertyChanged(dd, "Special Instructions", () =>
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
             {
                 dd.Lettuce = false;
             });
-            Assert.PropertyChanged(dd, "Special Instructions", () =>
+            Assert.PropertyChanged(dd, "SpecialInstructions", () =>
             {
                 dd.Mayo = false;
             });

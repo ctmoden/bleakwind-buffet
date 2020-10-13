@@ -58,15 +58,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
         {
             PhillyPoacher poacher = new PhillyPoacher();
-            Assert.PropertyChanged(poacher, "Special Instructions", () =>
+            Assert.PropertyChanged(poacher, "SpecialInstructions", () =>
             {
                 poacher.Sirloin = false;
             });
-            Assert.PropertyChanged(poacher, "Special Instructions", () =>
+            Assert.PropertyChanged(poacher, "SpecialInstructions", () =>
             {
                 poacher.Onion= false;
             });
-            Assert.PropertyChanged(poacher, "Special Instructions", () =>
+            Assert.PropertyChanged(poacher, "SpecialInstructions", () =>
             {
                 poacher.Roll = false;
             });

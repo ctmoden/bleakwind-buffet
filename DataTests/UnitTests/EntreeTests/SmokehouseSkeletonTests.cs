@@ -70,19 +70,19 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
         {
             SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
-            Assert.PropertyChanged(skeleton, "Special Instructions", () =>
+            Assert.PropertyChanged(skeleton, "SpecialInstructions", () =>
             {
                 skeleton.SausageLink = false;
             });
-            Assert.PropertyChanged(skeleton, "Special Instructions", () =>
+            Assert.PropertyChanged(skeleton, "SpecialInstructions", () =>
             {
                 skeleton.Egg = false;
             });
-            Assert.PropertyChanged(skeleton, "Special Instructions", () =>
+            Assert.PropertyChanged(skeleton, "SpecialInstructions", () =>
             {
                 skeleton.HashBrowns = false;
             });
-            Assert.PropertyChanged(skeleton, "Special Instructions", () =>
+            Assert.PropertyChanged(skeleton, "SpecialInstructions", () =>
             {
                 skeleton.Pancake = false;
             });
