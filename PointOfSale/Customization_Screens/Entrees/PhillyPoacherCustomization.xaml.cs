@@ -20,10 +20,12 @@ namespace PointOfSale.Customization_Screens
     public partial class PhillyPoacherCustomization : UserControl
     {
         PhillyPoacher poacher;
-        public PhillyPoacherCustomization(PhillyPoacher p)
+        MenuSelection menu;
+        public PhillyPoacherCustomization(MenuSelection m, PhillyPoacher p)
         {
             InitializeComponent();
             poacher = p;
+            menu = m;
             DataContext = poacher;
         }
         /// <summary>
@@ -33,7 +35,7 @@ namespace PointOfSale.Customization_Screens
         /// <param name="e">parameters of event</param>
         void ReturnToMainMenu(object sender, RoutedEventArgs e)
         {
-            ReturnToMenu.ReturnToMenuScreen(this);
+            ReturnToMenu.ReturnToMenuScreen(this, menu);
         }
     }
 }

@@ -21,10 +21,11 @@ namespace PointOfSale.Customization_Screens
     /// </summary>
     public partial class SideCustomization : UserControl
     {
-        
-        public SideCustomization(object obj)
+        MenuSelection menu;
+        public SideCustomization(MenuSelection m, object obj)
         {
             InitializeComponent();
+            menu = m;
             DataContext = obj;
         }
         /// <summary>
@@ -56,7 +57,7 @@ namespace PointOfSale.Customization_Screens
         /// <param name="e">parameters of event</param>
         void ReturnToMainMenu(object sender, RoutedEventArgs e)
         {
-            ReturnToMenu.ReturnToMenuScreen(this);
+            ReturnToMenu.ReturnToMenuScreen(this, menu);
         }
     }
 }

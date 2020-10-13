@@ -20,10 +20,16 @@ namespace PointOfSale.Customization_Screens
     public partial class SmokeHouseSkeletonCustomization : UserControl
     {
         SmokehouseSkeleton skeleton;
-        public SmokeHouseSkeletonCustomization(SmokehouseSkeleton s)
+        MenuSelection menu;
+        /// <summary>
+        /// Custom screen
+        /// </summary>
+        /// <param name="s"></param>
+        public SmokeHouseSkeletonCustomization(MenuSelection m, SmokehouseSkeleton s)
         {
             InitializeComponent();
             skeleton = s;
+            menu = m;
             DataContext = skeleton;
         }
         /// <summary>
@@ -33,7 +39,7 @@ namespace PointOfSale.Customization_Screens
         /// <param name="e">parameters of event</param>
         void ReturnToMainMenu(object sender, RoutedEventArgs e)
         {
-            ReturnToMenu.ReturnToMenuScreen(this);
+            ReturnToMenu.ReturnToMenuScreen(this, menu);
         }
     }
 }

@@ -20,10 +20,12 @@ namespace PointOfSale
     public partial class BriarhearthCustomization : UserControl 
     {
         BriarheartBurger burger;
-        public BriarhearthCustomization(BriarheartBurger b)
+        MenuSelection menu;
+        public BriarhearthCustomization(MenuSelection m, BriarheartBurger b)
         {
             InitializeComponent();
             burger = b;
+            menu = m;
             DataContext = burger;
         }
         /// <summary>
@@ -33,7 +35,7 @@ namespace PointOfSale
         /// <param name="e">parameters of event</param>
         void ReturnToMainMenu(object sender, RoutedEventArgs e)
         {
-            ReturnToMenu.ReturnToMenuScreen(this);
+            ReturnToMenu.ReturnToMenuScreen(this, menu);
         }
     }
 }

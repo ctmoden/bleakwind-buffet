@@ -22,10 +22,12 @@ namespace PointOfSale.Customization_Screens.Drinks
     public partial class SailorSodaCustomization : UserControl
     {
         SailorSoda soda;
-        public SailorSodaCustomization(SailorSoda s)
+        MenuSelection menu;
+        public SailorSodaCustomization(MenuSelection m, SailorSoda s)
         {
             InitializeComponent();
             soda = s;
+            menu = m;
             DataContext = soda;
         }
         /// <summary>
@@ -85,7 +87,7 @@ namespace PointOfSale.Customization_Screens.Drinks
         void ReturnToMainMenu(object sender, RoutedEventArgs e)
         {
             
-            ReturnToMenu.ReturnToMenuScreen(this);
+            ReturnToMenu.ReturnToMenuScreen(this, menu);
         }
     }
 }

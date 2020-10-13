@@ -20,10 +20,12 @@ namespace PointOfSale
     public partial class DoubleDraugrCustomization : UserControl
     {
         DoubleDraugr dd;
-        public DoubleDraugrCustomization(DoubleDraugr d)
+        MenuSelection menu;
+        public DoubleDraugrCustomization(MenuSelection m, DoubleDraugr d)
         {
             InitializeComponent();
             dd = d;
+            menu = m;
             DataContext = dd;
         }
         /// <summary>
@@ -33,7 +35,7 @@ namespace PointOfSale
         /// <param name="e">parameters of event</param>
         void ReturnToMainMenu(object sender, RoutedEventArgs e)
         {
-            ReturnToMenu.ReturnToMenuScreen(this);
+            ReturnToMenu.ReturnToMenuScreen(this, menu);
         }
     }
 }

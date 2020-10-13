@@ -21,10 +21,12 @@ namespace PointOfSale.Customization_Screens.Drinks
     public partial class WarriorWaterCustomizations : UserControl
     {
         WarriorWater water;
-        public WarriorWaterCustomizations(WarriorWater w)
+        MenuSelection menu;
+        public WarriorWaterCustomizations(MenuSelection m, WarriorWater w)
         {
             InitializeComponent();
             water = w;
+            menu = m;
             DataContext = water;
         }
         /// <summary>
@@ -49,7 +51,7 @@ namespace PointOfSale.Customization_Screens.Drinks
         /// <param name="e">parameters of event</param>
         void ReturnToMainMenu(object sender, RoutedEventArgs e)
         {
-            ReturnToMenu.ReturnToMenuScreen(this);
+            ReturnToMenu.ReturnToMenuScreen(this, menu);
         }
     }
 }

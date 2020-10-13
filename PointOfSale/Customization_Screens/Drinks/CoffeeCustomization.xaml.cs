@@ -21,9 +21,11 @@ namespace PointOfSale.Customization_Screens.Drinks
     public partial class CoffeeCustomization : UserControl
     {
         CandlehearthCoffee coffee;
-        public CoffeeCustomization(CandlehearthCoffee c)
+        MenuSelection menu;
+        public CoffeeCustomization(MenuSelection m, CandlehearthCoffee c)
         {
             InitializeComponent();
+            menu = m;
             coffee = c;
             DataContext = coffee;
         }
@@ -49,7 +51,7 @@ namespace PointOfSale.Customization_Screens.Drinks
         /// <param name="e">parameters of event</param>
         void ReturnToMainMenu(object sender, RoutedEventArgs e)
         {
-            ReturnToMenu.ReturnToMenuScreen(this);
+            ReturnToMenu.ReturnToMenuScreen(this, menu);
         }
     }
 }

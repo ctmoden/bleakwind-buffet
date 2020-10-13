@@ -20,10 +20,12 @@ namespace PointOfSale.Customization_Screens
     public partial class GardenOrcOmeletteCustomization : UserControl
     {
         GardenOrcOmelette omelette;
-        public GardenOrcOmeletteCustomization(GardenOrcOmelette o)
+        MenuSelection menu;
+        public GardenOrcOmeletteCustomization(MenuSelection m, GardenOrcOmelette o)
         {
             InitializeComponent();
             omelette = o;
+            menu = m;
             DataContext = omelette;
         }
         /// <summary>
@@ -33,7 +35,7 @@ namespace PointOfSale.Customization_Screens
         /// <param name="e">parameters of event</param>
         void ReturnToMainMenu(object sender, RoutedEventArgs e)
         {
-            ReturnToMenu.ReturnToMenuScreen(this);
+            ReturnToMenu.ReturnToMenuScreen(this, menu);
         }
     }
 }

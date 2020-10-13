@@ -21,10 +21,12 @@ namespace PointOfSale.Customization_Screens.Drinks
     public partial class AretinoAppleJuiceCustomization : UserControl
     {
         AretinoAppleJuice aj;
-        public AretinoAppleJuiceCustomization(AretinoAppleJuice a)
+        MenuSelection menu;
+        public AretinoAppleJuiceCustomization(MenuSelection m, AretinoAppleJuice a)
         {
             InitializeComponent();
             aj = a;
+            menu = m;
             DataContext = aj;
         }
         /// <summary>
@@ -49,7 +51,7 @@ namespace PointOfSale.Customization_Screens.Drinks
         /// <param name="e">parameters of event</param>
         void ReturnToMainMenu(object sender, RoutedEventArgs e)
         {
-            ReturnToMenu.ReturnToMenuScreen(this);
+            ReturnToMenu.ReturnToMenuScreen(this, menu);
         }
     }
 }

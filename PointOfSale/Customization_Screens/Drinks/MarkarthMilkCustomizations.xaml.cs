@@ -21,10 +21,12 @@ namespace PointOfSale.Customization_Screens.Drinks
     public partial class MarkarthMilkCustomizations : UserControl
     {
         MarkarthMilk milk;
-        public MarkarthMilkCustomizations(MarkarthMilk m)
+        MenuSelection menu;
+        public MarkarthMilkCustomizations(MenuSelection men, MarkarthMilk m)
         {
             InitializeComponent();
             milk = m;
+            menu = men;
             DataContext = milk;
         }
         /// <summary>
@@ -49,7 +51,7 @@ namespace PointOfSale.Customization_Screens.Drinks
         /// <param name="e">parameters of event</param>
         void ReturnToMainMenu(object sender, RoutedEventArgs e)
         {
-            ReturnToMenu.ReturnToMenuScreen(this);
+            ReturnToMenu.ReturnToMenuScreen(this, menu);
         }
     }
 }

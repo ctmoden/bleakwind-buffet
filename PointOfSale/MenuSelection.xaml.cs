@@ -26,15 +26,19 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuSelection : UserControl
     {
-       
+        bool isCombo = false;
+        Combo combo;
+
         public MenuSelection()
         {
             InitializeComponent();
             
         }
-
+        
         public void MakeCombo(object sender, RoutedEventArgs e)
         {
+            combo = new Combo();
+            isCombo = true;
             //only one of each can be selected
             //set some bool field to true if selected, create new combo instance
             //when selecting items, check for combo field
@@ -64,7 +68,13 @@ namespace PointOfSale
             {
                 BriarheartBurger burger = new BriarheartBurger();
                 order.Add(burger);
-                SendToScreenSwitcher(new BriarhearthCustomization(burger));
+                if (isCombo)
+                {
+                    combo.Entree = burger;
+                    DoubleButton.Visibility = Visibility.Collapsed;
+                }
+                SendToScreenSwitcher(new BriarhearthCustomization(this,burger));
+                
             }
             
           
@@ -80,7 +90,7 @@ namespace PointOfSale
             {
                 DoubleDraugr dd = new DoubleDraugr();
                 order.Add(dd);
-                SendToScreenSwitcher(new DoubleDraugrCustomization(dd));
+                SendToScreenSwitcher(new DoubleDraugrCustomization(this,dd));
             }
             
             
@@ -97,7 +107,7 @@ namespace PointOfSale
             {
                 ThalmorTriple triple = new ThalmorTriple();
                 order.Add(triple);
-                SendToScreenSwitcher(new ThalmorTripleCustomization(triple));
+                SendToScreenSwitcher(new ThalmorTripleCustomization(this, triple));
             }
             
 
@@ -114,7 +124,7 @@ namespace PointOfSale
             {
                 PhillyPoacher poacher = new PhillyPoacher();
                 order.Add(poacher);
-                SendToScreenSwitcher(new PhillyPoacherCustomization(poacher));
+                SendToScreenSwitcher(new PhillyPoacherCustomization(this, poacher));
             }
             
 
@@ -130,7 +140,7 @@ namespace PointOfSale
             {
                 GardenOrcOmelette omelette = new GardenOrcOmelette();
                 order.Add(omelette);
-                SendToScreenSwitcher(new GardenOrcOmeletteCustomization(omelette));
+                SendToScreenSwitcher(new GardenOrcOmeletteCustomization(this, omelette));
             }
             
         }
@@ -145,7 +155,7 @@ namespace PointOfSale
             {
                 SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
                 order.Add(skeleton);
-                SendToScreenSwitcher(new SmokeHouseSkeletonCustomization(skeleton));
+                SendToScreenSwitcher(new SmokeHouseSkeletonCustomization(this, skeleton));
             }
             
 
@@ -161,7 +171,7 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 DragonbornWaffleFries fries = new DragonbornWaffleFries();
-                SendToScreenSwitcher(new SideCustomization(fries));
+                SendToScreenSwitcher(new SideCustomization(this, fries));
                 order.Add(fries);
                 
             }
@@ -178,7 +188,7 @@ namespace PointOfSale
             {
                 FriedMiraak miraak = new FriedMiraak();
                 order.Add(miraak);
-                SendToScreenSwitcher(new SideCustomization(miraak));
+                SendToScreenSwitcher(new SideCustomization(this, miraak));
             }
             
             
@@ -194,7 +204,7 @@ namespace PointOfSale
             {
                 MadOtarGrits grits = new MadOtarGrits();
                 order.Add(grits);
-                SendToScreenSwitcher(new SideCustomization(grits));
+                SendToScreenSwitcher(new SideCustomization(this, grits));
             }
             
         }
@@ -209,7 +219,7 @@ namespace PointOfSale
             {
                 VokunSalad salad = new VokunSalad();
                 order.Add(salad);
-                SendToScreenSwitcher(new SideCustomization(salad));
+                SendToScreenSwitcher(new SideCustomization(this, salad));
             }
             
         }
@@ -224,7 +234,7 @@ namespace PointOfSale
             {
                 AretinoAppleJuice aj = new AretinoAppleJuice();
                 order.Add(aj);
-                SendToScreenSwitcher(new AretinoAppleJuiceCustomization(aj));
+                SendToScreenSwitcher(new AretinoAppleJuiceCustomization(this, aj));
             }
             
         }
@@ -239,7 +249,7 @@ namespace PointOfSale
             {
                 CandlehearthCoffee coffee = new CandlehearthCoffee();
                 order.Add(coffee);
-                SendToScreenSwitcher(new CoffeeCustomization(coffee));
+                SendToScreenSwitcher(new CoffeeCustomization(this, coffee));
             }
             
             
@@ -255,7 +265,7 @@ namespace PointOfSale
             {
                 MarkarthMilk milk = new MarkarthMilk();
                 order.Add(milk);
-                SendToScreenSwitcher(new MarkarthMilkCustomizations(milk));
+                SendToScreenSwitcher(new MarkarthMilkCustomizations(this, milk));
             }
             
         }
@@ -270,7 +280,7 @@ namespace PointOfSale
             {
                 SailorSoda soda = new SailorSoda();
                 order.Add(soda);
-                SendToScreenSwitcher(new SailorSodaCustomization(soda));
+                SendToScreenSwitcher(new SailorSodaCustomization(this, soda));
             }
             
         }
@@ -285,7 +295,7 @@ namespace PointOfSale
             {
                 WarriorWater water = new WarriorWater();
                 order.Add(water);
-                SendToScreenSwitcher(new WarriorWaterCustomizations(water));
+                SendToScreenSwitcher(new WarriorWaterCustomizations(this, water));
             }
             
         }

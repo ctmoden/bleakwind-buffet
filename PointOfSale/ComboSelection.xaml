@@ -18,6 +18,6 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="1" Text="Welcome to the Bleakwind Buffet!" TextAlignment="Center" TextWrapping="Wrap" FontSize="44" FontStyle="Italic"/>
         <Button Click="SelectCombo" Grid.Column="0" Grid.Row="1" x:Name="chooseCombo" FontSize="40" >Combo</Button>
-        <Button Click="SelectNonCombo" Grid.Column="2" Grid.Row="1" x:Name="chooseNonCombo" FontSize="40" >Non-Combo</Button>
+        <Button  Grid.Column="2" Grid.Row="1" x:Name="chooseNonCombo" FontSize="40" >Non-Combo</Button>
     </Grid>
 </UserControl>
