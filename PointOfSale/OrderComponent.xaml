@@ -73,7 +73,7 @@
 
         </DockPanel>
         <Border x:Name="menuControl" Grid.Column="0">
-            <local:ScreenSwitcher></local:ScreenSwitcher>
+            <local:MenuSelection></local:MenuSelection>
         </Border>
         
 

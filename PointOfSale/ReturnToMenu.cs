@@ -16,8 +16,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="element"></param>
         public static void ReturnToMenuScreen(FrameworkElement element, MenuSelection menu)
-        {
-            
+        {           
             OrderComponent orderControl = element.FindControl<OrderComponent>();
             orderControl.SwitchScreens(menu);//make sure you are only changing uppermost border.
         }
