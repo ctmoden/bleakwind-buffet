@@ -28,12 +28,34 @@ namespace BleakwindBuffet.DataTests.UnitTests
             });
         }
         [Fact]
-        public void ChangingPriceChangesPriceProperty()
+        public void ChangingDrinkPriceChangesPriceProperty()
         {
             Combo combo = new Combo();
             AretinoAppleJuice aj = new AretinoAppleJuice();
             
             Assert.PropertyChanged(combo, "Price", () =>
+            {
+                combo.Drink = aj;
+
+            });
+        }
+        [Fact]
+        public void ChangingDrinkCaloriesChanhgesCaloriesProperty()
+        {
+            Combo combo = new Combo();
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(combo, "Calories", () =>
+            {
+                combo.Drink = aj;
+
+            });
+        }
+        [Fact]
+        public void ChangingDrinkInstructionsChangesInstructionsProprty()
+        {
+            Combo combo = new Combo();
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(combo, "SpecialInstructions", () =>
             {
                 combo.Drink = aj;
 

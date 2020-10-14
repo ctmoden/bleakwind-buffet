@@ -120,27 +120,27 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
         {
             CandlehearthCoffee coffee = new CandlehearthCoffee();
-            Assert.PropertyChanged(coffee, "Special Instructions", () =>
+            Assert.PropertyChanged(coffee, "SpecialInstructions", () =>
             {
                 coffee.Ice = true;
             });
-            Assert.PropertyChanged(coffee, "Special Instructions", () =>
+            Assert.PropertyChanged(coffee, "SpecialInstructions", () =>
             {
                 coffee.Ice = false;
             });
-            Assert.PropertyChanged(coffee, "Special Instructions", () =>
+            Assert.PropertyChanged(coffee, "SpecialInstructions", () =>
             {
                 coffee.Decaf = false;
             });
-            Assert.PropertyChanged(coffee, "Special Instructions", () =>
+            Assert.PropertyChanged(coffee, "SpecialInstructions", () =>
             {
                 coffee.Decaf = true;
             });
-            Assert.PropertyChanged(coffee, "Special Instructions", () =>
+            Assert.PropertyChanged(coffee, "SpecialInstructions", () =>
             {
                 coffee.RoomForCream = false;
             });
-            Assert.PropertyChanged(coffee, "Special Instructions", () =>
+            Assert.PropertyChanged(coffee, "SpecialInstructions", () =>
             {
                 coffee.RoomForCream = true;
             });

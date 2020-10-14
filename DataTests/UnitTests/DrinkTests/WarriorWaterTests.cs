@@ -68,11 +68,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
         {
             WarriorWater water = new WarriorWater();
-            Assert.PropertyChanged(water, "Special Instructions", () =>
+            Assert.PropertyChanged(water, "SpecialInstructions", () =>
             {
                 water.Ice = false;
             });
-            Assert.PropertyChanged(water, "Special Instructions", () =>
+            Assert.PropertyChanged(water, "SpecialInstructions", () =>
             {
                 water.Lemon = true;
             });

@@ -89,11 +89,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
         {
             MarkarthMilk milk = new MarkarthMilk();
-            Assert.PropertyChanged(milk, "Special Instructions", () =>
+            Assert.PropertyChanged(milk, "SpecialInstructions", () =>
             {
                 milk.Ice = true;
             });
-            Assert.PropertyChanged(milk, "Special Instructions", () =>
+            Assert.PropertyChanged(milk, "SpecialInstructions", () =>
             {
                 milk.Ice = false;
             });

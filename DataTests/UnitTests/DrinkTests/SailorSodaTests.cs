@@ -121,11 +121,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         public void ChangingSpecialInstructionsNotifiesSpecialInstructionsProperty()
         {
             SailorSoda soda = new SailorSoda();
-            Assert.PropertyChanged(soda ,"Special Instructions", () =>
+            Assert.PropertyChanged(soda ,"SpecialInstructions", () =>
             {
                 soda.Ice = true;
             });
-            Assert.PropertyChanged(soda, "Special Instructions", () =>
+            Assert.PropertyChanged(soda, "SpecialInstructions", () =>
             {
                 soda.Ice = false;
             });
