@@ -28,5 +28,16 @@ namespace PointOfSale
             get => (int)GetValue(ValueProperty);
             set => SetValue(ValueProperty, value);
         }
+
+        void IncrementButton(object sender, RoutedEventArgs e)
+        {
+            Value++;
+            e.Handled = true;
+        }
+        void DecrementButton(object sender, RoutedEventArgs e)
+        {
+            if(Value>0) Value++;
+            e.Handled = true;
+        }
     }
 }
