@@ -19,38 +19,43 @@
             </StackPanel>
             <Grid DockPanel.Dock="Bottom">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
-                    <ColumnDefinition Width="50"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock x:Name="subTotalText" Grid.Row="0" Grid.Column="0" FontSize="30" Text="Subtotal"/>
-                <TextBlock x:Name="taxText" Grid.Row="1" Grid.Column="0" FontSize="30" Text="Tax"/>
-                <TextBlock x:Name="totalText" Grid.Row="2" Grid.Column="0" FontSize="30" Text="Total"/>
-                <TextBlock FontSize="30" Grid.Row="0" Grid.Column="1" Text="$" TextAlignment="Right"/>
-                <TextBlock FontSize="30" Grid.Row="1" Grid.Column="1" Text="$" TextAlignment="Right"/>
+                <Button Click="CompleteOrder" Grid.Row="0" Grid.Column="1" FontSize="30">Complete Order</Button>
+                <Button Click="CancelOrder" Grid.Row="1" Grid.Column="1" FontSize="30">Cancel Order</Button>
+                <TextBlock x:Name="subTotalText" Grid.Row="2" Grid.Column="0" FontSize="30" Text="Subtotal"/>
+                <TextBlock x:Name="taxText" Grid.Row="3" Grid.Column="0" FontSize="30" Text="Tax"/>
+                <TextBlock x:Name="totalText" Grid.Row="4" Grid.Column="0" FontSize="30" Text="Total"/>
                 <TextBlock FontSize="30" Grid.Row="2" Grid.Column="1" Text="$" TextAlignment="Right"/>
-                <TextBlock FontSize="30" Grid.Row="0" Grid.Column="2" Text="{Binding Path=SubTotal}" TextAlignment="Left"/>
-                <TextBlock FontSize="30" Grid.Row="1" Grid.Column="2" Text="{Binding Path=Tax}" TextAlignment="Left"/>
-                <TextBlock FontSize="30" Grid.Row="2" Grid.Column="2" Text="{Binding Path=Total}" TextAlignment="Left"/>
+                <TextBlock FontSize="30" Grid.Row="3" Grid.Column="1" Text="$" TextAlignment="Right"/>
+                <TextBlock FontSize="30" Grid.Row="4" Grid.Column="1" Text="$" TextAlignment="Right"/>
+                <TextBlock FontSize="30" Grid.Row="2" Grid.Column="2" Text="{Binding Path=SubTotal}" TextAlignment="Left"/>
+                <TextBlock FontSize="30" Grid.Row="3" Grid.Column="2" Text="{Binding Path=Tax}" TextAlignment="Left"/>
+                <TextBlock FontSize="30" Grid.Row="4" Grid.Column="2" Text="{Binding Path=Total}" TextAlignment="Left"/>
             </Grid>
+            
             <ListView IsSynchronizedWithCurrentItem="True" Name ="itemsListView" FontSize="30" ItemsSource="{Binding}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="300"/>
-                                <ColumnDefinition Width="10"/>
-                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="50"/>
-                                <RowDefinition Height="50"/>
-                                <RowDefinition Height="50"/>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
 
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Path=Name}"/>
@@ -62,13 +67,14 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                             
-                            <Button Grid.Row="2" Grid.Column="0" Click="ClearOrder">Remove</Button>
+                            <Button Grid.Row="2" Grid.Column="0" Click="ClearOrderItem">Remove</Button>
                             <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding Path=Price}"/>
                             <TextBlock Grid.Row="0" Grid.Column="1" Text="$"/>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            
 
 
         </DockPanel>

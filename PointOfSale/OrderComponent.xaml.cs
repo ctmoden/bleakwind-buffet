@@ -37,7 +37,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void ClearOrder(object sender, RoutedEventArgs e)
+        public void ClearOrderItem(object sender, RoutedEventArgs e)
         {
             if(DataContext is Order order)
             {
@@ -48,6 +48,25 @@ namespace PointOfSale
                 //how to find index of one I want to remove?
                 //need a reference to the item that needs to be deleted
             }
+        }
+
+        public void CancelOrder(object sender, RoutedEventArgs e)
+        {
+            
+            order = new Order();
+            DataContext = order;
+            
+        }
+        /// <summary>
+        /// Sends user to the payment screen.  Could leave order details in screen 
+        /// (as if switching between menu selection and customization screens)
+        /// look at SendToScreenSwitcher method in Menu selection for guidance
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void CompleteOrder(object sender, RoutedEventArgs e)
+        {
+
         }
         
 
