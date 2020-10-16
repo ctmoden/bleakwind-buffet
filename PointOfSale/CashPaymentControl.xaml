@@ -138,7 +138,7 @@
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" 
                                VerticalAlignment="Center"
                                FontSize="30"
-                               Text="Change" 
+                               Text="{Binding Path=ChangeOwed}" 
                                TextAlignment="Right"/>
                 </Grid>
 
