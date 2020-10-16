@@ -4,15 +4,108 @@ using System.ComponentModel;
 using System.Reflection;
 using System.Text;
 using BleakwindBuffet.Data;
+using RoundRegister;
 namespace BleakwindBuffet.Data
 {
     public class CashDrawerViewModel:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         Order order;
-        public CashDrawerViewModel()
+        
+        public CashDrawerViewModel(Order o)
         {
-            //order = o;
+            order = o;
+        }
+        /// <summary>
+        /// extracts current order's subtotal
+        /// </summary>
+        public double SubTotal
+        {
+            get => order.SubTotal;
+        }
+        /// <summary>
+        /// Extracts tax from order 
+        /// </summary>
+        public double Tax
+        {
+            get => order.Tax;
+        }
+        /// <summary>
+        /// Extracts total from curretnt order
+        /// </summary>
+        public double Total
+        {
+            get => order.Total;
+        }
+        /// <summary>
+        /// prints receipt of the whole order
+        /// </summary>
+        public void FinalizeOrder()
+        {
+            CashDrawer.OpenDrawer();
+            //add num of bills from customer
+            //subtract num of bills from change given
+            RecieptPrinter.PrintLine($"Order #{order.Number}");
+            //date and time order was finalized
+            for(int i = 0; i < order.Count; i++)
+            {
+                RecieptPrinter.PrintLine(order[i].ToString());
+                for(int j = 0; j < order[i].SpecialInstructions.Count; j++)
+                {
+                    RecieptPrinter.PrintLine($"\t {order[i].SpecialInstructions[j]}");
+                }
+                
+            }
+            RecieptPrinter.PrintLine($"Subtotal: {SubTotal}");
+            RecieptPrinter.PrintLine($"Tax: {Tax}");
+            RecieptPrinter.PrintLine($"Total: {order.Total}");
+            //payment method
+            //change owed
+            RecieptPrinter.CutTape();
+        }
+
+        public double CalculateChange()
+        {
+            //params/varaibles: order total, num of each currenncy from customer.
+            //add up all currency bills and coins given from the user
+            //
+            return 1.1;
+        }
+        
+        
+        /// <summary>
+        /// Total amount given my the user
+        /// </summary>
+        public double AmountTenuered
+        {
+            get => (Ones * 1) + (Twos * 2) + (Fives * 5) + (Tens * 10) +
+                    (Twenties * 20) + (Fifties * 50) + (Hundreds * 100) + (OneCent * .01) +
+                    (FiveCent * .05) + (TenCent * .1) + (TwentyFiveCent) * .25 + (FiftyCent * .5);
+            
+        }
+        //double amountOwed = 0;
+        /// <summary>
+        /// Running total 
+        /// </summary>
+        public double AmountOwed
+        {
+            get => Total-AmountTenuered;
+            
+        }
+        /// <summary>
+        /// Change owed to the user
+        /// </summary>
+        public double ChangeOwed
+        {
+            get
+            {
+                if (AmountTenuered > AmountOwed)
+                {
+                    return AmountTenuered - AmountOwed;
+                }
+                else return 0.0;
+            }
+            
         }
         int ones = 0;
         /// <summary>
@@ -23,8 +116,13 @@ namespace BleakwindBuffet.Data
             get => ones;
             set
             {
-                ones = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ones"));
+                if (ones != value)
+                {
+                    ones = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ones"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountTenured"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwed"));
+                }
             }
         }
         int twos = 0;
@@ -37,6 +135,7 @@ namespace BleakwindBuffet.Data
             set
             {
                 twos = value;
+                
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Twos"));
             }
         }

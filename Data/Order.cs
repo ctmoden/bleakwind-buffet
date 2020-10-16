@@ -120,7 +120,7 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-                return SubTotal * SalesTaxRate;
+                return SubTotal * SalesTaxRate;//FIXME format to two decimal places
             }
         }
         

@@ -15,7 +15,7 @@
         <Button Grid.Column="0" Click="DecrementButton" >
             <TextBlock Text="-" FontSize="80" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </Button>
-        <TextBlock Grid.Column="1" Text="{Binding Path=Value}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="80"/>
+        <TextBlock Grid.Column="1" Text="{Binding Path=Value, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:MoneyCountBox}}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="80"/>
         <Button Grid.Column="2" Click="IncrementButton" >
             <TextBlock Text="+" FontSize="80" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </Button>

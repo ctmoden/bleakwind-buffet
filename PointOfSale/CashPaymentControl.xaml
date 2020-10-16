@@ -26,7 +26,7 @@
             <local:MoneyCountBox Value="{Binding Path=FiveCent}" />
             <local:MoneyCountBox Value="{Binding Path=TenCent}" />
             <local:MoneyCountBox Value="{Binding Path=TwentyFiveCent}" />
-            <local:MoneyCountBox Value="{Binding Path=FiftyCent}" />
+            <local:MoneyCountBox Value="{Binding Path=FiftyCent}"/>
         </StackPanel>
         <StackPanel Grid.Column="0">
             <TextBlock HorizontalAlignment="Center" FontSize="30">Amount</TextBlock>
@@ -92,7 +92,7 @@
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" 
                                VerticalAlignment="Center"
                                FontSize="30"
-                               Text="Total" 
+                               Text="{Binding Path=Total}" 
                                TextAlignment="Right"/>
                 </Grid>
             </Grid>
@@ -101,7 +101,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="20">Amount Due</TextBlock>
+                <TextBlock Grid.Row="0" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="20">Amount Owed</TextBlock>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width=".25*"/>
@@ -115,7 +115,7 @@
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" 
                                VerticalAlignment="Center"
                                FontSize="30"
-                               Text="Due" 
+                               Text="{Binding Path=AmountOwed}" 
                                TextAlignment="Right"/>
                 </Grid>
             </Grid>

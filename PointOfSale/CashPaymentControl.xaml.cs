@@ -25,8 +25,9 @@ namespace PointOfSale
         public CashPaymentControl(Order o)
         {
             InitializeComponent();
-            DataContext = new CashDrawerViewModel();//do I send order details here too?
             order = o;
+            DataContext = new CashDrawerViewModel(order);//do I send order details here too?  I am thinking yes
+            
         }
 
         void ReturnToOrder(object sender, RoutedEventArgs e)
@@ -37,7 +38,7 @@ namespace PointOfSale
 
         void FinalizeSale(object sender, RoutedEventArgs e)
         {
-
+            //invoke receipt method defined in 
         }
     }
 }
