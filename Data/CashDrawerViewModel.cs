@@ -17,6 +17,14 @@ namespace BleakwindBuffet.Data
             order = o;
         }
         /// <summary>
+        /// calculates the change needed for each dollar bill 
+        /// modulus division on change due, use biggest bill 
+        /// </summary>
+        public void ChangeDueToCustomer()
+        {
+
+        }
+        /// <summary>
         /// extracts current order's subtotal
         /// </summary>
         public double SubTotal
@@ -90,19 +98,21 @@ namespace BleakwindBuffet.Data
         public double AmountOwed
         {
             get
-            {
-                //double amountOwed = Total - AmountTenuered;
-                if (Total > AmountTenuered)
-                {
-                    return Total-AmountTenuered;
-                }
-                else
-                {
-                    return 0;
-                }
-                
+            {               
+                return Total-AmountTenuered;  
             }
             
+        }
+        /// <summary>
+        /// Disply property for amount owed
+        /// </summary>
+        public double AmountOwedDisplay
+        {
+            get
+            {
+                if (AmountOwed < 0) return 0;
+                else return AmountOwed;
+            }
         }
         /// <summary>
         /// Change owed to the user
@@ -111,12 +121,25 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-                return Math.Abs(AmountTenuered - AmountOwed);
+                if (AmountOwed < 0) return Math.Abs(AmountOwed);
+                else return AmountTenuered - AmountOwed;
                 
-                
+
             }
             
         }
+        /// <summary>
+        /// Display property for change owed
+        /// </summary>
+        public double ChangeOwedDisplay
+        {
+            get
+            {
+                if (ChangeOwed > 0) return Math.Abs(ChangeOwed);
+                else return 0;
+            }
+        }
+        
         int ones = 0;
         /// <summary>
         /// number of one dollar bills in cash exchange
@@ -205,6 +228,8 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountTenured"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
         }
         int fifties = 0;
