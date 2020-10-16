@@ -20,16 +20,18 @@ namespace PointOfSale
     /// </summary>
     public partial class CashPaymentControl : UserControl
     {
-        MenuSelection menu;
+        
         Order order;
-        public CashPaymentControl()
+        public CashPaymentControl(Order o)
         {
             InitializeComponent();
-            DataContext = new CashDrawerViewModel();
+            DataContext = new CashDrawerViewModel();//do I send order details here too?
+            order = o;
         }
 
         void ReturnToOrder(object sender, RoutedEventArgs e)
         {
+            //bubble back up tree to find control I want to display
 
         }
 

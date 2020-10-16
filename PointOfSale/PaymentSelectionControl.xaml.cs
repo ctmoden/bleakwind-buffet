@@ -32,5 +32,11 @@ namespace PointOfSale
         {
             ReturnToMenu.ReturnToMenuScreen(this, menu);
         }
+
+        void CashPayment(object sender, RoutedEventArgs e)
+        {
+            controllerBorder.Child = new CashPaymentControl(order);
+            //switch to cash payment screen
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace PointOfSale
             
         }
         
-        public void MakeCombo(object sender, RoutedEventArgs e)
+        void MakeCombo(object sender, RoutedEventArgs e)
         {
             combo = new Combo();
             isCombo = true;
@@ -51,7 +51,7 @@ namespace PointOfSale
         /// newly created order control objects screen switching method
         /// </summary>
         /// <param name="screenToSwitchTo">specifies which screen to switch to from current screen</param>
-        public void SendToScreenSwitcher(FrameworkElement screenToSwitchTo)
+        void SendToScreenSwitcher(FrameworkElement screenToSwitchTo)
         {
             OrderComponent orderController = this.FindControl<OrderComponent>();
             orderController.SwitchScreens(screenToSwitchTo);
