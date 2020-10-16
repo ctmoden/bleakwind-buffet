@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
 using System.Text;
-
+using BleakwindBuffet.Data;
 namespace BleakwindBuffet.Data
 {
     public class CashDrawerViewModel:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
+        Order order;
+        public CashDrawerViewModel()
+        {
+            //order = o;
+        }
         int ones = 0;
         /// <summary>
         /// number of one dollar bills in cash exchange

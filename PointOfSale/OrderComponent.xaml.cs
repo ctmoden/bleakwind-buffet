@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BleakwindBuffet.Data.Order;
+
 
 namespace PointOfSale
 {
@@ -21,12 +21,14 @@ namespace PointOfSale
     public partial class OrderComponent : UserControl
     {
         Order order;
+        
         public OrderComponent()
         {
             InitializeComponent();
             order = new Order();
             DataContext = order;
         }
+        
         public void SwitchScreens(FrameworkElement element)
         {
             //pass in screen you want to change to
@@ -66,8 +68,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void CompleteOrder(object sender, RoutedEventArgs e)
         {
-
+            //menuControl.DataContext.
+            menuControl.Child = new PaymentSelectionControl(mainMenu, order);
+            //send order to cash payment control
+            //switch screens to cash control
+            //change menu selections border child to cash payment control, much like switching to customization screen
+            //HELP how do I get reference of current menu when working with buttons in order component
         }
+
+        
         
 
     }

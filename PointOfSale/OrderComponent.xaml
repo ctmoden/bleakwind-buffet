@@ -79,7 +79,7 @@
 
         </DockPanel>
         <Border x:Name="menuControl" Grid.Column="0">
-            <local:MenuSelection></local:MenuSelection>
+            <local:MenuSelection x:Name="mainMenu"></local:MenuSelection>
         </Border>
         
 

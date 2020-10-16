@@ -16,7 +16,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BleakwindBuffet.Data.Order;
 using BleakwindBuffet.Data.Drinks;
 
 namespace PointOfSale
@@ -52,10 +51,10 @@ namespace PointOfSale
         /// newly created order control objects screen switching method
         /// </summary>
         /// <param name="screenToSwitchTo">specifies which screen to switch to from current screen</param>
-        private void SendToScreenSwitcher(FrameworkElement screenToSwitchTo)
+        public void SendToScreenSwitcher(FrameworkElement screenToSwitchTo)
         {
-            OrderComponent orderControler = this.FindControl<OrderComponent>();
-            orderControler.SwitchScreens(screenToSwitchTo);
+            OrderComponent orderController = this.FindControl<OrderComponent>();
+            orderController.SwitchScreens(screenToSwitchTo);
         }
         /// <summary>
         /// Button event for briarheart

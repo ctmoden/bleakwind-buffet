@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.Specialized;
 
-namespace BleakwindBuffet.Data.Order
+namespace BleakwindBuffet.Data
 {
     public class Order: ObservableCollection<IOrderItem>, INotifyPropertyChanged
     {

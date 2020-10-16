@@ -1,5 +1,4 @@
-﻿using BleakwindBuffet.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -11,31 +10,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
-
+using BleakwindBuffet.Data;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CashPaymentControl.xaml
+    /// Interaction logic for PaymentSelectionControl.xaml
     /// </summary>
-    public partial class CashPaymentControl : UserControl
+    public partial class PaymentSelectionControl : UserControl
     {
         MenuSelection menu;
         Order order;
-        public CashPaymentControl()
+        public PaymentSelectionControl(MenuSelection m, Order o)
         {
+
             InitializeComponent();
-            DataContext = new CashDrawerViewModel();
+            menu = m;
+            order = o;
         }
 
-        void ReturnToOrder(object sender, RoutedEventArgs e)
+        void ReturnToMainMenu(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        void FinalizeSale(object sender, RoutedEventArgs e)
-        {
-
+            ReturnToMenu.ReturnToMenuScreen(this, menu);
         }
     }
 }
