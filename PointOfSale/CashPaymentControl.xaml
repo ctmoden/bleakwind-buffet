@@ -10,20 +10,139 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            <local:MoneyCountBox Value="{Binding Path=Ones}" Margin="5"/>
-            <local:MoneyCountBox Value="{Binding Path=Twos}" Margin="5"/>
-            <local:MoneyCountBox Value="{Binding Path=Fives}" Margin="5"/>
-            <local:MoneyCountBox Value="{Binding Path=Tens}" Margin="5"/>
-            <local:MoneyCountBox Value="{Binding Path=Fifties}" Margin="5"/>
-            <local:MoneyCountBox Value="{Binding Path=Hundreds}" Margin="5"/>
-            <local:MoneyCountBox Value="{Binding Path=OneCent}" Margin="5"/>
-            <local:MoneyCountBox Value="{Binding Path=FiveCent}" Margin="5"/>
-            <local:MoneyCountBox Value="{Binding Path=TenCent}" Margin="5"/>
-            <local:MoneyCountBox Value="{Binding Path=TwentyFiveCent}" Margin="5"/>
-            <local:MoneyCountBox Value="{Binding Path=FiftyCent}" Margin="5"/>
+        <StackPanel Grid.Column="1">
+            <TextBlock HorizontalAlignment="Center" FontSize="29">From Customer</TextBlock>
+            <local:MoneyCountBox Value="{Binding Path=Ones}" />
+            <local:MoneyCountBox Value="{Binding Path=Twos}" />
+            <local:MoneyCountBox Value="{Binding Path=Fives}" />
+            <local:MoneyCountBox Value="{Binding Path=Tens}" />
+            <local:MoneyCountBox Value="{Binding Path=Twenties}" />
+            <local:MoneyCountBox Value="{Binding Path=Fifties}" />
+            <local:MoneyCountBox Value="{Binding Path=Hundreds}" />
+            <local:MoneyCountBox Value="{Binding Path=OneCent}" />
+            <local:MoneyCountBox Value="{Binding Path=FiveCent}" />
+            <local:MoneyCountBox Value="{Binding Path=TenCent}" />
+            <local:MoneyCountBox Value="{Binding Path=TwentyFiveCent}" />
+            <local:MoneyCountBox Value="{Binding Path=FiftyCent}" />
         </StackPanel>
-        
+        <StackPanel Grid.Column="0">
+            <TextBlock HorizontalAlignment="Center" FontSize="30">Amount</TextBlock>
+            <TextBlock HorizontalAlignment="Right" Margin="3" FontSize="40">$1</TextBlock>
+            <TextBlock HorizontalAlignment="Right" Margin="3" FontSize="40">$2</TextBlock>
+            <TextBlock HorizontalAlignment="Right" Margin="3" FontSize="40">$5</TextBlock>
+            <TextBlock HorizontalAlignment="Right" Margin="7" FontSize="40">$10</TextBlock>
+            <TextBlock HorizontalAlignment="Right" Margin="2" FontSize="40">$20</TextBlock>
+            <TextBlock HorizontalAlignment="Right" Margin="2" FontSize="40">$50</TextBlock>
+            <TextBlock HorizontalAlignment="Right" Margin="2" FontSize="40">$100</TextBlock>
+            <TextBlock HorizontalAlignment="Right" Margin="2" FontSize="40">1c</TextBlock>
+            <TextBlock HorizontalAlignment="Right" Margin="2" FontSize="40">5c</TextBlock>
+            <TextBlock HorizontalAlignment="Right" Margin="2" FontSize="40">10c</TextBlock>
+            <TextBlock HorizontalAlignment="Right" Margin="10" FontSize="40">25c</TextBlock>
+            <TextBlock HorizontalAlignment="Right" Margin="5" FontSize="40">50c</TextBlock>
+        </StackPanel>
+        <!--change property linked to ChangeQuantity Dependency property-->
+        <StackPanel Grid.Column="2">
+            <TextBlock HorizontalAlignment="Center" FontSize="30">Change</TextBlock>
+            <TextBox  BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
+            <TextBox Margin="4" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
+            <TextBox Margin="2" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
+            <TextBox BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
+            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
+            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
+            <TextBox  BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
+            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
+            <TextBox Margin="1" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
+            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
+            <TextBox Margin="3" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
+            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
+        </StackPanel>
+        <Grid Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Margin="20" Click="ReturnToOrder">
+                <TextBlock TextWrapping="Wrap" Text="Return to Order" FontSize="30" TextAlignment="Center"/>
+            </Button>
+            <Button Grid.Row="1" Margin="20" Click="FinalizeSale">
+                <TextBlock TextWrapping="Wrap" Text="Finalize Sale" FontSize="30" TextAlignment="Center"/>
+            </Button>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="20">Total Sale</TextBlock>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".25*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" HorizontalAlignment="Right" 
+                               VerticalAlignment="Center"
+                               FontSize="30"
+                               TextAlignment="Right">$</TextBlock>
+                    <!--Need to bind to order total-->
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" 
+                               VerticalAlignment="Center"
+                               FontSize="30"
+                               Text="Total" 
+                               TextAlignment="Right"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="20">Amount Due</TextBlock>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".25*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" HorizontalAlignment="Right" 
+                               VerticalAlignment="Center"
+                               FontSize="30"
+                               TextAlignment="Right">$</TextBlock>
+                    <!--Need to bind to amount due-->
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" 
+                               VerticalAlignment="Center"
+                               FontSize="30"
+                               Text="Due" 
+                               TextAlignment="Right"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="20">Change Owed</TextBlock>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".25*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" HorizontalAlignment="Right" 
+                               VerticalAlignment="Center"
+                               FontSize="30"
+                               TextAlignment="Right">$</TextBlock>
+                    <!--Need to bind to change owed-->
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" 
+                               VerticalAlignment="Center"
+                               FontSize="30"
+                               Text="Change" 
+                               TextAlignment="Right"/>
+                </Grid>
+
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

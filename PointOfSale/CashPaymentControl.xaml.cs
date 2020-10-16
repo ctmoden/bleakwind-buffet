@@ -24,5 +24,15 @@ namespace PointOfSale
             InitializeComponent();
             DataContext = new CashDrawerViewModel();
         }
+
+        void ReturnToOrder(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        void FinalizeSale(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

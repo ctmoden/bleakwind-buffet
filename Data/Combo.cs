@@ -20,6 +20,8 @@ namespace BleakwindBuffet.Data
         public Combo()
         {
             drink.PropertyChanged += PropertyChangedListener;
+            entree.PropertyChanged += PropertyChangedListener;
+            side.PropertyChanged += PropertyChangedListener;
             //same process for entree and side 
         }
         /// <summary>
