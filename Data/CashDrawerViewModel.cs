@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using BleakwindBuffet.Data;
 using RoundRegister;
+
 namespace BleakwindBuffet.Data
 {
     public class CashDrawerViewModel:INotifyPropertyChanged
@@ -19,12 +20,14 @@ namespace BleakwindBuffet.Data
             if (paymentType.Equals("Card"))
             {
                 //run card
-                CardOperations();
+                //CardOperations();
                 //if approved, print receipt, start new order
             }
         }
-
-        private void CardOperations()
+        /// <summary>
+        /// 
+        /// </summary>
+        public string CardOperations()
         {
             CardTransactionResult cardTransactionResult = CardReader.RunCard(Total);
             switch (cardTransactionResult)
@@ -32,10 +35,18 @@ namespace BleakwindBuffet.Data
                 case CardTransactionResult.Approved:
                     DateTime orderDate = DateTime.Now;
                     UpdateCashDrawer.UpdateCashDrawerValues(this, paymentType, orderDate);
-                    break;
+                    return "Approved";
+                    
                 case CardTransactionResult.Declined:
-                    //FIXMEVmessage box wil not work
-                    break;
+                    return "Declnined";
+                case CardTransactionResult.IncorrectPin:
+                    return "Incorrect Pin";
+                case CardTransactionResult.InsufficientFunds:
+                    return "Insufficient Funds";
+                case CardTransactionResult.ReadError:
+                    return "Read Error";
+                default:
+                    throw new NotImplementedException("Card Operation Not Recognized");
             }
             
         }
@@ -131,7 +142,8 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-                if (AmountOwed < 0) return Math.Abs(AmountOwed);
+                if (paymentType.Equals("Card")) return 0.0;
+                else if (AmountOwed < 0) return Math.Abs(AmountOwed);
                 else return AmountTenuered - AmountOwed;
                 
 

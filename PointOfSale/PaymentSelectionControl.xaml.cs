@@ -55,10 +55,33 @@ namespace PointOfSale
         /// <param name="e"></param>
         void CardPayment(object sender, RoutedEventArgs e)
         {
-            //switch screens, even if it is something simple
-            //controllerBorder.Child = new CardPaymentControl(order);
-            //dont switch screens, create new cashdrawer view model, 
-            //update change given for a car to be explicitly 0
+            CashDrawerViewModel viewModel = new CashDrawerViewModel(order, "Card");
+            string cardResult = viewModel.CardOperations();
+            switch (cardResult)
+            {
+                case "Approved":
+                    OrderComponent orderController = this.FindControl<OrderComponent>();
+                    orderController.DataContext = new Order();
+                    ReturnToMenu.ReturnToMenuScreen(this, new MenuSelection());
+                    break;
+                case "Declined":
+                    MessageBox.Show(cardResult);
+                    break;
+                case "Insufficient Funds":
+                    MessageBox.Show(cardResult);
+                    break;
+                case "Incorrect Pin":
+                    MessageBox.Show(cardResult);
+                    break;
+                case "Read Error":
+                    MessageBox.Show(cardResult);
+                    break;
+                default:
+                    throw new NotImplementedException("Card Operation Not Recognized")
+
+            }
+                
+
 
         }
     }
