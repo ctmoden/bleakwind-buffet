@@ -16,6 +16,28 @@ namespace BleakwindBuffet.Data
         {
             order = o;
             paymentType = payment;
+            if (paymentType.Equals("Card"))
+            {
+                //run card
+                CardOperations();
+                //if approved, print receipt, start new order
+            }
+        }
+
+        private void CardOperations()
+        {
+            CardTransactionResult cardTransactionResult = CardReader.RunCard(Total);
+            switch (cardTransactionResult)
+            {
+                case CardTransactionResult.Approved:
+                    DateTime orderDate = DateTime.Now;
+                    UpdateCashDrawer.UpdateCashDrawerValues(this, paymentType, orderDate);
+                    break;
+                case CardTransactionResult.Declined:
+                    //FIXMEVmessage box wil not work
+                    break;
+            }
+            
         }
         /// <summary>
         /// calculates the change needed for each dollar bill 

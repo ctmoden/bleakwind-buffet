@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BleakwindBuffet.Data;
 
+
 namespace PointOfSale
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace PointOfSale
             ReturnToMenu.ReturnToMenuScreen(this, menu);
         }
         /// <summary>
-        /// 
+        /// switch screen to cash payment
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -55,7 +56,7 @@ namespace PointOfSale
         void CardPayment(object sender, RoutedEventArgs e)
         {
             //switch screens, even if it is something simple
-            controllerBorder.Child = new CardPaymentControl(order);
+            //controllerBorder.Child = new CardPaymentControl(order);
             //dont switch screens, create new cashdrawer view model, 
             //update change given for a car to be explicitly 0
 
