@@ -10,7 +10,7 @@
         <Border x:Name="controllerBorder">
             <StackPanel>
                 <TextBlock Text="Payment Options" TextAlignment="Center" FontSize="70"/>
-                <Button Margin="50" FontSize="70">Debit/Credit</Button>
+                <Button Click="CardPayment" Margin="50" FontSize="70">Debit/Credit</Button>
                 <Button Click="CashPayment" Margin="50" FontSize="70">Cash</Button>
                 <Button Click="ReturnToMainMenu" Margin="50" FontSize="70">Return To Menu</Button>
             </StackPanel>

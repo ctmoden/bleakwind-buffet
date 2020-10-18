@@ -49,7 +49,7 @@ namespace PointOfSale
             //switch to cash payment screen
         }
         /// <summary>
-        /// 
+        /// Runs operations for conducting a card payment
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -77,7 +77,7 @@ namespace PointOfSale
                     MessageBox.Show(cardResult);
                     break;
                 default:
-                    throw new NotImplementedException("Card Operation Not Recognized")
+                    throw new NotImplementedException("Card Operation Not Recognized");
 
             }
                 
