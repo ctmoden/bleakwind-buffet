@@ -10,11 +10,12 @@ namespace BleakwindBuffet.Data
     public class CashDrawerViewModel:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        Order order;
-        
-        public CashDrawerViewModel(Order o)
+        public Order order;//make public to be accessible in static 
+        private string paymentType;
+        public CashDrawerViewModel(Order o, string payment)
         {
             order = o;
+            paymentType = payment;
         }
         /// <summary>
         /// calculates the change needed for each dollar bill 
@@ -50,30 +51,17 @@ namespace BleakwindBuffet.Data
         /// </summary>
         public void FinalizeOrder()
         {
-            CashDrawer.OpenDrawer();
-            //add num of bills from customer
-            //subtract num of bills from change given
-            RecieptPrinter.PrintLine($"Order #{order.Number}");
-            //date and time order was finalized
-            for(int i = 0; i < order.Count; i++)
-            {
-                RecieptPrinter.PrintLine(order[i].ToString());
-                for(int j = 0; j < order[i].SpecialInstructions.Count; j++)
-                {
-                    RecieptPrinter.PrintLine($"\t {order[i].SpecialInstructions[j]}");
-                }
-                
-            }
-            RecieptPrinter.PrintLine($"Subtotal: {SubTotal}");
-            RecieptPrinter.PrintLine($"Tax: {Tax}");
-            RecieptPrinter.PrintLine($"Total: {order.Total}");
-            //payment method
-            //change owed
-            RecieptPrinter.CutTape();
+            DateTime orderDate = DateTime.Now;
+            UpdateCashDrawer.UpdateCashDrawerValues(this, "Cash", orderDate);
+            //start a new orde back at the order screen
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public double CalculateChange()
         {
+
             //params/varaibles: order total, num of each currenncy from customer.
             //add up all currency bills and coins given from the user
             //
@@ -156,6 +144,8 @@ namespace BleakwindBuffet.Data
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountTenured"));
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwed"));
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
                 }
             }
         }
@@ -174,6 +164,8 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountTenured"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
         }
         
@@ -192,6 +184,8 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountTenured"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
 
         }
@@ -211,6 +205,8 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountTenured"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
         }
 
@@ -246,6 +242,8 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountTenured"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
         }
 
@@ -263,6 +261,8 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountTenured"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
         }
         int oneCent = 0;
@@ -279,6 +279,8 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountTenured"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
         }
         int fiftyCent = 0;
@@ -295,6 +297,8 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountTenured"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
         }
         int twentyFiveCent = 0;
@@ -311,6 +315,8 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountTenured"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
         }
         int tenCent = 0;
@@ -327,6 +333,8 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountTenured"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
         }
         int fiveCent = 0;
@@ -343,6 +351,8 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountTenured"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
         }
     }

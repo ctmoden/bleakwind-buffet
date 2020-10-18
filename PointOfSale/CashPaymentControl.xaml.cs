@@ -22,11 +22,13 @@ namespace PointOfSale
     {
         
         Order order;
+        CashDrawerViewModel viewModel;
         public CashPaymentControl(Order o)
         {
             InitializeComponent();
             order = o;
-            DataContext = new CashDrawerViewModel(order);//do I send order details here too?  I am thinking yes
+            viewModel = new CashDrawerViewModel(order, "Cash");
+            DataContext = viewModel;
             
         }
 
@@ -38,7 +40,9 @@ namespace PointOfSale
 
         void FinalizeSale(object sender, RoutedEventArgs e)
         {
-            //invoke receipt method defined in 
+            viewModel.FinalizeOrder();
+            ReturnToMenu.ReturnToMenuScreen(this, new MenuSelection());
+            
         }
     }
 }
