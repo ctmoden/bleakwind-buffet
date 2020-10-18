@@ -54,6 +54,7 @@ namespace PointOfSale
         void SendToScreenSwitcher(FrameworkElement screenToSwitchTo)
         {
             OrderComponent orderController = this.FindControl<OrderComponent>();
+            
             orderController.SwitchScreens(screenToSwitchTo);
         }
         /// <summary>

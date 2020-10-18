@@ -41,6 +41,8 @@ namespace PointOfSale
         void FinalizeSale(object sender, RoutedEventArgs e)
         {
             viewModel.FinalizeOrder();
+            OrderComponent orderController = this.FindControl<OrderComponent>();
+            orderController.DataContext = new Order();
             ReturnToMenu.ReturnToMenuScreen(this, new MenuSelection());
             
         }
