@@ -204,7 +204,15 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ShouldGetCorrectInstructions()
         {
-
+            Combo combo = new Combo();
+            BriarheartBurger b = new BriarheartBurger();            
+            CandlehearthCoffee coffee = new CandlehearthCoffee();
+            combo.Entree = b;
+            combo.Drink = coffee;
+            b.Mustard = false;
+            coffee.Ice = true;
+            Assert.Contains("Hold mustard", combo.SpecialInstructions);
+            Assert.Contains("Add ice", combo.SpecialInstructions);
         }
     }
 }

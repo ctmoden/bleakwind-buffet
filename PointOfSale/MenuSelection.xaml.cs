@@ -27,6 +27,7 @@ namespace PointOfSale
     {
         bool isCombo = false;
         Combo combo;
+        int comboCount = 0;
 
         public MenuSelection()
         {
@@ -44,6 +45,37 @@ namespace PointOfSale
             //add to combo if user slects a combo
             //diable all other entrees/sides/drinks when one of each is selected
             //when full combo has been created, reenable combo and all other buttons
+        }
+        /// <summary>
+        /// Checks to see if combo has been finalized.  If it has then this method
+        /// reenable all buttons and adds the combo object to the order 
+        /// </summary>
+        void FinalizeCombo()
+        {
+            if(comboCount == 3)
+            {
+                if(DataContext is Order order)
+                {
+                    order.Add(combo);
+                    BriarButton.Visibility = Visibility.Visible;
+                    DoubleButton.Visibility = Visibility.Visible;
+                    ThalmorButton.Visibility = Visibility.Visible;
+                    PoacherButton.Visibility = Visibility.Visible;
+                    SmokeButton.Visibility = Visibility.Visible;
+                    OmeletteButton.Visibility = Visibility.Visible;
+                    TBoneButton.Visibility = Visibility.Visible;
+                    FriesButton.Visibility = Visibility.Visible;
+                    MiraakButton.Visibility = Visibility.Visible;
+                    GritsButton.Visibility = Visibility.Visible;
+                    SaladButton.Visibility = Visibility.Visible;
+                    AJButton.Visibility = Visibility.Visible;
+                    MilkButton.Visibility = Visibility.Visible;
+                    SodaButton.Visibility = Visibility.Visible;
+                    CoffeeButton.Visibility = Visibility.Visible;
+                    WaterButton.Visibility = Visibility.Visible;
+
+                }
+            }
         }
         
         /// <summary>
@@ -67,17 +99,21 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 BriarheartBurger burger = new BriarheartBurger();
-                order.Add(burger);
+                //order.Add(burger);
                 if (isCombo)
                 {
                     combo.Entree = burger;
+                    comboCount++;
+                    
                     DoubleButton.Visibility = Visibility.Collapsed;
                     ThalmorButton.Visibility = Visibility.Collapsed;
                     PoacherButton.Visibility = Visibility.Collapsed;
                     SmokeButton.Visibility = Visibility.Collapsed;
                     OmeletteButton.Visibility = Visibility.Collapsed;
                     TBoneButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(burger);
                 SendToScreenSwitcher(new BriarhearthCustomization(this,burger));
                 
             }
@@ -94,17 +130,21 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 DoubleDraugr dd = new DoubleDraugr();
-                order.Add(dd);
+                
                 if (isCombo)
                 {
                     combo.Entree = dd;
+                    comboCount++;
+                    
                     BriarButton.Visibility = Visibility.Collapsed;
                     ThalmorButton.Visibility = Visibility.Collapsed;
                     PoacherButton.Visibility = Visibility.Collapsed;
                     SmokeButton.Visibility = Visibility.Collapsed;
                     OmeletteButton.Visibility = Visibility.Collapsed;
                     TBoneButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(dd);
                 SendToScreenSwitcher(new DoubleDraugrCustomization(this,dd));
             }
             
@@ -121,17 +161,21 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 ThalmorTriple triple = new ThalmorTriple();
-                order.Add(triple);
+                
                 if (isCombo)
                 {
                     combo.Entree = triple;
+                    comboCount++;
+                    
                     BriarButton.Visibility = Visibility.Collapsed;
                     DoubleButton.Visibility = Visibility.Collapsed;
                     PoacherButton.Visibility = Visibility.Collapsed;
                     SmokeButton.Visibility = Visibility.Collapsed;
                     OmeletteButton.Visibility = Visibility.Collapsed;
                     TBoneButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(triple);
                 SendToScreenSwitcher(new ThalmorTripleCustomization(this, triple));
             }
             
@@ -148,17 +192,21 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 PhillyPoacher poacher = new PhillyPoacher();
-                order.Add(poacher);
+                
                 if (isCombo)
                 {
                     combo.Entree = poacher;
+                    comboCount++;
+                    
                     BriarButton.Visibility = Visibility.Collapsed;
                     ThalmorButton.Visibility = Visibility.Collapsed;
                     DoubleButton.Visibility = Visibility.Collapsed;
                     SmokeButton.Visibility = Visibility.Collapsed;
                     OmeletteButton.Visibility = Visibility.Collapsed;
                     TBoneButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(poacher);
                 SendToScreenSwitcher(new PhillyPoacherCustomization(this, poacher));
             }
             
@@ -174,17 +222,21 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 GardenOrcOmelette omelette = new GardenOrcOmelette();
-                order.Add(omelette);
+                
                 if (isCombo)
                 {
                     combo.Entree = omelette;
+                    comboCount++;
+                    
                     BriarButton.Visibility = Visibility.Collapsed;
                     ThalmorButton.Visibility = Visibility.Collapsed;
                     PoacherButton.Visibility = Visibility.Collapsed;
                     SmokeButton.Visibility = Visibility.Collapsed;
                     DoubleButton.Visibility = Visibility.Collapsed;
                     TBoneButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(omelette);
                 SendToScreenSwitcher(new GardenOrcOmeletteCustomization(this, omelette));
             }
             
@@ -199,17 +251,21 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
-                order.Add(skeleton);
+                
                 if (isCombo)
                 {
                     combo.Entree = skeleton;
+                    comboCount++;
+                    
                     BriarButton.Visibility = Visibility.Collapsed;
                     ThalmorButton.Visibility = Visibility.Collapsed;
                     PoacherButton.Visibility = Visibility.Collapsed;
                     DoubleButton.Visibility = Visibility.Collapsed;
                     OmeletteButton.Visibility = Visibility.Collapsed;
                     TBoneButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(skeleton);
                 SendToScreenSwitcher(new SmokeHouseSkeletonCustomization(this, skeleton));
             }
             
@@ -226,13 +282,18 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 DragonbornWaffleFries fries = new DragonbornWaffleFries();
-                order.Add(fries);
+                
                 if (isCombo)
                 {
+                    combo.Side = fries;
+                    comboCount++;
+                    
                     MiraakButton.Visibility = Visibility.Collapsed;
                     GritsButton.Visibility = Visibility.Collapsed;
                     SaladButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(fries);
                 SendToScreenSwitcher(new SideCustomization(this, fries));
                 
                 
@@ -249,13 +310,18 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 FriedMiraak miraak = new FriedMiraak();
-                order.Add(miraak);
+                
                 if (isCombo)
                 {
+                    combo.Side = miraak;
+                    comboCount++;
+                    
                     FriesButton.Visibility = Visibility.Collapsed;
                     GritsButton.Visibility = Visibility.Collapsed;
                     SaladButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(miraak);
                 SendToScreenSwitcher(new SideCustomization(this, miraak));
             }
             
@@ -271,13 +337,18 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 MadOtarGrits grits = new MadOtarGrits();
-                order.Add(grits);
+                
                 if (isCombo)
                 {
+                    combo.Side = grits;
+                    comboCount++;
+                    
                     MiraakButton.Visibility = Visibility.Collapsed;
                     FriesButton.Visibility = Visibility.Collapsed;
                     SaladButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(grits);
                 SendToScreenSwitcher(new SideCustomization(this, grits));
             }
             
@@ -292,13 +363,18 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 VokunSalad salad = new VokunSalad();
-                order.Add(salad);
+                
                 if (isCombo)
                 {
+                    combo.Side = salad;
+                    comboCount++;
+                    
                     MiraakButton.Visibility = Visibility.Collapsed;
                     GritsButton.Visibility = Visibility.Collapsed;
                     FriesButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(salad);
                 SendToScreenSwitcher(new SideCustomization(this, salad));
             }
             
@@ -313,14 +389,19 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 AretinoAppleJuice aj = new AretinoAppleJuice();
-                order.Add(aj);
+                
                 if (isCombo)
                 {
+                    combo.Drink = aj;
+                    comboCount++;
+                    
                     CoffeeButton.Visibility = Visibility.Collapsed;
                     MilkButton.Visibility = Visibility.Collapsed;
                     SodaButton.Visibility = Visibility.Collapsed;
                     WaterButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(aj);
                 SendToScreenSwitcher(new AretinoAppleJuiceCustomization(this, aj));
             }
             
@@ -335,14 +416,19 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 CandlehearthCoffee coffee = new CandlehearthCoffee();
-                order.Add(coffee);
+                
                 if (isCombo)
                 {
+                    combo.Drink = coffee;
+                    comboCount++;
+                    
                     AJButton.Visibility = Visibility.Collapsed;
                     MilkButton.Visibility = Visibility.Collapsed;
                     SodaButton.Visibility = Visibility.Collapsed;
                     WaterButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(coffee);
                 SendToScreenSwitcher(new CoffeeCustomization(this, coffee));
             }
             
@@ -358,14 +444,19 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 MarkarthMilk milk = new MarkarthMilk();
-                order.Add(milk);
+                
                 if (isCombo)
                 {
+                    combo.Drink = milk;
+                    comboCount++;
+                    
                     AJButton.Visibility = Visibility.Collapsed;
                     CoffeeButton.Visibility = Visibility.Collapsed;
                     SodaButton.Visibility = Visibility.Collapsed;
                     WaterButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(milk);
                 SendToScreenSwitcher(new MarkarthMilkCustomizations(this, milk));
             }
             
@@ -380,14 +471,19 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 SailorSoda soda = new SailorSoda();
-                order.Add(soda);
+                
                 if (isCombo)
                 {
+                    combo.Drink = soda;
+                    comboCount++;
+                    
                     AJButton.Visibility = Visibility.Collapsed;
                     MilkButton.Visibility = Visibility.Collapsed;
                     CoffeeButton.Visibility = Visibility.Collapsed;
                     WaterButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(soda);
                 SendToScreenSwitcher(new SailorSodaCustomization(this, soda));
             }
             
@@ -402,14 +498,19 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 WarriorWater water = new WarriorWater();
-                order.Add(water);
+                
                 if (isCombo)
                 {
+                    combo.Drink = water;
+                    comboCount++;
+                    
                     AJButton.Visibility = Visibility.Collapsed;
                     MilkButton.Visibility = Visibility.Collapsed;
                     SodaButton.Visibility = Visibility.Collapsed;
                     CoffeeButton.Visibility = Visibility.Collapsed;
+                    FinalizeCombo();
                 }
+                else order.Add(water);
                 SendToScreenSwitcher(new WarriorWaterCustomizations(this, water));
             }
             

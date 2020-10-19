@@ -9,8 +9,7 @@ using System.Collections.Specialized;
 namespace BleakwindBuffet.Data
 {
     public class Order: ObservableCollection<IOrderItem>, INotifyPropertyChanged
-    {
-        
+    {       
         /// <summary>
         /// Constructor
         /// </summary>
@@ -20,22 +19,7 @@ namespace BleakwindBuffet.Data
             Number = nextOrderNum;
             nextOrderNum++;
         }
-        /*
-        /// <summary>
-        /// Gets 
-        /// </summary>
-        public List<IOrderItem> List
-        {
-            get
-            {
-                foreach (IOrderItem item in this)
-                {
-                    itemList.Add(item);
-                }
-                return itemList;
-            }
-        }
-        */
+        
         /// <summary>
         /// Event handler for when the collection changes
         /// </summary>
@@ -95,11 +79,7 @@ namespace BleakwindBuffet.Data
                 case "Calories":
                     OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
                     break;
-                    /*
-                case "List":
-                    OnPropertyChanged(new PropertyChangedEventArgs("List"));
-                    break;
-                    */
+                    
                 default:
                     break;
             }
@@ -120,7 +100,7 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-                return SubTotal * SalesTaxRate;//FIXME format to two decimal places
+                return Math.Round(SubTotal * SalesTaxRate,2);//FIXME format to two decimal places
             }
         }
         
@@ -129,7 +109,7 @@ namespace BleakwindBuffet.Data
         /// </summary>
         public double Total
         {
-            get { return SubTotal + Tax; }
+            get { return Math.Round((SubTotal + Tax),2); }
         }
        
         /// <summary>
@@ -144,7 +124,7 @@ namespace BleakwindBuffet.Data
                 {
                     subTotal += item.Price;
                 }
-                return subTotal;
+                return Math.Round(subTotal,2);
             }
         }
         /// <summary>
