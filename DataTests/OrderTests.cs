@@ -48,6 +48,49 @@ namespace BleakwindBuffet.DataTests
             Assert.Equal(.12, order.SalesTaxRate);
         }
         [Fact]
-        public void 
+        public void AddingOrRemovingItemNotifiesSubTotal()
+        {
+            Order order = new Order();
+            
+            Assert.PropertyChanged(order, "SubTotal", () =>
+            {
+                BriarheartBurger b = new BriarheartBurger();
+                order.Add(b);
+
+            });
+            Assert.PropertyChanged(order, "SubTotal", () =>
+            {
+                BriarheartBurger b = new BriarheartBurger();
+                order.Add(b);
+                order.Remove(b);
+
+            });
+
+        }
+        [Fact]
+        public void AddingOrRemovingItemNotifiesTaxProperty()
+        {
+            Order order = new Order();
+
+            Assert.PropertyChanged(order, "Tax", () =>
+            {
+                BriarheartBurger b = new BriarheartBurger();
+                order.Add(b);
+
+            });
+            Assert.PropertyChanged(order, "Tax", () =>
+            {
+                BriarheartBurger b = new BriarheartBurger();
+                order.Add(b);
+                order.Remove(b);
+
+            });
+        }
+        [Fact]
+        public void AddingItemNotifiesCalories()
+        {
+            Order order = new Order();
+
+        }
     }
 }

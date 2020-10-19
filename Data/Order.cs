@@ -36,7 +36,7 @@ namespace BleakwindBuffet.Data
                         //only for one item added
                         //OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));//FIXME create a new NoifyCollection Changed Args?
                         
-                        OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
+                        OnPropertyChanged(new PropertyChangedEventArgs("SubTotal"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Total"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
@@ -51,7 +51,7 @@ namespace BleakwindBuffet.Data
                         item.PropertyChanged -= CollectionItemChangedListener;//FIXME need to figure out how to get preoperty changed event into 
                         
                         //OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, item));//FIXME create a new NoifyCollection Changed Args?
-                        OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
+                        OnPropertyChanged(new PropertyChangedEventArgs("SubTotal"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Total"));
                         OnPropertyChanged(new PropertyChangedEventArgs("Calories"));
