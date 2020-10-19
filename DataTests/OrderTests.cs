@@ -1,6 +1,7 @@
 ﻿using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Sides;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -87,10 +88,82 @@ namespace BleakwindBuffet.DataTests
             });
         }
         [Fact]
-        public void AddingItemNotifiesCalories()
+        public void OrderNumberShouldIncrementWithNewOrder()
         {
             Order order = new Order();
+            Order order2 = new Order();
+            Assert.Equal(order.Number+1, order2.Number);
+            
+        }
 
+        [Fact]
+        public void ShouldBeAbleToSetSalesTaxRate()
+        {
+            Order order = new Order();
+            order.SalesTaxRate = .13;
+            Assert.Equal(.13, order.SalesTaxRate);
+        }
+
+        [Fact]
+        public void AddingItemNotifiesPriceProperty()
+        {
+            Order order = new Order();
+            FriedMiraak miraak = new FriedMiraak();
+            order.Add(miraak);
+            Assert.PropertyChanged(miraak, "Price", () =>
+            {
+                miraak.Size = Data.Enums.Size.Medium;
+
+            });
+
+        }
+        [Fact]
+        public void AddingItemNotifiesCaloriesProperty()
+        {
+            Order order = new Order();
+            FriedMiraak miraak = new FriedMiraak();
+            order.Add(miraak);
+            Assert.PropertyChanged(miraak, "Calories", () =>
+            {
+                miraak.Size = Data.Enums.Size.Medium;
+
+            });
+        }
+        [Fact]
+        public void ChangingItemPriceNotifiesSubTotalProperty()
+        {
+            Order order = new Order();
+            FriedMiraak miraak = new FriedMiraak();
+            order.Add(miraak);
+            Assert.PropertyChanged(order, "SubTotal", () =>
+            {
+                miraak.Size = Data.Enums.Size.Medium;
+
+            });
+        }
+        [Fact]
+        public void ChangingItemPriceNotifiesTotalProperty()
+        {
+            Order order = new Order();
+            FriedMiraak miraak = new FriedMiraak();
+            order.Add(miraak);
+            Assert.PropertyChanged(order, "Total", () =>
+            {
+                miraak.Size = Data.Enums.Size.Medium;
+
+            });
+        }
+        [Fact]
+        public void ChangingItemPriceNotifiesSubTaxProperty()
+        {
+            Order order = new Order();
+            FriedMiraak miraak = new FriedMiraak();
+            order.Add(miraak);
+            Assert.PropertyChanged(order, "Tax", () =>
+            {
+                miraak.Size = Data.Enums.Size.Medium;
+
+            });
         }
     }
 }

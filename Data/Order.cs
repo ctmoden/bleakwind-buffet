@@ -32,7 +32,7 @@ namespace BleakwindBuffet.Data
                 case NotifyCollectionChangedAction.Add:
                     foreach(IOrderItem item in e.NewItems)
                     {
-                        item.PropertyChanged += CollectionItemChangedListener;//FIXME need to figure out how to get preoperty changed event into 
+                        item.PropertyChanged += CollectionItemChangedListener;
                         //only for one item added
                         //OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));//FIXME create a new NoifyCollection Changed Args?
                         

@@ -17,12 +17,7 @@ namespace BleakwindBuffet.Data
         {
             order = o;
             paymentType = payment;
-            if (paymentType.Equals("Card"))
-            {
-                //run card
-                //CardOperations();
-                //if approved, print receipt, start new order
-            }
+            
         }
         /// <summary>
         /// 
