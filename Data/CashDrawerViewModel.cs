@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Reflection;
 using System.Text;
 using BleakwindBuffet.Data;
@@ -8,7 +9,7 @@ using RoundRegister;
 
 namespace BleakwindBuffet.Data
 {
-    public class CashDrawerViewModel:INotifyPropertyChanged
+    public class CashDrawerViewModel: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public Order order;//make public to be accessible in static 
@@ -17,6 +18,7 @@ namespace BleakwindBuffet.Data
         {
             order = o;
             paymentType = payment;
+            
             
         }
         /// <summary>
@@ -86,14 +88,35 @@ namespace BleakwindBuffet.Data
         /// <summary>
         /// 
         /// </summary>
-        /// <returns></returns>
-        public double CalculateChange()
+        public void CalculateChange(double change)
         {
-
-            //params/varaibles: order total, num of each currenncy from customer.
-            //add up all currency bills and coins given from the user
-            //
-            return 1.1;
+            //double change = ChangeOwed;
+            hundredsChange += (int)Math.Floor(change / 100);
+            change %= 100;
+            fiftiesChange += (int)Math.Floor(change / 50);
+            change %= 50;
+            TwentiesChange += (int)Math.Floor(change / 20);
+            change %= 20;
+            tensChange += (int)Math.Floor(change / 10);
+            change %= 10;
+            fivesChange += (int)Math.Floor(change / 5);
+            change %= 5;
+            twosChange += (int)Math.Floor(change / 2);
+            change %= 2;
+            onesChange += (int)Math.Floor(change / 1);
+            change %= 1;
+            halfDollarChange += (int)Math.Floor(change / .5);
+            change %= .5;
+            quarterChange += (int)Math.Floor(change / .25);
+            change %= .25;
+            dimeChange += (int)Math.Floor(change / .1);
+            change %= .1;
+            nickelChange += (int)Math.Floor(change / .05);
+            change %= .05;
+            pennyChange += (int)Math.Floor(change / .01);
+            
+            
+            
         }
         
         
@@ -104,7 +127,7 @@ namespace BleakwindBuffet.Data
         {
             get => (Ones * 1) + (Twos * 2) + (Fives * 5) + (Tens * 10) +
                     (Twenties * 20) + (Fifties * 50) + (Hundreds * 100) + (OneCent * .01) +
-                    (FiveCent * .05) + (TenCent * .1) + (TwentyFiveCent) * .25 + (FiftyCent * .5);
+                    (FiveCent * .05) + (TenCent * .1) + (TwentyFiveCent) * .25 + (FiftyCent * .5);//call the change method here?
             
         }
         //double amountOwed = 0;
@@ -138,8 +161,18 @@ namespace BleakwindBuffet.Data
             get
             {
                 if (paymentType.Equals("Card")) return 0.0;
-                else if (AmountOwed < 0) return Math.Abs(AmountOwed);
-                else return AmountTenuered - AmountOwed;
+
+                else if (AmountOwed < 0)
+                {
+                    CalculateChange(Math.Abs(AmountOwed));
+                    return Math.Abs(AmountOwed);
+
+                }
+                else
+                {
+                    CalculateChange(AmountTenuered - AmountOwed);
+                    return AmountTenuered - AmountOwed;
+                }
                 
 
             }
@@ -178,6 +211,21 @@ namespace BleakwindBuffet.Data
                 }
             }
         }
+
+        int onesChange = 0;
+        /// <summary>
+        /// One dollar bills due in change
+        /// </summary>
+        public int OnesChange
+        {
+            get => onesChange;
+            set
+            {
+                onesChange = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("OnesChange"));
+            }
+        }
+        
         int twos = 0;
         /// <summary>
         /// number of two dollar bills in cash exchange
@@ -195,6 +243,19 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
+            }
+        }
+        int twosChange = 0;
+        /// <summary>
+        /// Two dollar bills due in change
+        /// </summary>
+        public int TwosChange
+        {
+            get => twosChange;
+            set
+            {
+                twosChange = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TwosChange"));
             }
         }
         
@@ -218,7 +279,20 @@ namespace BleakwindBuffet.Data
             }
 
         }
-        
+        int fivesChange = 0;
+        /// <summary>
+        /// Five dollar bills in change due to customer
+        /// </summary>
+        public int FivesChange
+        {
+            get => fivesChange;
+            set
+            {
+                fivesChange = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("FivesChange"));
+            }
+        }
+
 
         int tens = 0;
         /// <summary>
@@ -236,6 +310,19 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
+            }
+        }
+        int tensChange = 0;
+        /// <summary>
+        /// Ten dollar bills due in change to customer
+        /// </summary>
+        public int TensChange
+        {
+            get => tensChange;
+            set
+            {
+                tensChange = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TensChange"));
             }
         }
 
@@ -257,6 +344,17 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
         }
+        int twentiesChange = 0;
+        public int TwentiesChange
+        {
+            get => twentiesChange;
+            set
+            {
+                twentiesChange = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TwentiesChange"));
+            }
+        }
+        
         int fifties = 0;
         /// <summary>
         /// number of fifty dollar bills in cash exchange
@@ -273,6 +371,19 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
+            }
+        }
+        int fiftiesChange = 0;
+        /// <summary>
+        /// Change in 50 bills due to customer
+        /// </summary>
+        public int FiftiesChange
+        {
+            get => fiftiesChange;
+            set
+            {
+                fiftiesChange = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("FiftiesChange"));
             }
         }
 
@@ -294,6 +405,19 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
         }
+        int hundredsChange = 0;
+        /// <summary>
+        /// Change in $100 buills due to customer
+        /// </summary>
+        public int HundredsChange
+        {
+            get => hundredsChange;
+            set
+            {
+                hundredsChange = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HundredsChange"));
+            }
+        }
         int oneCent = 0;
         /// <summary>
         /// number of pennies in cash exchange
@@ -310,6 +434,19 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
+            }
+        }
+        int pennyChange = 0;
+        /// <summary>
+        /// Pennies of change due to customer
+        /// </summary>
+        public int PennyChange
+        {
+            get => pennyChange;
+            set
+            {
+                pennyChange = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("PennyChange"));
             }
         }
         int fiftyCent = 0;
@@ -330,6 +467,19 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
         }
+        int halfDollarChange = 0;
+        /// <summary>
+        /// half dollar change due to customer
+        /// </summary>
+        public int HalfDollarChange
+        {
+            get => halfDollarChange;
+            set
+            {
+                halfDollarChange = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HalfDollarChange"));
+            }
+        }
         int twentyFiveCent = 0;
         /// <summary>
         /// number of quarters in cash exchange
@@ -346,6 +496,19 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
+            }
+        }
+        int quarterChange = 0;
+        /// <summary>
+        /// Quarters due to customer in change
+        /// </summary>
+        public int QuarterChange
+        {
+            get => quarterChange;
+            set
+            {
+                quarterChange = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("QuarterChange"));
             }
         }
         int tenCent = 0;
@@ -366,6 +529,19 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
             }
         }
+        int dimeChange = 0;
+        /// <summary>
+        /// dimes in change due to customer
+        /// </summary>
+        public int DimeChange
+        {
+            get => dimeChange;
+            set
+            {
+                dimeChange = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DimeChange"));
+            }
+        }
         int fiveCent = 0;
         /// <summary>
         /// Number of nickels in cash exchange
@@ -382,6 +558,16 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountOwedDisplay"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwedDisplay"));
+            }
+        }
+        int nickelChange = 0;
+        public int NickelChange
+        {
+            get => nickelChange;
+            set
+            {
+                nickelChange = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("NickelChange"));
             }
         }
     }

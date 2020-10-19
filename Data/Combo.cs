@@ -132,7 +132,7 @@ namespace BleakwindBuffet.Data
                 side.PropertyChanged -= PropertyChangedListener;
                 side = value;
                 side.PropertyChanged += PropertyChangedListener;
-                InvokePropertyChange("Side"); //invoke here or as a side (side.Invoke...?)
+                InvokePropertyChange("Side"); 
                 InvokePropertyChange("Price");
                 InvokePropertyChange("Calories");
                 InvokePropertyChange("SpecialInstructions");
@@ -147,7 +147,7 @@ namespace BleakwindBuffet.Data
         {
             if (e.PropertyName == "Price") InvokePropertyChange("Price");
             if (e.PropertyName == "Calories") InvokePropertyChange("Calories");
-            if (e.PropertyName == "SpecialInstructions") InvokePropertyChange("SpecialInstructions");//FIXME check spacing on all of these calls
+            if (e.PropertyName == "SpecialInstructions") InvokePropertyChange("SpecialInstructions");
         }
         
         
