@@ -18,7 +18,7 @@ namespace BleakwindBuffet.Data
         {
             CashDrawer.OpenDrawer();
             AddTenured(viewModel);
-            //subtract num of bills from change given
+            SubtractChange(viewModel);
             RecieptPrinter.PrintLine($"Order #{viewModel.order.Number}");
             RecieptPrinter.PrintLine($"{orderDate}");
             for (int i = 0; i < viewModel.order.Count; i++)
@@ -61,7 +61,18 @@ namespace BleakwindBuffet.Data
         /// <param name="viewModel"></param>
         private static void SubtractChange(CashDrawerViewModel viewModel)
         {
-
+            CashDrawer.Dimes -= viewModel.TensChange;
+            CashDrawer.Ones -= viewModel.OnesChange;
+            CashDrawer.Fifties -= viewModel.FiftiesChange;
+            CashDrawer.Fives -= viewModel.FivesChange;
+            CashDrawer.HalfDollars -= viewModel.HalfDollarChange;
+            CashDrawer.Hundreds -= viewModel.HundredsChange;
+            CashDrawer.Nickels -= viewModel.NickelChange;
+            CashDrawer.Pennies -= viewModel.PennyChange;
+            CashDrawer.Quarters -= viewModel.QuarterChange;
+            CashDrawer.Tens -= viewModel.TensChange;
+            CashDrawer.Twenties -= viewModel.TwentiesChange;
+            CashDrawer.Twos -= viewModel.TwosChange;
         }
     }
 }

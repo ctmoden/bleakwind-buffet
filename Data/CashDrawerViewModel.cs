@@ -86,35 +86,34 @@ namespace BleakwindBuffet.Data
             //start a new orde back at the order screen
         }
         /// <summary>
-        /// 
+        /// Calculates change due to customer
         /// </summary>
-        /// <param name="change"></param>
         public void CalculateChange()
         {
             double change = ChangeOwed;
-            hundredsChange += (int)Math.Floor(change / 100);
+            HundredsChange = (int)Math.Floor(change / 100);
             change %= 100;
-            fiftiesChange += (int)Math.Floor(change / 50);
+            FiftiesChange = (int)Math.Floor(change / 50);
             change %= 50;
-            twentiesChange += (int)Math.Floor(change / 20);
+            TwentiesChange = (int)Math.Floor(change / 20);
             change %= 20;
-            tensChange += (int)Math.Floor(change / 10);
+            TensChange = (int)Math.Floor(change / 10);
             change %= 10;
-            fivesChange += (int)Math.Floor(change / 5);
+            FivesChange = (int)Math.Floor(change / 5);
             change %= 5;
-            twosChange += (int)Math.Floor(change / 2);
-            change %= 2;
-            onesChange += (int)Math.Floor(change / 1);
-            change %= 1;
-            halfDollarChange += (int)Math.Floor(change / .5);
-            change %= .5;
-            quarterChange += (int)Math.Floor(change / .25);
-            change %= .25;
-            dimeChange += (int)Math.Floor(change / .1);
-            change %= .1;
-            nickelChange += (int)Math.Floor(change / .05);
-            change %= .05;
-            pennyChange += (int)Math.Floor(change / .01);
+            TwosChange = (int)Math.Floor(change / 2);
+            change = Math.Round(change % 2,2);
+            OnesChange = (int)Math.Floor(change / 1);
+            change = Math.Round(change % 1, 2);
+            HalfDollarChange = (int)Math.Floor(change / .5);
+            change = Math.Round(change % .5, 2);
+            QuarterChange = (int)Math.Floor(change / .25);
+            change = Math.Round(change % .25, 2);
+            DimeChange = (int)Math.Floor(change / .1);
+            change = Math.Round(change % .1, 2);
+            NickelChange = (int)Math.Floor(change / .05);
+            change = Math.Round(change % .05, 2);
+            PennyChange = (int)Math.Floor(change / .01);
             
             
             
@@ -226,8 +225,9 @@ namespace BleakwindBuffet.Data
             get => onesChange;
             set
             {
-                onesChange = value;
+                value = onesChange;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("OnesChange"));
+                
             }
         }
         

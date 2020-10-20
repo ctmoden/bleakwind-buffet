@@ -31,13 +31,24 @@ namespace PointOfSale
             DataContext = viewModel;
             
         }
-
+        /// <summary>
+        /// return to menu to make any corrections before payment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ReturnToOrder(object sender, RoutedEventArgs e)
         {
             //bubble back up tree to find control I want to display
+            OrderComponent orderController = this.FindControl<OrderComponent>();
+            orderController.DataContext = order;
+            ReturnToMenu.ReturnToMenuScreen(this, new MenuSelection());
 
         }
-
+        /// <summary>
+        /// Prints receipt, starts a new order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void FinalizeSale(object sender, RoutedEventArgs e)
         {
             viewModel.FinalizeOrder();
