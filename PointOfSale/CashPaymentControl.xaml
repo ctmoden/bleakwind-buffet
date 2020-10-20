@@ -46,18 +46,30 @@
         <!--change property linked to ChangeQuantity Dependency property-->
         <StackPanel Grid.Column="2">
             <TextBlock HorizontalAlignment="Center" FontSize="30">Change</TextBlock>
-            <TextBox   BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="{Binding Path=OnesChange}"/>
-            <TextBox Margin="4" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
-            <TextBox Margin="2" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
-            <TextBox BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
-            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
-            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
-            <TextBox  BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
-            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
-            <TextBox Margin="1" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
-            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
-            <TextBox Margin="3" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
-            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
+            <TextBox   BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" 
+                       Text="{Binding Path=OnesChange}"/>
+            <TextBox Margin="4" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" 
+                     Text="{Binding Path=TwosChange}"/>
+            <TextBox Margin="2" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" 
+                     Text="{Binding Path=FivesChange}"/>
+            <TextBox BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" 
+                     Text="{Binding Path=TensChange}"/>
+            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" 
+                     Text="{Binding Path=TwentiesChange}"/>
+            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" 
+                     Text="{Binding Path=FiftiesChange}"/>
+            <TextBox  BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" 
+                      Text="{Binding Path=HundredsChange}"/>
+            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" 
+                     Text="{Binding Path=PennyChange}"/>
+            <TextBox Margin="1" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40"
+                     Text="{Binding Path=NickelChange}"/>
+            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" 
+                     Text="{Binding Path=DimeChange}"/>
+            <TextBox Margin="3" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" 
+                     Text="{Binding Path=QuarterChange}"/>
+            <TextBox Margin="5" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" 
+                     Text="{Binding Path=HalfDollarChange}"/>
         </StackPanel>
         <Grid Grid.Column="3">
             <Grid.RowDefinitions>

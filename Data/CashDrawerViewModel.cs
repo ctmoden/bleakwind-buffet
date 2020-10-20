@@ -88,14 +88,15 @@ namespace BleakwindBuffet.Data
         /// <summary>
         /// 
         /// </summary>
-        public void CalculateChange(double change)
+        /// <param name="change"></param>
+        public void CalculateChange()
         {
-            //double change = ChangeOwed;
+            double change = ChangeOwed;
             hundredsChange += (int)Math.Floor(change / 100);
             change %= 100;
             fiftiesChange += (int)Math.Floor(change / 50);
             change %= 50;
-            TwentiesChange += (int)Math.Floor(change / 20);
+            twentiesChange += (int)Math.Floor(change / 20);
             change %= 20;
             tensChange += (int)Math.Floor(change / 10);
             change %= 10;
@@ -164,13 +165,13 @@ namespace BleakwindBuffet.Data
 
                 else if (AmountOwed < 0)
                 {
-                    CalculateChange(Math.Abs(AmountOwed));
+                    //CalculateChange(Math.Abs(AmountOwed));
                     return Math.Abs(AmountOwed);
 
                 }
                 else
                 {
-                    CalculateChange(AmountTenuered - AmountOwed);
+                    //if(AmountTenuered > AmountOwed);
                     return AmountTenuered - AmountOwed;
                 }
                 
@@ -185,7 +186,11 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-                if (ChangeOwed > 0) return Math.Abs(ChangeOwed);
+                if (ChangeOwed > 0) 
+                {
+                    CalculateChange();
+                    return Math.Abs(ChangeOwed);
+                } 
                 else return 0;
             }
         }
