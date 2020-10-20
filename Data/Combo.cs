@@ -46,6 +46,17 @@ namespace BleakwindBuffet.Data
                 return Drink.Price + Entree.Price + Side.Price - 1.00;
             }
         }
+        /// <summary>
+        /// Gets a string containining the combos special instructions
+        /// </summary>
+        public string Name
+        {
+            get
+            {
+                return "This Lame Combo";
+            }
+                
+        }
         //public MyEnumerator GetEnumerator();
         
         /// <summary>
@@ -67,8 +78,11 @@ namespace BleakwindBuffet.Data
             get
             {//list add range 
                 List<string> specialInstructions = new List<string>();
+                specialInstructions.Add(Drink.Name);
                 specialInstructions.AddRange(Drink.SpecialInstructions);
+                specialInstructions.Add(Entree.Name);
                 specialInstructions.AddRange(Entree.SpecialInstructions);
+                specialInstructions.Add(Side.Name);
                 specialInstructions.AddRange(Side.SpecialInstructions);
                 return specialInstructions;
             }

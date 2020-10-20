@@ -59,7 +59,8 @@
 
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Path=Name}"/>
-                            <ListView Grid.Row="1" Grid.Column="0" x:Name="specialInstructionsListView" ItemsSource="{Binding Path=SpecialInstructions}" FontSize="30">
+                            <ListView Grid.Row="1" Grid.Column="0" x:Name="specialInstructionsListView" 
+                                      ItemsSource="{Binding Path=SpecialInstructions}" FontSize="30">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding}"/>
