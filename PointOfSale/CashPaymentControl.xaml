@@ -46,7 +46,7 @@
         <!--change property linked to ChangeQuantity Dependency property-->
         <StackPanel Grid.Column="2">
             <TextBlock HorizontalAlignment="Center" FontSize="30">Change</TextBlock>
-            <TextBox  BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
+            <TextBox   BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="{Binding Path=OnesChange}"/>
             <TextBox Margin="4" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
             <TextBox Margin="2" BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
             <TextBox BorderBrush="Green" HorizontalAlignment="Center" FontSize="40" Text="0"/>
