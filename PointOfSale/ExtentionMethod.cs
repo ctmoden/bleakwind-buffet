@@ -11,6 +11,12 @@ namespace PointOfSale
     /// </summary>
     public static class ExtentionMethod
     {
+        /// <summary>
+        /// Finds Ancestor control desired to be switched to 
+        /// </summary>
+        /// <typeparam name="T">Template Type </typeparam>
+        /// <param name="element">framework element</param>
+        /// <returns></returns>
         public static T FindControl<T>(this DependencyObject element) where T : DependencyObject
         {
             var parent = VisualTreeHelper.GetParent(element);

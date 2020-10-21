@@ -8,6 +8,9 @@ using System.Collections.Specialized;
 
 namespace BleakwindBuffet.Data
 {
+    /// <summary>
+    /// Class representing an entire order
+    /// </summary>
     public class Order: ObservableCollection<IOrderItem>, INotifyPropertyChanged
     {       
         /// <summary>

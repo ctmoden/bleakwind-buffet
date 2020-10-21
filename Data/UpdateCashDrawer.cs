@@ -6,6 +6,9 @@ using RoundRegister;
 
 namespace BleakwindBuffet.Data
 {
+    /// <summary>
+    /// Prints Receipt and updates cash drawer
+    /// </summary>
     public static class UpdateCashDrawer
     {
         /// <summary>
