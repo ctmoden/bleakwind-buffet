@@ -47,14 +47,7 @@ namespace BleakwindBuffet.Data
             }
             
         }
-        /// <summary>
-        /// calculates the change needed for each dollar bill 
-        /// modulus division on change due, use biggest bill 
-        /// </summary>
-        public void ChangeDueToCustomer()
-        {
-
-        }
+        
         /// <summary>
         /// extracts current order's subtotal
         /// </summary>
@@ -87,6 +80,7 @@ namespace BleakwindBuffet.Data
         }
         /// <summary>
         /// Calculates change due to customer
+        /// Algorithm structure from: https://stackoverflow.com/questions/31330657/change-calculator-not-calculating-pennies 
         /// </summary>
         public void CalculateChange()
         {
