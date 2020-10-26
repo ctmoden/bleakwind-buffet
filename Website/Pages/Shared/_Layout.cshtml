@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cowboy Cafe</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <!--updates the css in google chrome web browser, otherwise google chrome does not update the css file each time the site is rendered without clearing the cache-->
+    <link asp-append-version="true" rel="stylesheet" href="~/css/site.css" />
     
 </head>
 
@@ -26,12 +27,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/About">About</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <a href="About.cshtml">About</a>
+    
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
