@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Enums;
 
 namespace Website.Pages
 {

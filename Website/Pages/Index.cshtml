@@ -6,33 +6,66 @@
 
 <h1>Welcome to the Bleakwind Buffet</h1>
 <p>
-    We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. 
-    Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. 
-    Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! 
+    We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim.
+    Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas.
+    Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger!
     You’ve had a hard adventure and earned your loot, so spend it with us!
 </p>
 
 <h2>Entrees</h2>
-<ul>
 
-</ul>
-<li>
-    @foreach (BleakwindBuffet.Data.Entrees.Entree entree in BleakwindBuffet.Data.Menu.Entrees())
-    {
+@foreach (BleakwindBuffet.Data.Entrees.Entree entree in BleakwindBuffet.Data.Menu.Entrees())
+{
+    <li>
         <div class="menu-item">
             @entree.Name
             @entree.Price
             @entree.Calories
         </div>
-        
+    </li>
 
-    }
-
-
-</li>
+}
 
 <h2>Sides</h2>
+
+@foreach (BleakwindBuffet.Data.Sides.Side side in BleakwindBuffet.Data.Menu.Sides())
+{
+    <li>
+        <div class="menu-item">
+            @side.Name
+            @side.Price
+            @side.Calories
+        </div>
+    </li>
+}
+
+
 <h2>Drinks</h2>
+@foreach (BleakwindBuffet.Data.Drinks.Drink drink in BleakwindBuffet.Data.Menu.Drinks())
+{
+    <li>
+        <div class="menu-item">
+            @drink.Name
+            @drink.Price
+            @drink.Calories
+        </div>
+    </li>
+}
+<h2>Combo deals</h2>
+<p>
+    Get the best bang for your buck with a combo meal!
+    Any combination of one entree, side, and drink will earn you a $1 discount!
+</p>
+
+<h2>Thirsty?  We have a wide variety of flavors for our famed Sailor Soda!</h2>
+@foreach (var flavor in Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.SodaFlavor)))
+{
+    <li>
+        <div class="soda-flabor">
+            @flavor
+        </div>
+    </li>
+}
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
