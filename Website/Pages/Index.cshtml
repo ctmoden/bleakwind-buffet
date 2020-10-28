@@ -19,8 +19,13 @@
         <li>
             <div class="menu-item">
                 @entree.Name
-                @entree.Price
-                @entree.Calories
+                <div>
+                    ---Price: $@entree.Price
+                </div>
+                <div>
+                    ---Calories: @entree.Calories
+                </div>
+               
             </div>
         </li>
 
@@ -33,8 +38,13 @@
         <li>
             <div class="menu-item">
                 @side.Name
-                @side.Price
-                @side.Calories
+                <div>
+                    ---Price: $@side.Price
+                </div>
+                <div>
+                    ---Calories: @side.Calories
+                </div>
+
             </div>
         </li>
     }
@@ -46,12 +56,17 @@
         <li>
             <div class="menu-item">
                 @drink.Name
-                @drink.Price
-                @drink.Calories
+                <div>
+                    ---Price: $@drink.Price
+                </div>
+                <div>
+                    ---Calories: @drink.Calories
+                </div>
+
             </div>
         </li>
     }
-    <h2>Combo deals</h2>
+    <h2>Combo Deals</h2>
     <p>
         Get the best bang for your buck with a combo meal!
         Any combination of one entree, side, and drink will earn you a $1 discount!
