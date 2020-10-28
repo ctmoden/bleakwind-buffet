@@ -29,7 +29,7 @@ namespace Website.Pages
             get => Menu.Sides();
         }
         /// <summary>
-        /// Property for all available drinks on the menu
+        /// Property for all available drinks on the menu.
         /// </summary>
         public IEnumerable<IOrderItem> Drinks
         {
