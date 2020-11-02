@@ -14,7 +14,7 @@
 <u1 class="menu-list">
     <h2>Entrees</h2>
 
-    @foreach (BleakwindBuffet.Data.Entrees.Entree entree in BleakwindBuffet.Data.Menu.Entrees())
+    @foreach (BleakwindBuffet.Data.Entrees.Entree entree in Model.Entrees)
     {
         <li>
             <div class="menu-item">
@@ -33,7 +33,7 @@
 
     <h2>Sides</h2>
 
-    @foreach (BleakwindBuffet.Data.Sides.Side side in BleakwindBuffet.Data.Menu.Sides())
+    @foreach (BleakwindBuffet.Data.Sides.Side side in Model.Sides)
     {
         <li>
             <div class="menu-item">
@@ -51,7 +51,7 @@
 
 
     <h2>Drinks</h2>
-    @foreach (BleakwindBuffet.Data.Drinks.Drink drink in BleakwindBuffet.Data.Menu.Drinks())
+    @foreach (BleakwindBuffet.Data.Drinks.Drink drink in Model.Drinks)
     {
         <li>
             <div class="menu-item">
@@ -73,7 +73,7 @@
     </p>
 
     <h2>Thirsty?  We have a wide variety of flavors for our famed Sailor Soda!</h2>
-    @foreach (var flavor in Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.SodaFlavor)))
+    @foreach (var flavor in Model.SodaFlavors)
     {
         <li>
             <div class="soda-flavor">
