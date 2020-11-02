@@ -21,6 +21,18 @@ namespace BleakwindBuffet.Data
     public static class Menu
     {
         /// <summary>
+        /// All possible categories for menu items
+        /// </summary>
+        public static string[] Categories
+        {
+            get => new string[]
+            {
+                "Entree",
+                "Drink",
+                "Side"
+            };
+        }
+        /// <summary>
         /// Creates an instance of every available entree and returns that collection
         /// </summary>
         /// <returns>list of all available entrees</returns>
