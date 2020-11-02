@@ -29,6 +29,9 @@ namespace BleakwindBuffet.Data
         /// Special instructions property
         /// </summary>
         List<string> SpecialInstructions { get; }
-
+        /// <summary>
+        /// Name of item
+        /// </summary>
+        string Name { get; }
     }
 }

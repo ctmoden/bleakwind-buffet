@@ -336,5 +336,102 @@ namespace BleakwindBuffet.Data
             */
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name=""></param>
+        /// <param name="terms"></param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> Search(string terms)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+            IEnumerable<IOrderItem> all = FullMenu();
+            if (terms == null) return all;
+            foreach(IOrderItem item in all)
+            {
+                //FIXME overload not working for Contains method
+                if (item.Name.Contains(terms))
+                    results.Add(item);
+            }
+            return results;
+        }
+        /// <summary>
+        /// Searches menu items based on calories
+        /// </summary>
+        /// <param name="items">menu items available in current context</param>
+        /// <param name="min">min price </param>
+        /// <param name="max">max price</param>
+        /// <returns>items falling in specified calorie range</returns>
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, double? min, double? max)
+        {
+            if (min == null && max == null) return items;
+            var results = new List<IOrderItem>();
+            if(min == null)
+            {
+                foreach(IOrderItem item in items)
+                {
+                    if (item.Calories <= max) results.Add(item);
+                }
+            }
+            if(max == null)
+            {
+                foreach(IOrderItem item in items)
+                {
+                    if (item.Calories >= min) results.Add(item);
+                }
+            }
+            foreach(IOrderItem item in items)
+            {
+                if (item.Calories >= min && item.Calories <= max) results.Add(item);
+            }
+            return results;
+        }
+        /// <summary>
+        /// Filters menu items by price
+        /// </summary>
+        /// <param name="items">collection of menu items available in current context</param>
+        /// <param name="min">min price</param>
+        /// <param name="max">max price</param>
+        /// <returns>list of menu items within price range</returns>
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, int? min, int? max)
+        {
+            if (min == null && max == null) return items;
+            var results = new List<IOrderItem>();
+            if(min == null)
+            {
+                foreach(IOrderItem item in items)
+                {
+                    if (item.Price <= max) results.Add(item);
+                }
+            }
+            if(max == null)
+            {
+                foreach(IOrderItem item in items)
+                {
+                    if (item.Price >= min) results.Add(item);
+                }
+            }
+            foreach(IOrderItem item in items)
+            {
+                if (item.Price >= min && item.Price <= max) results.Add(item);
+            }
+            return results;
+        }
+        /// <summary>
+        /// Filters search by menu type criteria
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="categories"></param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, string category)
+        {
+            var results = new List<IOrderItem>();
+            if (category == null) return items;
+            foreach(IOrderItem item in items)
+            {
+                if (item.GetType().ToString().Equals(category)) results.Add(item);
+            }
+            return results;
+        }
     }
 }
