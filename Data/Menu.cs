@@ -438,15 +438,13 @@ namespace BleakwindBuffet.Data
         /// <param name="items"></param>
         /// <param name="categories"></param>
         /// <returns></returns>
-        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, string category)
+        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, IEnumerable<string> categories)
         {
-            var results = new List<IOrderItem>();
-            if (category == null) return items;
-            foreach(IOrderItem item in items)
-            {
-                if (item.GetType().ToString().Equals(category)) results.Add(item);
-            }
-            return results;
+            //var results = new List<IOrderItem>();
+            if (categories == null || categories.Count() == 0) return items;
+            //WATCH will get type return drink, entree, side or IOrder Item??
+            if (!(categories.Contains(items.GetType().ToString()))) return null;
+            else return items;
         }
     }
 }

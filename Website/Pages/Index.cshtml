@@ -14,7 +14,7 @@
         {
             <label>
                 <!--FIXME not sure what to do for checkbox yet-->
-                <input type="checkbox" name="Categories" value="@category" />
+                <input type="checkbox" name="Categories" value="@Model.Categories.Contains(category)" />
                 @category
             </label>
         }

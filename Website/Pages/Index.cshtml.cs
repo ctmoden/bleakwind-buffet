@@ -43,6 +43,11 @@ namespace Website.Pages
         /// </summary>
         [BindProperty(SupportsGet = true)]
         public double? PriceMin { get; set; }
+        /// <summary>
+        /// Possible menu categories
+        /// </summary>
+        [BindProperty(SupportsGet = true)]
+        public string[] Categories { get; set; }
 
         private IEnumerable<IOrderItem> entrees = Menu.Entrees();
         /// <summary>
@@ -114,7 +119,9 @@ namespace Website.Pages
             Entrees = Menu.FilterByPrice(Entrees, PriceMin, PriceMax);
             Sides = Menu.FilterByPrice(Sides, PriceMin, PriceMax);
             Drinks = Menu.FilterByPrice(Drinks, PriceMin, PriceMax);
-
+            Entrees = Menu.FilterByCategory(Entrees, Categories);
+            Drinks = Menu.FilterByCategory(Drinks, Categories);
+            Sides = Menu.FilterByCategory(Sides, Categories);
         }
     }
 }
