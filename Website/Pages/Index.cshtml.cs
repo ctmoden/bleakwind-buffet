@@ -108,6 +108,10 @@ namespace Website.Pages
             Entrees = Menu.Search(SearchTerms, Entrees);
             Sides = Menu.Search(SearchTerms,Sides);
             Drinks = Menu.Search(SearchTerms,Drinks);
+            Entrees = Menu.FilterByCalories(Entrees, CaloriesMin, CaloriesMax);
+            Sides = Menu.FilterByCalories(Sides, CaloriesMin, CaloriesMax);
+            Drinks = Menu.FilterByCalories(Drinks, CaloriesMin, CaloriesMax);
+
         }
     }
 }
