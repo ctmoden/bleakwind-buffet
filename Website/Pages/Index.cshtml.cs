@@ -21,7 +21,7 @@ namespace Website.Pages
         /// <summary>
         /// Full collection of order items
         /// </summary>
-        [BindProperty(SupportsGet = true)]
+        //[BindProperty(SupportsGet = true)]
         public IEnumerable<IOrderItem> Items { get; set; }
         /// <summary>
         /// Max calories in a search
@@ -83,9 +83,10 @@ namespace Website.Pages
             _logger = logger;
         }
 
+        
         public void OnGet()
         {
-
+            Items = Menu.Search(SearchTerms);
         }
     }
 }
