@@ -408,7 +408,7 @@ namespace BleakwindBuffet.Data
         /// <param name="min">min price</param>
         /// <param name="max">max price</param>
         /// <returns>list of menu items within price range</returns>
-        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, int? min, int? max)
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, double? min, double? max)
         {
             if (min == null && max == null) return items;
             var results = new List<IOrderItem>();

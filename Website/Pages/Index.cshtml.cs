@@ -111,6 +111,9 @@ namespace Website.Pages
             Entrees = Menu.FilterByCalories(Entrees, CaloriesMin, CaloriesMax);
             Sides = Menu.FilterByCalories(Sides, CaloriesMin, CaloriesMax);
             Drinks = Menu.FilterByCalories(Drinks, CaloriesMin, CaloriesMax);
+            Entrees = Menu.FilterByPrice(Entrees, PriceMin, PriceMax);
+            Sides = Menu.FilterByPrice(Sides, PriceMin, PriceMax);
+            Drinks = Menu.FilterByPrice(Drinks, PriceMin, PriceMax);
 
         }
     }
