@@ -432,6 +432,7 @@ namespace BleakwindBuffet.Data
             }
             return results;
         }
+        /*
         /// <summary>
         /// Filters search by menu type criteria
         /// </summary>
@@ -443,8 +444,10 @@ namespace BleakwindBuffet.Data
             //var results = new List<IOrderItem>();
             if (categories == null || categories.Count() == 0) return items;
             //WATCH will get type return drink, entree, side or IOrder Item??
-            if (!(categories.Contains(items.GetType().ToString()))) return null;
-            else return items;
+            if (categories.Contains(items.GetType().ToString())) return items;
+            categories.Cast()
+            else return null;
         }
+        */
     }
 }

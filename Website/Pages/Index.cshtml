@@ -14,10 +14,14 @@
         {
             <label>
                 <!--FIXME not sure what to do for checkbox yet-->
-                <input type="checkbox" name="Categories" value="@Model.Categories.Contains(category)" />
+                <input type="checkbox" name="Categories" value="@Model.Categories.Contains(category)" 
+                       
+                       checked="@Model.Categories.Contains(category)"/>
+                
                 @category
             </label>
         }
+        
         <h4>Price</h4>
         <div>
             Between<input name="PriceMin" type="number" min="0" step=".25" placeholder="min"
@@ -47,59 +51,68 @@
 </p>
 <u1 class="menu-list">
     <h2>Entrees</h2>
-    
-    @foreach (BleakwindBuffet.Data.Entrees.Entree entree in Model.Entrees)
+    @if (Model.Categories.Contains("Entree"))
     {
-        <li>
-            <div class="menu-item">
-                @entree.Name
-                <div>
-                    ---Price: $@entree.Price
-                </div>
-                <div>
-                    ---Calories: @entree.Calories
-                </div>
+        @foreach (BleakwindBuffet.Data.Entrees.Entree entree in Model.Entrees)
+        {
+            <li>
+                <div class="menu-item">
+                    @entree.Name
+                    <div>
+                        ---Price: $@entree.Price
+                    </div>
+                    <div>
+                        ---Calories: @entree.Calories
+                    </div>
 
-            </div>
-        </li>
-
+                </div>
+            </li>
+        }
     }
+
 
     <h2>Sides</h2>
-
-    @foreach (BleakwindBuffet.Data.Sides.Side side in Model.Sides)
+    @if (Model.Categories.Contains("Side"))
     {
-        <li>
-            <div class="menu-item">
-                @side.Name
-                <div>
-                    ---Price: $@side.Price
-                </div>
-                <div>
-                    ---Calories: @side.Calories
-                </div>
+        @foreach (BleakwindBuffet.Data.Sides.Side side in Model.Sides)
+        {
+            <li>
+                <div class="menu-item">
+                    @side.Name
+                    <div>
+                        ---Price: $@side.Price
+                    </div>
+                    <div>
+                        ---Calories: @side.Calories
+                    </div>
 
-            </div>
-        </li>
+                </div>
+            </li>
+        }
     }
+
 
 
     <h2>Drinks</h2>
-    @foreach (BleakwindBuffet.Data.Drinks.Drink drink in Model.Drinks)
+    @if (Model.Categories.Contains("Drink"))
     {
-        <li>
-            <div class="menu-item">
-                @drink.Name
-                <div>
-                    ---Price: $@drink.Price
-                </div>
-                <div>
-                    ---Calories: @drink.Calories
-                </div>
+        @foreach (BleakwindBuffet.Data.Drinks.Drink drink in Model.Drinks)
+        {
+            <li>
+                <div class="menu-item">
+                    @drink.Name
+                    <div>
+                        ---Price: $@drink.Price
+                    </div>
+                    <div>
+                        ---Calories: @drink.Calories
+                    </div>
 
-            </div>
-        </li>
+                </div>
+            </li>
+        }
     }
+
     <h2>Combo Deals</h2>
     <p>
         Get the best bang for your buck with a combo meal!
