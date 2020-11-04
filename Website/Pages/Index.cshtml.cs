@@ -43,11 +43,12 @@ namespace Website.Pages
         /// </summary>
         [BindProperty(SupportsGet = true)]
         public double? PriceMin { get; set; }
+
         private IEnumerable<IOrderItem> entrees = Menu.Entrees();
         /// <summary>
         /// Property for the all available entrees on the menu
         /// </summary>
-        [BindProperty (SupportsGet = true)]
+        
         public IEnumerable<IOrderItem> Entrees 
         { 
             get=> entrees;
@@ -61,6 +62,7 @@ namespace Website.Pages
         /// <summary>
         /// Property for all available sides on the menu
         /// </summary>
+        
         public IEnumerable<IOrderItem> Sides
         {
             get => sides;
@@ -73,6 +75,7 @@ namespace Website.Pages
         /// <summary>
         /// Property for all available drinks on the menu.
         /// </summary>
+        
         public IEnumerable<IOrderItem> Drinks
         {
             get => drinks;
