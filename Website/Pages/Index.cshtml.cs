@@ -47,7 +47,7 @@ namespace Website.Pages
         /// <summary>
         /// Possible menu categories
         /// </summary>
-        //[BindProperty(SupportsGet = true)]
+        
         public string[] Categories { get; set; } = Menu.Categories;
 
         private IEnumerable<IOrderItem> entrees = Menu.Entrees();
