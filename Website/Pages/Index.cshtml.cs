@@ -48,7 +48,7 @@ namespace Website.Pages
         /// Possible menu categories
         /// </summary>
         //[BindProperty(SupportsGet = true)]
-        public string[] Categories { get; set; } = new[] { "Entree", "Drink", "Side" };
+        public string[] Categories { get; set; } = Menu.Categories;
 
         private IEnumerable<IOrderItem> entrees = Menu.Entrees();
         /// <summary>
@@ -109,7 +109,7 @@ namespace Website.Pages
         }
 
         
-        public void OnGet()
+        public void OnGet(string[] Categories)
         {
             Entrees = Menu.Search(SearchTerms, Entrees);
             Sides = Menu.Search(SearchTerms,Sides);
@@ -120,7 +120,7 @@ namespace Website.Pages
             Entrees = Menu.FilterByPrice(Entrees, PriceMin, PriceMax);
             Sides = Menu.FilterByPrice(Sides, PriceMin, PriceMax);
             Drinks = Menu.FilterByPrice(Drinks, PriceMin, PriceMax);
-            
+            this.Categories = Categories;
             /*
             Entrees = Menu.FilterByCategory(Entrees, Categories);
             Drinks = Menu.FilterByCategory(Drinks, Categories);

@@ -14,13 +14,14 @@
         {
             <label>
                 <!--FIXME not sure what to do for checkbox yet-->
-                <input type="checkbox" name="Categories" value="@Model.Categories.Contains(category)" 
+                <input type="checkbox" name="Categories" value="@category" 
                        
                        checked="@Model.Categories.Contains(category)"/>
                 
                 @category
             </label>
         }
+        
         
         <h4>Price</h4>
         <div>
@@ -51,7 +52,7 @@
 </p>
 <u1 class="menu-list">
     <h2>Entrees</h2>
-    @if (Model.Categories.Contains("Entree"))
+    @if (Model.Categories.Length == 0 || Model.Categories.Contains("Entree"))
     {
         @foreach (BleakwindBuffet.Data.Entrees.Entree entree in Model.Entrees)
         {
@@ -69,10 +70,28 @@
             </li>
         }
     }
+    <h2>Drinks</h2>
+    @if (Model.Categories.Length == 0 || Model.Categories.Contains("Drink"))
+    {
+        @foreach (BleakwindBuffet.Data.Drinks.Drink drink in Model.Drinks)
+        {
+            <li>
+                <div class="menu-item">
+                    @drink.Name
+                    <div>
+                        ---Price: $@drink.Price
+                    </div>
+                    <div>
+                        ---Calories: @drink.Calories
+                    </div>
 
+                </div>
+            </li>
+        }
+    }
 
     <h2>Sides</h2>
-    @if (Model.Categories.Contains("Side"))
+    @if (Model.Categories.Length == 0 || Model.Categories.Contains("Side"))
     {
         @foreach (BleakwindBuffet.Data.Sides.Side side in Model.Sides)
         {
@@ -93,25 +112,7 @@
 
 
 
-    <h2>Drinks</h2>
-    @if (Model.Categories.Contains("Drink"))
-    {
-        @foreach (BleakwindBuffet.Data.Drinks.Drink drink in Model.Drinks)
-        {
-            <li>
-                <div class="menu-item">
-                    @drink.Name
-                    <div>
-                        ---Price: $@drink.Price
-                    </div>
-                    <div>
-                        ---Calories: @drink.Calories
-                    </div>
 
-                </div>
-            </li>
-        }
-    }
 
     <h2>Combo Deals</h2>
     <p>
