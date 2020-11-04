@@ -349,17 +349,20 @@ namespace BleakwindBuffet.Data
 
         }
         /// <summary>
-        /// 
+        /// Searches full menu for user inputed search terms
         /// </summary>
-        /// <param name=""></param>
-        /// <param name="terms"></param>
+        /// <param name="terms">user defined search terms</param>
+        /// <param name="category">category of menu being searched through</param>
         /// <returns></returns>
-        public static IEnumerable<IOrderItem> Search(string terms)
+        public static IEnumerable<IOrderItem> Search(string terms, IEnumerable<IOrderItem> category)
         {
             List<IOrderItem> results = new List<IOrderItem>();
-            IEnumerable<IOrderItem> all = FullMenu();
-            if (terms == null) return all;
-            foreach(IOrderItem item in all)
+            
+            if (terms == null)
+            {
+                return category;
+            }
+            foreach(IOrderItem item in category)
             {
                 //FIXME overload not working for Contains method
                 if (item.Name.Contains(terms))

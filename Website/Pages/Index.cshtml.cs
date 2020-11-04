@@ -43,27 +43,43 @@ namespace Website.Pages
         /// </summary>
         [BindProperty(SupportsGet = true)]
         public double? PriceMin { get; set; }
+        private IEnumerable<IOrderItem> entrees = Menu.Entrees();
         /// <summary>
         /// Property for the all available entrees on the menu
         /// </summary>
+        [BindProperty (SupportsGet = true)]
         public IEnumerable<IOrderItem> Entrees 
         { 
-            get=> Menu.Entrees();
+            get=> entrees;
+            set
+            {
+                entrees = value;
+            }
             
         }
+        private IEnumerable<IOrderItem> sides = Menu.Sides();
         /// <summary>
         /// Property for all available sides on the menu
         /// </summary>
         public IEnumerable<IOrderItem> Sides
         {
-            get => Menu.Sides();
+            get => sides;
+            set
+            {
+                sides = value;
+            }
         }
+        private IEnumerable<IOrderItem> drinks = Menu.Drinks();
         /// <summary>
         /// Property for all available drinks on the menu.
         /// </summary>
         public IEnumerable<IOrderItem> Drinks
         {
-            get => Menu.Drinks();
+            get => drinks;
+            set
+            {
+                drinks = value;
+            }
         }
         /// <summary>
         /// gets full menu of items
@@ -86,7 +102,9 @@ namespace Website.Pages
         
         public void OnGet()
         {
-            Items = Menu.Search(SearchTerms);
+            Entrees = Menu.Search(SearchTerms, Entrees);
+            Sides = Menu.Search(SearchTerms,Sides);
+            Drinks = Menu.Search(SearchTerms,Drinks);
         }
     }
 }
