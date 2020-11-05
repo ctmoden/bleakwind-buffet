@@ -90,25 +90,25 @@ namespace Website.Pages
                 drinks = value;
             }
         }
-        /// <summary>
-        /// gets full menu of items
-        /// </summary>
-        public IEnumerable<IOrderItem> FullMenu
-        {
-            get => Menu.FullMenu();
-        }
+        
         /// <summary>
         /// Gets an array of all soda flavors available for the sailor soda
         /// </summary>
-        public Array SodaFlavors => Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.SodaFlavor));
+        public Array SodaFlavors => Enum.GetValues(typeof(SodaFlavor));
         private readonly ILogger<IndexModel> _logger;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="logger"></param>
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
         }
 
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Categories"></param>
         public void OnGet(string[] Categories)
         {
             Entrees = Menu.Search(SearchTerms, Entrees);
@@ -121,11 +121,6 @@ namespace Website.Pages
             Sides = Menu.FilterByPrice(Sides, PriceMin, PriceMax);
             Drinks = Menu.FilterByPrice(Drinks, PriceMin, PriceMax);
             this.Categories = Categories;
-            /*
-            Entrees = Menu.FilterByCategory(Entrees, Categories);
-            Drinks = Menu.FilterByCategory(Drinks, Categories);
-            Sides = Menu.FilterByCategory(Sides, Categories);
-            */
         }
     }
 }
