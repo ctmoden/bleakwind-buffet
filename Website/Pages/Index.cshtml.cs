@@ -18,11 +18,7 @@ namespace Website.Pages
         /// </summary>
         [BindProperty(SupportsGet = true)]
         public string SearchTerms { get; set; }
-        /// <summary>
-        /// Full collection of order items
-        /// </summary>
-        //[BindProperty(SupportsGet = true)]
-        public IEnumerable<IOrderItem> Items { get; set; }
+        
         /// <summary>
         /// Max calories in a search
         /// </summary>
@@ -95,6 +91,7 @@ namespace Website.Pages
         /// Gets an array of all soda flavors available for the sailor soda
         /// </summary>
         public Array SodaFlavors => Enum.GetValues(typeof(SodaFlavor));
+        
         private readonly ILogger<IndexModel> _logger;
         /// <summary>
         /// 
