@@ -374,10 +374,10 @@ namespace BleakwindBuffet.Data
         /// Searches menu items based on calories
         /// </summary>
         /// <param name="items">menu items available in current context</param>
-        /// <param name="min">min price </param>
-        /// <param name="max">max price</param>
+        /// <param name="min">min calories </param>
+        /// <param name="max">max calories</param>
         /// <returns>items falling in specified calorie range</returns>
-        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, double? min, double? max)
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, uint? min, uint? max)
         {
             if (min == null && max == null) return items;
             var results = new List<IOrderItem>();
@@ -432,22 +432,6 @@ namespace BleakwindBuffet.Data
             }
             return results;
         }
-        /*
-        /// <summary>
-        /// Filters search by menu type criteria
-        /// </summary>
-        /// <param name="items"></param>
-        /// <param name="categories"></param>
-        /// <returns></returns>
-        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, IEnumerable<string> categories)
-        {
-            //var results = new List<IOrderItem>();
-            if (categories == null || categories.Count() == 0) return items;
-            //WATCH will get type return drink, entree, side or IOrder Item??
-            if (categories.Contains(items.GetType().ToString())) return items;
-            categories.Cast()
-            else return null;
-        }
-        */
+        
     }
 }
