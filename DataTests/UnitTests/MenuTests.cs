@@ -14,6 +14,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data;
+using Xunit.Sdk;
 
 namespace BleakwindBuffet.DataTests.MenuTests
 {
@@ -22,13 +23,15 @@ namespace BleakwindBuffet.DataTests.MenuTests
     /// </summary>
     public class MenuTests
     {
+
+
         [Fact]
         public void EntreesMethodShouldReturnIEnumerable()
         {
             //create another method for checking list length
             IEnumerable<IOrderItem> entrees = Menu.Entrees();
             Assert.Collection(entrees,
-                item=> item.ToString().Contains("Briarheart Burger"),
+                item => item.ToString().Contains("Briarheart Burger"),
                 item => item.ToString().Contains("Double Draugr"),
                 item => item.ToString().Contains("Garden Orc Omelette"),
                 item => item.ToString().Contains("Philly Poacher"),
@@ -38,26 +41,26 @@ namespace BleakwindBuffet.DataTests.MenuTests
 
                 );
 
-                
+
 
         }
         [Fact]
         public void EntreeListShouldBeCorrectLength()
         {
             IEnumerable<IOrderItem> entrees = Menu.Entrees();
-            Assert.Equal(7, entrees.Count()); 
+            Assert.Equal(7, entrees.Count());
         }
 
         [Fact]
         public void SidesMethodShouldReturnIEnumerable()
         {
-            
+
             IEnumerable<IOrderItem> sides = Menu.Sides();
             Assert.Collection(sides,
                 item => item.ToString().Contains("Small Dragonborn Waffle Fies"),
                 item => item.ToString().Contains("Medium Dragonborn Waffle Fries"),
                 item => item.ToString().Contains("Large Dragonborn Waffle Fries"),
-                item=> item.ToString().Contains("Small Fried Miraak"),
+                item => item.ToString().Contains("Small Fried Miraak"),
                 item => item.ToString().Contains("Medium Fried Miraak"),
                 item => item.ToString().Contains("Large Fried Miraak"),
                 item => item.ToString().Contains("Small Mad Otar Grits"),
@@ -77,10 +80,10 @@ namespace BleakwindBuffet.DataTests.MenuTests
         [Fact]
         public void DrinksMethodShouldReturnIEnumerable()
         {
-            
+
             IEnumerable<IOrderItem> drinks = Menu.Drinks();
             Assert.Collection(drinks,
-                item=> item.ToString().Contains("Small Aretino Apple Juice"),
+                item => item.ToString().Contains("Small Aretino Apple Juice"),
                 item => item.ToString().Contains("Medium Aretino Apple Juice"),
                 item => item.ToString().Contains("Large Aretino Apple Juice"),
                 item => item.ToString().Contains("Small Candlehearth Coffee"),
@@ -111,8 +114,8 @@ namespace BleakwindBuffet.DataTests.MenuTests
                 item => item.ToString().Contains("Medium Warrior Water"),
                 item => item.ToString().Contains("Large Warrior Water")
                 );
-            
-            
+
+
         }
         [Fact]
         public void DrinkListShouldBeCorrectLength()
@@ -183,6 +186,16 @@ namespace BleakwindBuffet.DataTests.MenuTests
         {
             IEnumerable<IOrderItem> fullMenu = Menu.FullMenu();
             Assert.Equal(49, fullMenu.Count());
+        }
+        private static readonly IOrderItem[] EntreeItems = new List<IOrderItem> { new BriarheartBurger() }.ToArray();
+        
+        [Theory]
+        [InlineData("Burger", EntreeItems)]
+        public void ShouldReturnCorrectSearchResultsForEntrees(string terms, List<IOrderItem> expectedResults)
+        {
+            IEnumerable<IOrderItem> entrees = Menu.Entrees();
+            //IEnumerable<IOrderItem> expectedResults = new List<IOrderItem> { new BriarheartBurger() };
+            Assert.Equal(expectedResults, Menu.Search(terms, entrees));
         }
     }
 }
