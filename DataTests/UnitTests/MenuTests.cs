@@ -189,13 +189,28 @@ namespace BleakwindBuffet.DataTests.MenuTests
         }
         private static readonly IOrderItem[] EntreeItems = new List<IOrderItem> { new BriarheartBurger() }.ToArray();
         
-        [Theory]
-        [InlineData("Burger", EntreeItems)]
-        public void ShouldReturnCorrectSearchResultsForEntrees(string terms, List<IOrderItem> expectedResults)
+        [Fact]
+        public void ShouldReturnCorrectSearchResultsForEntreeSearch()
         {
             IEnumerable<IOrderItem> entrees = Menu.Entrees();
+            IEnumerable<IOrderItem> drinks = Menu.Drinks();
+            IEnumerable<IOrderItem> sides = Menu.Sides();
             //IEnumerable<IOrderItem> expectedResults = new List<IOrderItem> { new BriarheartBurger() };
-            Assert.Equal(expectedResults, Menu.Search(terms, entrees));
+            Assert.Equal(new List<IOrderItem> { new BriarheartBurger() }, Menu.Search("Burger", entrees));
+            Assert.Equal(new List<IOrderItem>(), Menu.Search("Burger", drinks));
+            Assert.Equal(new List<IOrderItem>(), Menu.Search("Burger", sides));
+        }
+
+        [Fact]//make a theory here
+        public void ShouldReturnCorrectSearchResultsForSideSearch()
+        {
+            IEnumerable<IOrderItem> sideSearch = Menu.Search("Grits", Menu.Sides());
+            Assert.Collection(sideSearch,
+                item => item.Name.Equals("Small Mad Otar Grits"),
+                item => item.Name.Equals("Medium Mad Otar Grits"),
+                item => item.Name.Equals("Large Mad Otar Grits")
+                );
+
         }
     }
 }
