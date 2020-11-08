@@ -252,5 +252,89 @@ namespace BleakwindBuffet.DataTests.MenuTests
                 item => item.Name.Equals("Thugs T-Bone")
                 );
         }
+        /// <summary>
+        /// conducts a test on  a search where the min calorie value is null and max is not null
+        /// </summary>
+        [Fact]
+        public void ShouldReturnCorrectCollectionForCalorieRange3()
+        {
+            IEnumerable<IOrderItem> calorieSearch = Menu.FilterByCalories(Menu.Entrees(), null, 700);
+            Assert.Collection(calorieSearch,
+                item => item.Name.Equals("Garden Orc Omelette"),
+                item => item.Name.Equals("Smokehouse Skeleton")
+                );
+        }
+        /// <summary>
+        /// conducts a calorie search when both min and max are null
+        /// </summary>
+        [Fact]
+        public void ShouldReturnCorrectCollectionForCalorieRange4()
+        {
+            IEnumerable<IOrderItem> calorieSearch = Menu.FilterByCalories(Menu.Entrees(), null, null);
+            Assert.Collection(calorieSearch,
+                item => item.Name.Equals("Briarheart Burger"),
+                item => item.Name.Equals("Double Draugr"),
+                item => item.Name.Equals("Garden Orc Omelette"),
+                item => item.Name.Equals("Philly Poacher"),
+                item => item.Name.Equals("Smokehouse Skeleton"),
+                item => item.Name.Equals("Thalmor Triple"),
+                item => item.Name.Equals("Thugs T-Bone")
+
+                );
+        }
+        /// <summary>
+        /// Conducts a test on a search where both price values are not null
+        /// </summary>
+        [Fact]
+        public void ShouldReturnCorrectCollectionForPriceRange1()
+        {
+            IEnumerable<IOrderItem> priceSearch = Menu.FilterByPrice(Menu.Entrees(), 6.0, 7.0);
+            Assert.Collection(priceSearch,
+                item=>item.Name.Equals("Briarheart Burger"),
+                item => item.Name.Equals("Thugs T-Bone")
+                );
+        }
+        /// <summary>
+        /// conducts a test on a search where max price is null and min price is not null
+        /// </summary>
+        [Fact]
+        public void ShouldReturnCorrectCollectionForPriceRange2()
+        {
+            IEnumerable<IOrderItem> priceSearch = Menu.FilterByPrice(Menu.Entrees(), 8.0, null);
+            Assert.Collection(priceSearch,
+                item=>item.Name.Equals("Thalmor Triple")
+
+                );
+        }
+        /// <summary>
+        /// conducts a test on a search where min price is null and max price is not null
+        /// </summary>
+        [Fact]
+        public void ShouldReturnCorrectCollectionForPriceRange3()
+        {
+            IEnumerable<IOrderItem> priceSearch = Menu.FilterByPrice(Menu.Entrees(), null, 6);
+            Assert.Collection(priceSearch,
+                item => item.Name.Equals("Garden Orc Omelette"),
+                item => item.Name.Equals("Smokehouse Skeleton")
+
+                );
+        }
+        /// <summary>
+        /// conducts a test on a search where both min and max are null
+        /// </summary>
+        [Fact]
+        public void ShouldReturnCorrectCollectionForPriceRange4()
+        {
+            IEnumerable<IOrderItem> priceSearch = Menu.FilterByPrice(Menu.Entrees(), null, null);
+            Assert.Collection(priceSearch,
+                item => item.Name.Equals("Briarheart Burger"),
+                item => item.Name.Equals("Double Draugr"),
+                item => item.Name.Equals("Garden Orc Omelette"),
+                item => item.Name.Equals("Philly Poacher"),
+                item => item.Name.Equals("Smokehouse Skeleton"),
+                item => item.Name.Equals("Thalmor Triple"),
+                item => item.Name.Equals("Thugs T-Bone")
+                );
+        }
     }
 }
