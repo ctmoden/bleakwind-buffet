@@ -189,16 +189,20 @@ namespace BleakwindBuffet.DataTests.MenuTests
         }
         private static readonly IOrderItem[] EntreeItems = new List<IOrderItem> { new BriarheartBurger() }.ToArray();
         
-        [Fact]
-        public void ShouldReturnCorrectSearchResultsForEntreeSearch()
+        [Theory]
+        [InlineData("Burger", "Briarheart Burger")]
+        [InlineData("Thalmor", "Thalmor Triple")]
+        [InlineData("Double", "Double Draugr")]
+        [InlineData("Skeleton", "Smokehouse Skeleton")]
+        [InlineData("Orc", "Garden Orc Omelette")]
+        [InlineData("Philly", "Philly Poacher")]
+        [InlineData("Thugs", "Thugs T-Bone")]
+        public void ShouldReturnCorrectSearchResultsForEntreeSearch(string search, string name)
         {
-            IEnumerable<IOrderItem> entrees = Menu.Entrees();
-            IEnumerable<IOrderItem> drinks = Menu.Drinks();
-            IEnumerable<IOrderItem> sides = Menu.Sides();
-            //IEnumerable<IOrderItem> expectedResults = new List<IOrderItem> { new BriarheartBurger() };
-            Assert.Equal(new List<IOrderItem> { new BriarheartBurger() }, Menu.Search("Burger", entrees));
-            Assert.Equal(new List<IOrderItem>(), Menu.Search("Burger", drinks));
-            Assert.Equal(new List<IOrderItem>(), Menu.Search("Burger", sides));
+            IEnumerable<IOrderItem> entreeSearch = Menu.Search(search, Menu.Entrees());
+            Assert.Collection(entreeSearch,
+                item => item.Name.Equals(name)
+                );
         }
 
         [Fact]//make a theory here
@@ -211,6 +215,42 @@ namespace BleakwindBuffet.DataTests.MenuTests
                 item => item.Name.Equals("Large Mad Otar Grits")
                 );
 
+        }
+        [Fact]
+        public void ShouldReturnCorrectSearchResultsForDrinkSearch()
+        {
+            IEnumerable<IOrderItem> drinkSearch = Menu.Search("Warrior", Menu.Drinks());
+            Assert.Collection(drinkSearch,
+                item => item.Name.Equals("Small Warrior Water"),
+                item => item.Name.Equals("Medium Warrior Water"),
+                item => item.Name.Equals("Large Warrior Water")
+                );
+
+        }
+        /// <summary>
+        /// Conducts a test on a search where both calorie values are not null
+        /// </summary>
+        [Fact]
+        public void ShouldReturnCorrectCollectionForCalorieRange1()
+        {
+            IEnumerable<IOrderItem> calorieSearch = Menu.FilterByCalories(Menu.Entrees(), 700, 800);
+            Assert.Collection(calorieSearch,
+                item => item.Name.Equals("Briarheart Burger"),
+                item => item.Name.Equals("Philly Poacher")
+                );            
+        }
+        /// <summary>
+        /// Conducts a test on a search where max calorie value is null and the min is not null
+        /// </summary>
+        [Fact]
+        public void ShouldReturnCorrectCollectionForCalorieRange2()
+        {
+            IEnumerable<IOrderItem> calorieSearch = Menu.FilterByCalories(Menu.Entrees(), 800, null);
+            Assert.Collection(calorieSearch,
+                item => item.Name.Equals("Double Draugr"),
+                item => item.Name.Equals("Thalmor Triple"),
+                item => item.Name.Equals("Thugs T-Bone")
+                );
         }
     }
 }
