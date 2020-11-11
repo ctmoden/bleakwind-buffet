@@ -49,5 +49,9 @@ namespace BleakwindBuffet.Data.Drinks
         /// Name Property for access to to string method return 
         /// </summary>
         public virtual string Name { get => ToString(); }
+        /// <summary>
+        /// Drink description
+        /// </summary>
+        public abstract string Description { get; }
     }
 }

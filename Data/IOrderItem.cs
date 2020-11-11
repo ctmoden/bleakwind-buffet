@@ -33,5 +33,9 @@ namespace BleakwindBuffet.Data
         /// Name of item
         /// </summary>
         string Name { get; }
+        /// <summary>
+        /// description of IOrder item
+        /// </summary>
+        string Description { get; }
     }
 }

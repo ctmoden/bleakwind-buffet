@@ -121,5 +121,9 @@ namespace BleakwindBuffet.Data.Drinks
         {
             return ($"{Size} Aretino Apple Juice");
         }
+        /// <summary>
+        /// Description of soda
+        /// </summary>
+        public override string Description => "An old fashioned jerked soda, corbonated water and flavored syrup poured over a bed of crushed ice";
     }
 }
