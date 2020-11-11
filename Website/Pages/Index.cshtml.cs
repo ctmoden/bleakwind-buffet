@@ -116,12 +116,51 @@ namespace Website.Pages
             */
 
             if(SearchTerms!=null) SearchTermsQuery();
+            if(CaloriesMin != null)
+            {
+                Entrees = Entrees.Where(entree =>
+                entree.Calories >= CaloriesMin);
+                Sides = Sides.Where(side =>
+                side.Calories >= CaloriesMin);
+                Drinks = Drinks.Where(drink =>
+                drink.Calories >= CaloriesMin);
+            }
+            if(CaloriesMax != null)
+            {
+                Entrees = Entrees.Where(entree =>
+                entree.Calories <= CaloriesMax);
+                Sides = Sides.Where(side =>
+                side.Calories <= CaloriesMax);
+                Drinks = Drinks.Where(drink =>
+                drink.Calories <= CaloriesMax);
+            }
+            if(PriceMin != null)
+            {
+                Entrees = Entrees.Where(entree =>
+                entree.Price >= PriceMin);
+                Sides = Sides.Where(side =>
+                side.Price >= PriceMin);
+                Drinks = Drinks.Where(drink =>
+                drink.Price >= PriceMin);
+            }
+            if(PriceMax != null)
+            {
+                Entrees = Entrees.Where(entree =>
+                entree.Price <= PriceMax);
+                Sides = Sides.Where(side =>
+                side.Price <= PriceMax);
+                Drinks = Drinks.Where(drink =>
+                drink.Price <= PriceMax);
+            }
+            /*
             Entrees = Menu.FilterByCalories(Entrees, CaloriesMin, CaloriesMax);
             Sides = Menu.FilterByCalories(Sides, CaloriesMin, CaloriesMax);
             Drinks = Menu.FilterByCalories(Drinks, CaloriesMin, CaloriesMax);
+            
             Entrees = Menu.FilterByPrice(Entrees, PriceMin, PriceMax);
             Sides = Menu.FilterByPrice(Sides, PriceMin, PriceMax);
             Drinks = Menu.FilterByPrice(Drinks, PriceMin, PriceMax);
+            */
             this.Categories = Categories;
         }
         /// <summary>
