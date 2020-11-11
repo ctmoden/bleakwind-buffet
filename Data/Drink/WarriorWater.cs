@@ -87,6 +87,10 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
         /// <summary>
+        /// Description of water
+        /// </summary>
+        public override string Description => "It's water.  Just water.";
+        /// <summary>
         /// Overrides default ToString method with string specific to drink size and name
         /// </summary>
         /// <returns>string</returns>

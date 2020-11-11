@@ -127,6 +127,10 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
         /// <summary>
+        /// Description of soda
+        /// </summary>
+        public override string Description => "An old fashioned jerked soda, corbonated water and flavored syrup poured over a bed of crushed ice";
+        /// <summary>
         /// Overrides default ToString method with string specific to drink size, flavor, and name
         /// </summary>
         /// <returns>string</returns>

@@ -110,6 +110,10 @@ namespace BleakwindBuffet.Data.Drinks
                 return specialInstructions;
             }
         }
+        /// <summary>
+        /// Description of milk
+        /// </summary>
+        public override string Description => "Hormone-free organic 2% milk";
 
         /// <summary>
         /// Overrides default ToString method with string specific to drink size and name
@@ -119,6 +123,7 @@ namespace BleakwindBuffet.Data.Drinks
         {
             return ($"{Size} Markarth Milk");
         }
+
 
     }
 }
