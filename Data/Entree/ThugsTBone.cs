@@ -31,6 +31,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
         /// <summary>
+        /// Description of the T-Bone
+        /// </summary>
+        public override string Description => "Juicy T-Bone, not much else to say.";
+        /// <summary>
         /// Overrrides defualt ToString method with string specific to class
         /// </summary>
         /// <returns>"Thusgs T-Bone" string</returns>

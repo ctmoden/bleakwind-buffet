@@ -13,11 +13,19 @@ namespace Website.Pages
 {
     public class IndexModel : PageModel
     {
+        private string searchTerms;
         /// <summary>
         /// String for user search text
         /// </summary>
         [BindProperty(SupportsGet = true)]
-        public string SearchTerms { get; set; }
+        public string SearchTerms
+        {
+            get => searchTerms;
+            set
+            {
+                searchTerms = value.Trim();
+            }
+        }
         
         /// <summary>
         /// Max calories in a search
@@ -103,14 +111,17 @@ namespace Website.Pages
         }
 
         /// <summary>
-        /// 
+        /// On get method
         /// </summary>
         /// <param name="Categories"></param>
         public void OnGet(string[] Categories)
         {
+            /*
             Entrees = Menu.Search(SearchTerms, Entrees);
             Sides = Menu.Search(SearchTerms,Sides);
             Drinks = Menu.Search(SearchTerms,Drinks);
+            */
+            SearchTermsQuery();
             Entrees = Menu.FilterByCalories(Entrees, CaloriesMin, CaloriesMax);
             Sides = Menu.FilterByCalories(Sides, CaloriesMin, CaloriesMax);
             Drinks = Menu.FilterByCalories(Drinks, CaloriesMin, CaloriesMax);
@@ -118,6 +129,20 @@ namespace Website.Pages
             Sides = Menu.FilterByPrice(Sides, PriceMin, PriceMax);
             Drinks = Menu.FilterByPrice(Drinks, PriceMin, PriceMax);
             this.Categories = Categories;
+        }
+        /// <summary>
+        /// Uses LINQ queries to filter Entrees, sides, and drinks based on user input search terms
+        /// </summary>
+        private void SearchTermsQuery()
+        {      
+            foreach(string term in SearchTerms.Split(' ')){
+                Entrees = Entrees.Where(entree => entree.Name.Contains(term, StringComparison.InvariantCultureIgnoreCase));
+                Entrees = Entrees.Where(entree => entree.Description.Contains(term, StringComparison.InvariantCultureIgnoreCase));
+                Sides = Sides.Where(side => side.Name.Contains(term, StringComparison.InvariantCultureIgnoreCase));
+                Sides = Sides.Where(side => side.Description.Contains(term, StringComparison.InvariantCultureIgnoreCase));
+                Drinks = Drinks.Where(drink => drink.Name.Contains(term, StringComparison.InvariantCultureIgnoreCase));
+                Drinks = Drinks.Where(drink => drink.Description.Contains(term, StringComparison.InvariantCultureIgnoreCase));
+            }
         }
     }
 }

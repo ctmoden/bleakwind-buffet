@@ -38,6 +38,10 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
         /// <summary>
+        /// Entree description
+        /// </summary>
+        public abstract string Description { get; }
+        /// <summary>
         /// Name 
         /// </summary>
         public virtual string Name{ get => ToString(); }

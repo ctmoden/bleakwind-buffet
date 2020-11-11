@@ -41,6 +41,10 @@ namespace BleakwindBuffet.Data.Sides
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
         /// <summary>
+        /// Description of side
+        /// </summary>
+        public abstract string Description { get; }
+        /// <summary>
         /// Name Property for access to to string method return 
         /// </summary>
         public virtual string Name { get => ToString(); }

@@ -92,6 +92,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
         /// <summary>
+        /// Description of philly 
+        /// </summary>
+        public override string Description => "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.";
+        /// <summary>
         /// Overrirdes default ToString method to return string specific to class
         /// </summary>
         /// <returns>"Philly Poacher" string</returns>

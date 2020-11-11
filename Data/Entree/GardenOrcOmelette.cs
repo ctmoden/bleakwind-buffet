@@ -112,6 +112,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
         /// <summary>
+        /// Description of omelette
+        /// </summary>
+        public override string Description => "Vegetarian. Two egg omelette packed with a mix of broccoli, mushrooms, and tomatoes. Topped with cheddar cheese.";
+        /// <summary>
         /// Overrirdes base ToString method and replaces return string with omlette name.
         /// </summary>
         /// <returns>"Gardern Orc Omlette" string</returns>

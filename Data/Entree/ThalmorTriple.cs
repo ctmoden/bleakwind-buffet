@@ -227,6 +227,10 @@ namespace BleakwindBuffet.Data.Entrees
             //FIXME do we need a setter?  I think it is fine on first guess.
         }
         /// <summary>
+        /// Description of the thalmor
+        /// </summary>
+        public override string Description => "Think you are strong enough to take on the Thalmor? Inlcudes two 1/4lb patties with a 1/2lb patty in between with ketchup, mustard, pickle, cheese, tomato, lettuce, mayo, bacon, and an egg.";
+        /// <summary>
         /// Overrides the standard ToString method and replaces the return value with the burger name.
         /// </summary>
         /// <returns>string "Briarheart Burger"</returns>

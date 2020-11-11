@@ -90,6 +90,8 @@ namespace BleakwindBuffet.Data.Sides
                 return specialInstructions;
             }
         }
+
+        public override string Description => "Cheesy Grits.";
         /// <summary>
         /// Overrides default ToString method with string specific to side size and name
         /// </summary>

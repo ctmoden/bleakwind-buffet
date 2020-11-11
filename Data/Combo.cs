@@ -163,6 +163,8 @@ namespace BleakwindBuffet.Data
             if (e.PropertyName == "Calories") InvokePropertyChange("Calories");
             if (e.PropertyName == "SpecialInstructions") InvokePropertyChange("SpecialInstructions");
         }
+
+        public override string Description => "Combo meal";
         
         
     }

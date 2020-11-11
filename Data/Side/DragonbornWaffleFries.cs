@@ -90,6 +90,10 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
         /// <summary>
+        /// Description of fries
+        /// </summary>
+        public override string Description => "Crispy fried potato waffle fries.";
+        /// <summary>
         /// Overrides default ToString method with string specific to side size and name
         /// </summary>
         /// <returns>string</returns>

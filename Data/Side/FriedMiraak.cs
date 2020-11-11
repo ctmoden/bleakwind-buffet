@@ -90,6 +90,10 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
         /// <summary>
+        /// Description of fried miraak
+        /// </summary>
+        public override string Description => "Perfectly prepared hash brown pancakes.";
+        /// <summary>
         /// Overrides default ToString method with string specific to side size and name
         /// </summary>
         /// <returns>string</returns>

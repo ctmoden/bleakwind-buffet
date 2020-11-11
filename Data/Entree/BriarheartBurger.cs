@@ -133,6 +133,10 @@ namespace BleakwindBuffet.Data.Entrees
             
         }
         /// <summary>
+        /// Description of burger
+        /// </summary>
+        public override string Description => "Single patty burger on a brioche bun.  Comes with ketchup, mustard, pickle, and cheese";
+        /// <summary>
         /// Overrides the standard ToString method and replaces the return value with the burger name.
         /// </summary>
         /// <returns>string "Briarheart Burger"</returns>
