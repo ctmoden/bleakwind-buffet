@@ -174,5 +174,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             hash.Size = size;
             Assert.Equal(name, hash.ToString());
         }
+        [Fact]
+        public void ShouldReturnCorrectDescription()
+        {
+            FriedMiraak hash = new FriedMiraak();
+            Assert.Equal("Perfectly prepared hash brown pancakes.", hash.Description);
+        }
     }
 }

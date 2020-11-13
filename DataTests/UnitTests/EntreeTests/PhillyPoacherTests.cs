@@ -180,5 +180,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             PhillyPoacher philly = new PhillyPoacher();
             Assert.Equal("Philly Poacher", philly.ToString());
         }
+        [Fact]
+        public void ShouldReturnCorectDescription()
+        {
+            PhillyPoacher philly = new PhillyPoacher();
+            Assert.Equal("Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.", philly.Description);
+        }
     }
 }

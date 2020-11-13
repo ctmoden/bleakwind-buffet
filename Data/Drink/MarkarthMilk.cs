@@ -113,7 +113,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Description of milk
         /// </summary>
-        public override string Description => "Hormone-free organic 2% milk";
+        public override string Description => "Hormone-free organic 2% milk.";
 
         /// <summary>
         /// Overrides default ToString method with string specific to drink size and name

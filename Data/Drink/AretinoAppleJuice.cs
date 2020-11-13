@@ -124,6 +124,6 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Description of soda
         /// </summary>
-        public override string Description => "Fresh squeezed apple juice";
+        public override string Description => "Fresh squeezed apple juice.";
     }
 }
