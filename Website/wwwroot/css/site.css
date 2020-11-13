@@ -31,13 +31,14 @@ for details on configuring this project to bundle and minify static web assets. 
 
 }
 @media(max-width: 490px) {
-    .menu-list {
+    .menu-list > u1 {
         flex-direction: column;
 
     }
     .menu-list > u1 {
         float:none;
         width : 100%;
+        
     }
 }
 .soda-flavor
