@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author:  Christian Moden
+ * Class: Index.cshtml.cs
+ * Purpose: Data manager for the website 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
