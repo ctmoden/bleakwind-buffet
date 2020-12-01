@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="RoundRegister">
       <HintPath>RoundRegister.dll</HintPath>
     </Reference>
